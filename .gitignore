@@ -1,5 +1,5 @@
 dist/*
-.build/*
+.builds/*
 *.sw?
 *~
 logs/*
