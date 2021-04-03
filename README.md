@@ -6,27 +6,41 @@
 Проверьте файл [CHANGELOG.md], чтобы узнать что изменилось!
 Проверьте файл [TODO.md], чтобы увидеть текущие цели основного репозитория >:3c
 
-Старые файлы README и гайды смотрите в папке [docs]. (Dpeta удалил macBuilds от Lexicality, так как он больше не применим)
-
 [CHANGELOG.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/CHANGELOG.md
-[docs]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/
 [TODO.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/TODO.md
+
+## Руководства
+
+Старые файлы README и руководства смотрите в папке [docs]
+Dpeta крайне рекомендует прочитать эти руководства, если вы новичок в Достанькореше:
+- [README-pesterchum.mkdn]
+- [trollquirks.mkdn]
+
+Руководства по особенностям и темам Python также находятся в папке [docs]. Если вы хотите настроить градиентное правило (gradient quirk), вам следует взглянуть на [этих руководствах][gradient-guide].
+
+[gradient-guide]: https://paste.0xfc.de/?e60df5a155e93583#AmcgN9cRnCcBycmVMvw6KJ1YLKPXGbaSzZLbgAhoNCQD
+[trollquirks.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/docs/trollquirks.mkdn
+[README-pesterchum.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/docs/README-pesterchum.mkdn
+[docs]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/
+
 
 ## УСТАНОВКА
 Загрузите соответствующий выпуск для своей платформы с [releases][releases]. Если вы работаете в Windows, вы можете использовать установщик, для ручной установки загрузите zip-файл и извлеките его в любой каталог, а затем запустите исполняемый файл : )
+
+Из-за природы cx_freeze и pyinstaller некоторые библиотеки (как glibc) динамически связаны. Если исполняемый файл для вашей платформы несовместим с версией вашей операционной системы, смотрите следующий раздел для прямого запуска Достанькореша.
  
 [releases]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/releases
 
-## BUILDING
-Самостоятельная сборка Достанькореша не требуется !!! Это актуально только в том случае, если вы знаете, что делаете >:3c
+## ЗАПУСК И СБОРКА
+Вот краткое руководство о том, что делать, чтобы запустить Pesterchum из командной строки и создать его, если хотите (то есть создать исполняемый файл). Прямой запуск Достанькореша или самостоятельная сборка Достанькореша не требуется!!! Это актуально только в том случае, если вы знаете, что делаете >:3c
 
-### REQUIREMENTS:
+### НЕОБХОДИМО:
 
  - [Python 3]
 
-#### PYTHON DEPENDENCIES
+#### PYTHON ЗАВИСИМОСТИ
  - [pygame]
- - [PyQt5] (And, depending on your package manager & platform, python3-pyqt5.qtmultimedia)
+ - [PyQt5] (И, в зависимости от вашего менеджера пакетов и платформы, python3-pyqt5.qtmultimedia)
  - [feedparser]
  - [python-magic]
  - [ostools]
@@ -39,7 +53,7 @@
 [python-magic]: https://pypi.org/project/python-magic/
 [ostools]: https://pypi.org/project/ostools/
 [requests]: https://pypi.org/project/requests/
-### CX_FREEZE METHOD
+### CX_FREEZE СБОРКА
 
 #### Windows:
 ``python setup.py build``
@@ -49,8 +63,8 @@ or
 #### Mac:
 ``python setup.py bdist``
 
-### PYINSTALLER METHOD
-#### Linux (might also work on other platforms!!): 
+### PYINSTALLER СБОРКА
+#### Linux (также может работать на других платформах!!): 
 ``pyinstaller pesterchum.spec``
 
 ## РУСИФИКАЦИЯ
