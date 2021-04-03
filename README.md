@@ -1,24 +1,24 @@
-# PESTERCHUM
-Maintained repository of ghostDunk's Pesterchum. Connects to irc.pesterchum.xyz by defaults since the official server shut down (custom servers can be configured in server.json!!). Pesterchum is an instant messaging client copying the look and feel of clients from Andrew Hussie's webcomic Homestuck.
+# Достанькореша
+Поддерживается репозиторий Достанькореша ghostDunk'a. Подключается к irc.pesterchum.xyz по умолчанию с момента выключения официального сервера (поменять на другие серверы можно в server.json!!!). Достанькореша - это клиент обмена мгновенными сообщениями, который копирует внешний вид клиентов из веб-комикса Эндрю Хасси Homestuck.
 
-This repository builds on (and was mirrored from!) from pesterchum-karxi + Hydrothermal's nickserv fix.
+Этот репозиторий основан (и был скопирован на зеркала) на исправлениях nickserv pesterchum-karxi + Hydrothermal.
 
-Check out [CHANGELOG.md] file to see what's changed!
-Check out [TODO.md] to see this repo's current goals >:3c
+Проверьте файл [CHANGELOG.md], чтобы узнать что изменилось!
+Проверьте файл [TODO.md], чтобы увидеть текущие цели основного репозитория >:3c
 
-For the old READMEs and guides, view the [docs] folder. (I removed Lexicality's macBuilds since it's no longer applicable)
+Старые файлы README и гайды смотрите в папке [docs]. (Dpeta удалил macBuilds от Lexicality, так как он больше не применим)
 
 [CHANGELOG.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/CHANGELOG.md
 [docs]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/
 [TODO.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/TODO.md
 
-## INSTALATION
-Download the appropriate release for your platform from [releases][releases]. If you're on windows you can use the installer, for a manual install download the zip file and extract it to any directory, and run the executable : )
+## УСТАНОВКА
+Загрузите соответствующий выпуск для своей платформы с [releases][releases]. Если вы работаете в Windows, вы можете использовать установщик, для ручной установки загрузите zip-файл и извлеките его в любой каталог, а затем запустите исполняемый файл : )
  
-[releases]: https://github.com/Dpeta/pesterchum-alt-servers/releases
+[releases]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/releases
 
 ## BUILDING
-Building Pesterchum yourself is not required to run it!!! This is only relevant if you know what you're doing >:3c
+Самостоятельная сборка Достанькореша не требуется !!! Это актуально только в том случае, если вы знаете, что делаете >:3c
 
 ### REQUIREMENTS:
 
@@ -53,8 +53,11 @@ or
 #### Linux (might also work on other platforms!!): 
 ``pyinstaller pesterchum.spec``
 
-## SMILIES
-Just for easy reference. :3 (Taken from docs/README-karxi.mkdn)
+## РУСИФИКАЦИЯ
+Переводом и остальным занимается Daosp (тупой челик, который хренового знает инглиш и питон)
+
+## СМАЙЛЫ
+Просто для удобства. :3 (Взято из докментов [README-karxi.mkdn])
 
 * `:rancorous:`
 * `:apple:`
@@ -110,3 +113,5 @@ Just for easy reference. :3 (Taken from docs/README-karxi.mkdn)
 * `:billiards:`
 * `:billiardslarge:`
 * `:whatdidyoudo:`
+
+[README-karxi.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/README-karxi.mkdn
