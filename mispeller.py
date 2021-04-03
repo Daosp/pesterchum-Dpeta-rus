@@ -1,19 +1,18 @@
 import random
 
 kbloc = [[x for x in "1234567890-="],
-         [x for x in "qwertyuiop[]"],
-         [x for x in "asdfghjkl:;'"],
-         [x for x in "zxcvbnm,.>/?"]]
+         [x for x in "йцукенгшщзхъ"],
+         [x for x in "фывапролджэ"],
+         [x for x in "ячсмитьбю."]]
 kbdict = {}
 for (i, l) in enumerate(kbloc):
     for (j, k) in enumerate(l):
         kbdict[k] = (i, j)
 
-sounddict = {"a": "e", "b": "d", "c": "k", "d": "g", "e": "eh",
-             "f": "ph", "g": "j", "h": "h", "i": "ai", "j": "ge",
-             "k": "c", "l": "ll", "m": "n", "n": "m", "o": "oa",
-             "p": "b", "q": "kw", "r": "ar", "s": "ss", "t": "d",
-             "u": "you", "v": "w", "w": "wn", "x": "cks", "y": "uy", "z": "s"}
+sounddict = {"а": "о", "д": "т", "тс": "ц", "г": "к", "ши": "шы",
+             "в": "ф", "жи": "жы", "надеть": "одеть", "надень": "одень", "надев": "одев",
+             "ш": "щ", "мгн": "мн", "гк": "хк", "я": "йа", "ё": "е",
+             "шю": "шу", "лнц": "нц"}
              
 
 def mispeller(word):
@@ -41,10 +40,10 @@ def mispeller(word):
         l[i], l[j] = l[j], l[i]
         return "".join(l)
     def randomletter(string, i):
-        string = string[0:i+1]+random.choice("abcdefghijklmnopqrstuvwxyz")+string[i+1:]
+        string = string[0:i+1]+random.choice("абвгдеёжзийклмнопрстуфхцчшщъыьэюя")+string[i+1:]
         return string
     def randomreplace(string, i):
-        string = string[0:i]+random.choice("abcdefghijklmnopqrstuvwxyz")+string[i+1:]
+        string = string[0:i]+random.choice("абвгдеёжзийклмнопрстуфхцчшщъыьэюя")+string[i+1:]
         return string
     def soundalike(string, i):
         try:

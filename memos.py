@@ -74,16 +74,16 @@ def pcfGrammar(td):
         temporal = "???"
         pcf = "?"
     elif td > timedelta(0):
-        when = "FROM NOW"
-        temporal = "FUTURE"
+        when = "СПУСТЯ В БУДУЩЕМ"
+        temporal = "БУДУЮЩИЙ"
         pcf = "F"
     elif td < timedelta(0):
-        when = "AGO"
-        temporal = "PAST"
+        when = "НАЗАД"
+        temporal = "ПРОШЛЫЙ"
         pcf = "P"
     else:
-        when = "RIGHT NOW"
-        temporal = "CURRENT"
+        when = "ПРЯМО СЕЙЧАС"
+        temporal = "ТЕКУЩИЙ"
         pcf = "C"
     return (temporal, pcf, when)
 
@@ -420,15 +420,15 @@ class PesterMemo(PesterConvo):
         self.invitechum = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/invitechum"], self)
         self.invitechum.triggered.connect(self.inviteChums)
 
-        self._beepToggle = QtWidgets.QAction("Beep on Message", self)
+        self._beepToggle = QtWidgets.QAction("Биип при сообщении", self)
         self._beepToggle.setCheckable(True)
         self._beepToggle.toggled[bool].connect(self.toggleBeep)
 
-        self._flashToggle = QtWidgets.QAction("Flash on Message", self)
+        self._flashToggle = QtWidgets.QAction("Мигает при сообщении", self)
         self._flashToggle.setCheckable(True)
         self._flashToggle.toggled[bool].connect(self.toggleFlash)
 
-        self._muteToggle = QtWidgets.QAction("Mute Notifications", self)
+        self._muteToggle = QtWidgets.QAction("Отключить уведомления", self)
         self._muteToggle.setCheckable(True)
         self._muteToggle.toggled[bool].connect(self.toggleMute)
 
@@ -465,8 +465,8 @@ class PesterMemo(PesterConvo):
         self.timeinput = TimeInput(self.timeslider, self)
         self.timeinput.setText(timestr)
         self.timeinput.setSlider()
-        self.timetravel = QtWidgets.QPushButton("GO", self)
-        self.timeclose = QtWidgets.QPushButton("CLOSE", self)
+        self.timetravel = QtWidgets.QPushButton("ВПЕРЁД", self)
+        self.timeclose = QtWidgets.QPushButton("ЗАКРЫТЬ", self)
         self.timeswitchl = QtWidgets.QPushButton(self)
         self.timeswitchr = QtWidgets.QPushButton(self)
 
@@ -723,7 +723,7 @@ class PesterMemo(PesterConvo):
             elif op == self.mainwindow.profile().handle:
                 opgrammar = self.time.getGrammar()
             else:
-                opgrammar = TimeGrammar("CURRENT", "C", "RIGHT NOW")
+                opgrammar = TimeGrammar("ТЕКУЩИЙ", "C", "ПРЯМО СЕЙЧАС")
         if modes[0] == "+":
             for m in modes[1:]:
                 if m not in chanmodes:
@@ -734,25 +734,25 @@ class PesterMemo(PesterConvo):
                 self.quirksOff.setChecked(True)
                 self.applyquirks = False
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "A No-Quirk zone", True)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Зона без своих правил письма", True)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
             if modes.find("s") >= 0:
                 self.chanHide.setChecked(True)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Secret", True)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Секретный", True)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
             if modes.find("i") >= 0:
                 self.chanInvite.setChecked(True)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Invite-Only", True)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Только по приглашению", True)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
             if modes.find("m") >= 0:
                 self.chanMod.setChecked(True)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Muted", True)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Приглушенный", True)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
         elif modes[0] == "-":
@@ -764,25 +764,25 @@ class PesterMemo(PesterConvo):
             if modes.find("c") >= 0:
                 self.chanNoquirks.setChecked(False)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "A No-Quirk zone", False)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Зона без своих правил письма", False)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
             if modes.find("s") >= 0:
                 self.chanHide.setChecked(False)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Secret", False)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Секретный", False)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
             if modes.find("i") >= 0:
                 self.chanInvite.setChecked(False)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Invite-Only", False)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Только по приглашению", False)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
             if modes.find("m") >= 0:
                 self.chanMod.setChecked(False)
                 if op:
-                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Muted", False)
+                    msg = chum.memomodemsg(opchum, opgrammar, systemColor, "Приглушенный", False)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
         chanmodes.sort()
@@ -866,8 +866,8 @@ class PesterMemo(PesterConvo):
                 self.close()
             msgbox = QtWidgets.QMessageBox()
             msgbox.setStyleSheet("QMessageBox{" + self.mainwindow.theme["main/defaultwindow/style"] + "}")
-            msgbox.setText("%s: Invites only!" % (c))
-            msgbox.setInformativeText("This channel is invite-only. You must get an invitation from someone on the inside before entering.")
+            msgbox.setText("%s: Только по приглашению!" % (c))
+            msgbox.setInformativeText("Этот меморандум только по приглашению. Вы можете войти, если получите приглашение от находящихся в нём корешей.")
             msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
             ret = msgbox.exec_()
 
@@ -886,7 +886,7 @@ class PesterMemo(PesterConvo):
                     elif op == self.mainwindow.profile().handle:
                         opgrammar = self.time.getGrammar()
                     else:
-                        opgrammar = TimeGrammar("CURRENT", "C", "RIGHT NOW")
+                        opgrammar = TimeGrammar("ТЕКУЩИЙ", "C", "ПРЯМО СЕЙЧАС")
                     msg = chum.memoquirkkillmsg(opchum, opgrammar, systemColor)
                     self.textArea.append(convertTags(msg))
                     self.mainwindow.chatlog.log(self.channel, msg)
@@ -907,7 +907,7 @@ class PesterMemo(PesterConvo):
         elif op == self.mainwindow.profile().handle:
             opgrammar = self.time.getGrammar()
         else:
-            opgrammar = TimeGrammar("CURRENT", "C", "RIGHT NOW")
+            opgrammar = TimeGrammar("ТЕКУЩИЙ", "C", "ПРЯМО СЕЙЧАС")
         return (chum, opchum, opgrammar)
     def iconCrap(self, c, down=True):
         for m in (self.umodes if down else reversed(self.umodes)):
@@ -1011,7 +1011,7 @@ class PesterMemo(PesterConvo):
             elif op == self.mainwindow.profile().handle:
                 opgrammar = self.time.getGrammar()
             else:
-                opgrammar = TimeGrammar("CURRENT", "C", "RIGHT NOW")
+                opgrammar = TimeGrammar("ТЕКУЩИЙ", "C", "ПРЯМО СЕЙЧАС")
             while ttracker.getTime() is not None:
                 grammar = ttracker.getGrammar()
                 allinitials.append("%s%s%s" % (grammar.pcf, chum.initials(), grammar.number))
@@ -1025,7 +1025,7 @@ class PesterMemo(PesterConvo):
                 msgbox = QtWidgets.QMessageBox()
                 msgbox.setStyleSheet("QMessageBox{" + self.mainwindow.theme["main/defaultwindow/style"] + "}")
                 msgbox.setText(self.mainwindow.theme["convo/text/kickedmemo"])
-                msgbox.setInformativeText("press 0k to rec0nnect or cancel to absc0nd")
+                msgbox.setInformativeText("нажмит3 0k, чтобы п3р3п0дключится, или 0тм3на чтобы скрыться")
                 msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok | QtWidgets.QMessageBox.Cancel)
                 # Find the OK button and make it default
                 for b in msgbox.buttons():
@@ -1193,7 +1193,7 @@ class PesterMemo(PesterConvo):
         if not self.userlist.currentItem():
             return
         currentHandle = str(self.userlist.currentItem().text())
-        (reason, ok) = QtWidgets.QInputDialog.getText(self, "Ban User", "Enter the reason you are banning this user (optional):")
+        (reason, ok) = QtWidgets.QInputDialog.getText(self, "Забанить пользователя", "Введите причину бана пользователя (необязательно):")
         if ok:
             self.mainwindow.kickUser.emit("%s:%s" % (currentHandle, reason), self.channel)
     @QtCore.pyqtSlot()
@@ -1235,7 +1235,7 @@ class PesterMemo(PesterConvo):
         if not hasattr(self, 'invitechums'):
             self.invitechums = None
         if not self.invitechums:
-            (chum, ok) = QtWidgets.QInputDialog.getText(self, "Invite to Chat", "Enter the chumhandle of the user you'd like to invite:")
+            (chum, ok) = QtWidgets.QInputDialog.getText(self, "Пригласить в чат", "Введите корешник того, кого хотите пригласить:")
             if ok:
                 chum = str(chum)
                 self.mainwindow.inviteChum.emit(chum, self.channel)

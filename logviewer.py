@@ -47,9 +47,9 @@ class PesterLogUserSelect(QtWidgets.QDialog):
         self.logpath = _datadir+"logs"
 
         self.setStyleSheet(self.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Pesterlogs")
+        self.setWindowTitle("Досталоги")
 
-        instructions = QtWidgets.QLabel("Pick a memo or chumhandle:")
+        instructions = QtWidgets.QLabel("Выберете меморандум или корешник:")
 
         if os.path.exists("%s/%s" % (self.logpath, self.handle)):
             chumMemoList = os.listdir("%s/%s/" % (self.logpath, self.handle))
@@ -73,7 +73,7 @@ class PesterLogUserSelect(QtWidgets.QDialog):
         self.search = PesterLogSearchInput(theme, self)
         self.search.setFocus()
 
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
@@ -81,7 +81,7 @@ class PesterLogUserSelect(QtWidgets.QDialog):
         layout_ok = QtWidgets.QHBoxLayout()
         layout_ok.addWidget(self.cancel)
         layout_ok.addWidget(self.ok)
-        self.directory = QtWidgets.QPushButton("LOG DIRECTORY", self)
+        self.directory = QtWidgets.QPushButton("РАСПОЛОЖЕНИЕ ЛОГОВ", self)
         self.directory.clicked.connect(self.openDir)
 
         layout_0 = QtWidgets.QVBoxLayout()
@@ -138,7 +138,7 @@ class PesterLogViewer(QtWidgets.QDialog):
         self.logpath = _datadir+"logs"
 
         self.setStyleSheet(self.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Pesterlogs with " + self.chum)
+        self.setWindowTitle("Досталог с " + self.chum)
 
         self.format = "bbcode"
         if os.path.exists("%s/%s/%s/%s" % (self.logpath, self.handle, chum, self.format)):
@@ -147,9 +147,9 @@ class PesterLogViewer(QtWidgets.QDialog):
             self.logList = []
 
         if not os.path.exists("%s/%s/%s/%s" % (self.logpath, self.handle, chum, self.format)) or len(self.logList) == 0:
-            instructions = QtWidgets.QLabel("No Pesterlogs were found")
+            instructions = QtWidgets.QLabel("Не найдены досталоги!")
 
-            self.ok = QtWidgets.QPushButton("CLOSE", self)
+            self.ok = QtWidgets.QPushButton("ЗАКРЫТЬ", self)
             self.ok.setDefault(True)
             self.ok.clicked.connect(self.reject)
             layout_ok = QtWidgets.QHBoxLayout()
@@ -161,7 +161,7 @@ class PesterLogViewer(QtWidgets.QDialog):
 
             self.setLayout(layout_0)
         else:
-            self.instructions = QtWidgets.QLabel("Pesterlog with " +self.chum+ " on")
+            self.instructions = QtWidgets.QLabel("Досталоги с " +self.chum+ " по")
 
             self.textArea = PesterLogText(theme, self.parent)
             self.textArea.setReadOnly(True)
@@ -202,7 +202,7 @@ class PesterLogViewer(QtWidgets.QDialog):
 
             self.search = PesterLogSearchInput(theme, self)
             self.search.setFocus()
-            self.find = QtWidgets.QPushButton("Find", self)
+            self.find = QtWidgets.QPushButton("Найти", self)
             font = self.find.font()
             font.setPointSize(8)
             self.find.setFont(font)
@@ -212,10 +212,10 @@ class PesterLogViewer(QtWidgets.QDialog):
             layout_search.addWidget(self.search)
             layout_search.addWidget(self.find)
 
-            self.qdb = QtWidgets.QPushButton("Pesterchum QDB", self)
+            self.qdb = QtWidgets.QPushButton("Достанькореша QDB", self)
             self.qdb.setFixedWidth(260)
             self.qdb.clicked.connect(self.openQDB)
-            self.ok = QtWidgets.QPushButton("CLOSE", self)
+            self.ok = QtWidgets.QPushButton("ЗАКРЫТЬ", self)
             self.ok.setFixedWidth(80)
             self.ok.clicked.connect(self.reject)
             layout_ok = QtWidgets.QHBoxLayout()
@@ -257,7 +257,7 @@ class PesterLogViewer(QtWidgets.QDialog):
         textCur = self.textArea.textCursor()
         textCur.movePosition(1)
         self.textArea.setTextCursor(textCur)
-        self.instructions.setText("Pesterlog with " +self.chum+ " on " + self.fileToTime(str(fname)))
+        self.instructions.setText("Досталог с " +self.chum+ " в " + self.fileToTime(str(fname)))
 
     def logSearch(self, search):
         self.hilight.searchTerm = search
@@ -305,6 +305,6 @@ class PesterLogText(PesterText):
         #                 self, QtCore.SLOT('submitLog()'))
         #    textMenu.addAction(self.submitLogAction)
         a = textMenu.actions()
-        a[0].setText("Copy Plain Text")
+        a[0].setText("Копировать обычный текст")
         a[0].setShortcut(self.tr("Ctrl+C"))
         textMenu.exec_(event.globalPos())

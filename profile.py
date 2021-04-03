@@ -58,8 +58,8 @@ class PesterLog(object):
                     fp = codecs.open("%s/%s/%s/%s/%s.%s.txt" % (self.logpath, self.handle, handle, format, handle, time), encoding='utf-8', mode='a')
                 except IOError:
                     errmsg = QtWidgets.QMessageBox(self)
-                    errmsg.setText("Warning: Pesterchum could not open the log file for %s!" % (handle))
-                    errmsg.setInformativeText("Your log for %s will not be saved because something went wrong. We suggest restarting Pesterchum. Sorry :(" % (handle))
+                    errmsg.setText("ВНИМАНИЕ: Достанькорешу не удалось открыть лог %s!" % (handle))
+                    errmsg.setInformativeText("Ваш лог %s не будет сохранён, так как что то пошло не так. Мы предлагаем перезапустить Достанькореша. Просим прощения за доставленные неудобства :(" % (handle))
                     errmsg.show()
                     continue
                 self.convos[handle][format] = fp
@@ -386,9 +386,9 @@ class userProfile(object):
                 msgBox.setIcon(QtWidgets.QMessageBox.Information)
                 msgBox.setWindowTitle(":(")
                 self.filename = _datadir+"pesterchum.js"
-                msgBox.setText("Failed to open \"" + \
+                msgBox.setText("Не удалось открыть \"" + \
                                ("%s/%s.js" % (self.profiledir, user)) + \
-                               "\n You should switch to a different profile and set it as the default.")
+                               "\n Вам следует переключиться на другой профиль и установить его по умолчанию.")
                                #"\" if pesterchum acts oddly you might want to try backing up and then deleting \"" + \
                                #_datadir+"pesterchum.js" + \
                                #"\"")

@@ -17,7 +17,7 @@ _reversere = re.compile(r"reverse\(([\w<>\\]+)\)")
 class pesterQuirk(object):
     def __init__(self, quirk):
         if type(quirk) != dict:
-            raise ValueError("Quirks must be given a dictionary")
+            raise ValueError("Правила должны быть выданы словарю/nQuirks must be given a dictionary ¯\_('_')_/¯")
         self.quirk = quirk
         self.type = self.quirk["type"]
         if "on" not in self.quirk:
@@ -81,17 +81,17 @@ class pesterQuirk(object):
 
     def __str__(self):
         if self.type == "prefix":
-            return "BEGIN WITH: %s" % (self.quirk["value"])
+            return "НАЧИНАТЬ С: %s" % (self.quirk["value"])
         elif self.type == "suffix":
-            return "END WITH: %s" % (self.quirk["value"])
+            return "ЗАКАНЧИВАТЬ С: %s" % (self.quirk["value"])
         elif self.type == "replace":
-            return "REPLACE %s WITH %s" % (self.quirk["from"], self.quirk["to"])
+            return "ЗАМЕНИТЬ %s НА %s" % (self.quirk["from"], self.quirk["to"])
         elif self.type == "regexp":
-            return "REGEXP: %s REPLACED WITH %s" % (self.quirk["from"], self.quirk["to"])
+            return "РЕГВЫР: %s ЗАМЕНИТЬ НА %s" % (self.quirk["from"], self.quirk["to"])
         elif self.type == "random":
-            return "REGEXP: %s RANDOMLY REPLACED WITH %s" % (self.quirk["from"], [r for r in self.quirk["randomlist"]])
+            return "РЕГВЫР: %s СЛУЧАЙНО ЗАМЕНИТЬ НА %s" % (self.quirk["from"], [r for r in self.quirk["randomlist"]])
         elif self.type == "spelling":
-            return "MISPELLER: %d%%" % (self.quirk["percentage"])
+            return "ОШИБКИ: %d%%" % (self.quirk["percentage"])
 
 class pesterQuirks(object):
     def __init__(self, quirklist):
@@ -209,9 +209,9 @@ class PesterProfile(object):
             initials = self.initials()+uppersuffix
         return "<c=%s>-- %s%s <c=%s>[%s]</c> %s --</c>" % (syscolor.name(), handle, suffix, self.colorhtml(), initials, msg)
     def pestermsg(self, otherchum, syscolor, verb):
-        return "<c=%s>-- %s <c=%s>[%s]</c> %s %s <c=%s>[%s]</c> at %s --</c>" % (syscolor.name(), self.handle, self.colorhtml(), self.initials(), verb, otherchum.handle, otherchum.colorhtml(), otherchum.initials(), datetime.now().strftime("%H:%M"))
+        return "<c=%s>-- %s <c=%s>[%s]</c> %s %s <c=%s>[%s]</c> в %s --</c>" % (syscolor.name(), self.handle, self.colorhtml(), self.initials(), verb, otherchum.handle, otherchum.colorhtml(), otherchum.initials(), datetime.now().strftime("%H:%M"))
     def moodmsg(self, mood, syscolor, theme):
-        return "<c=%s>-- %s <c=%s>[%s]</c> changed their mood to %s <img src='%s' /> --</c>" % (syscolor.name(), self.handle, self.colorhtml(), self.initials(), mood.name().upper(), theme["main/chums/moods"][mood.name()]["icon"])
+        return "<c=%s>-- %s <c=%s>[%s]</c> изменил своё настроение на %s <img src='%s' /> --</c>" % (syscolor.name(), self.handle, self.colorhtml(), self.initials(), mood.name().upper(), theme["main/chums/moods"][mood.name()]["icon"])
     def idlemsg(self, syscolor, verb):
         return "<c=%s>-- %s <c=%s>[%s]</c> %s --</c>" % (syscolor.name(), self.handle, self.colorhtml(), self.initials(), verb)
     def memoclosemsg(self, syscolor, initials, verb):
@@ -221,9 +221,9 @@ class PesterProfile(object):
             return "<c=%s><c=%s>%s%s%s</c> %s.</c>" % (syscolor.name(), self.colorhtml(), initials.pcf, self.initials(), initials.number, verb)
     def memonetsplitmsg(self, syscolor, initials):
         if len(initials) <= 0:
-            return "<c=%s>Netsplit quits: <c=black>None</c></c>" % (syscolor.name())
+            return "<c=%s>Нетсплит выходит: <c=black>None</c></c>" % (syscolor.name())
         else:
-            return "<c=%s>Netsplit quits: <c=black>%s</c></c>" % (syscolor.name(), ", ".join(initials))
+            return "<c=%s>Нетсплит выходит: <c=black>%s</c></c>" % (syscolor.name(), ", ".join(initials))
     def memoopenmsg(self, syscolor, td, timeGrammar, verb, channel):
         (temporal, pcf, when) = (timeGrammar.temporal, timeGrammar.pcf, timeGrammar.when)
         timetext = timeDifference(td)
@@ -234,23 +234,23 @@ class PesterProfile(object):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
         if type(initials) == type(list()):
             if opchum.handle == reason:
-                return "<c=%s>%s</c> banned <c=%s>%s</c> from responding to memo." % \
+                return "<c=%s>%s</c> забанен <c=%s>%s</c> из меморандума." % \
                     (opchum.colorhtml(), opinit, self.colorhtml(), ", ".join(initials))
             else:
-                return "<c=%s>%s</c> banned <c=%s>%s</c> from responding to memo: <c=black>[%s]</c>." % \
+                return "<c=%s>%s</c> забанен <c=%s>%s</c> из меморандума: <c=black>[%s]</c>." % \
                     (opchum.colorhtml(), opinit, self.colorhtml(), ", ".join(initials), str(reason))
         else:
             initials = timeGrammar.pcf+self.initials()+timeGrammar.number
             if opchum.handle == reason:
-                return "<c=%s>%s</c> banned <c=%s>%s</c> from responding to memo." % \
+                return "<c=%s>%s</c> забанен <c=%s>%s</c> из меморандума." % \
                     (opchum.colorhtml(), opinit, self.colorhtml(), initials)
             else:
-                return "<c=%s>%s</c> banned <c=%s>%s</c> from responding to memo: <c=black>[%s]</c>." % \
+                return "<c=%s>%s</c> забанен <c=%s>%s</c> из меморандума: <c=black>[%s]</c>." % \
                     (opchum.colorhtml(), opinit, self.colorhtml(), initials, str(reason))
     def memopermabanmsg(self, opchum, opgrammar, syscolor, timeGrammar):
         initials = timeGrammar.pcf+self.initials()+timeGrammar.number
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
-        return "<c=%s>%s</c> permabanned <c=%s>%s</c> from the memo." % \
+        return "<c=%s>%s</c> перманентно забанен <c=%s>%s</c> из меморандума." % \
             (opchum.colorhtml(), opinit, self.colorhtml(), initials)
     def memojoinmsg(self, syscolor, td, timeGrammar, verb):
         (temporal, pcf, when) = (timeGrammar.temporal, timeGrammar.pcf, timeGrammar.when)
@@ -261,29 +261,29 @@ class PesterProfile(object):
              initials, timetext, verb)
     def memoopmsg(self, opchum, opgrammar, syscolor):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
-        return "<c=%s>%s</c> made <c=%s>%s</c> an OP." % \
+        return "<c=%s>%s</c> сделал <c=%s>%s</c> OP." % \
             (opchum.colorhtml(), opinit, self.colorhtml(), self.initials())
     def memodeopmsg(self, opchum, opgrammar, syscolor):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
-        return "<c=%s>%s</c> took away <c=%s>%s</c>'s OP powers." % \
+        return "<c=%s>%s</c> забрал у <c=%s>%s</c> OP права." % \
             (opchum.colorhtml(), opinit, self.colorhtml(), self.initials())
     def memovoicemsg(self, opchum, opgrammar, syscolor):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
-        return "<c=%s>%s</c> gave <c=%s>%s</c> voice." % \
+        return "<c=%s>%s</c> дал <c=%s>%s</c> голос." % \
             (opchum.colorhtml(), opinit, self.colorhtml(), self.initials())
     def memodevoicemsg(self, opchum, opgrammar, syscolor):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
-        return "<c=%s>%s</c> took away <c=%s>%s</c>'s voice." % \
+        return "<c=%s>%s</c> забрал у <c=%s>%s</c> голос." % \
             (opchum.colorhtml(), opinit, self.colorhtml(), self.initials())
     def memomodemsg(self, opchum, opgrammar, syscolor, modeverb, modeon):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
         if modeon: modeon = "now"
         else:      modeon = "no longer"
-        return "<c=%s>Memo is %s <c=black>%s</c> by <c=%s>%s</c></c>" % \
+        return "<c=%s>Меморандум %s <c=black>%s</c> <c=%s>%s</c></c>" % \
             (syscolor.name(), modeon, modeverb, opchum.colorhtml(), opinit)
     def memoquirkkillmsg(self, opchum, opgrammar, syscolor):
         opinit = opgrammar.pcf+opchum.initials()+opgrammar.number
-        return "<c=%s><c=%s>%s</c> turned off your quirk.</c>" % \
+        return "<c=%s><c=%s>%s</c> выключил свои правила.</c>" % \
             (syscolor.name(), opchum.colorhtml(), opinit)
 
     @staticmethod
@@ -293,11 +293,11 @@ class PesterProfile(object):
     def checkValid(handle):
         caps = [l for l in handle if l.isupper()]
         if len(caps) != 1:
-            return (False, "Must have exactly 1 uppercase letter")
+            return (False, "Должна быть 1 заглавная буква")
         if handle[0].isupper():
-            return (False, "Cannot start with uppercase letter")
+            return (False, "Не может начинаться с заглавной буквы")
         if re.search("[^A-Za-z0-9]", handle) is not None:
-            return (False, "Only alphanumeric characters allowed")
+            return (False, "Разрешены только буквы и цифры")
         return (True,)
 
 class PesterHistory(object):

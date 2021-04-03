@@ -153,8 +153,8 @@ class PesterQuirkList(QtWidgets.QTreeWidget):
                 msgbox = QtWidgets.QMessageBox()
                 msgbox.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
                 msgbox.setObjectName("delquirkwarning")
-                msgbox.setWindowTitle("WARNING!")
-                msgbox.setInformativeText("Are you sure you want to delete the quirk group: %s" % (f.text(0)))
+                msgbox.setWindowTitle("ВНИМАНИЕ!")
+                msgbox.setInformativeText("Вы уверены, что хотите удалить группу правил: %s" % (f.text(0)))
                 msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok | QtWidgets.QMessageBox.Cancel)
                 # Find the Cancel button and make it default
                 for b in msgbox.buttons():
@@ -178,12 +178,12 @@ class PesterQuirkList(QtWidgets.QTreeWidget):
         if not hasattr(self, 'addgroupdialog'):
             self.addgroupdialog = None
         if not self.addgroupdialog:
-            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Add Group", "Enter a name for the new quirk group:")
+            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Добавить группу", "Введите название новой группы правил:")
             if ok:
                 gname = str(gname)
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
-                    msgbox.setInformativeText("THIS IS NOT A VALID GROUP NAME")
+                    msgbox.setInformativeText("ЭТО НЕ ДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ ПРАВИЛ")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     ret = msgbox.exec_()
                     self.addgroupdialog = None
@@ -191,7 +191,7 @@ class PesterQuirkList(QtWidgets.QTreeWidget):
                 found = self.findItems(gname, QtCore.Qt.MatchExactly)
                 if found:
                     msgbox = QtWidgets.QMessageBox()
-                    msgbox.setInformativeText("THIS QUIRK GROUP ALREADY EXISTS")
+                    msgbox.setInformativeText("ЭТА ГРУППА ПРАВИЛ УЖЕ СУЩЕСТВУЕТ")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     ret = msgbox.exec_()
                     return
@@ -235,7 +235,7 @@ class QuirkTesterWindow(QtWidgets.QDialog):
         self.prnt = parent
         self.mainwindow = parent.mainwindow
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Quirk Tester")
+        self.setWindowTitle("Проверка правил")
         self.resize(350,300)
 
         self.textArea = PesterText(self.mainwindow.theme, self)
@@ -283,19 +283,19 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         QtWidgets.QDialog.__init__(self, parent)
         self.mainwindow = parent.mainwindow
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Quirk Wizard")
+        self.setWindowTitle("Мастер Правил")
         self.resize(500,310)
 
         self.quirk = quirk
         self.pages = QtWidgets.QStackedWidget(self)
 
-        self.next = QtWidgets.QPushButton("Next", self)
+        self.next = QtWidgets.QPushButton("Следующее", self)
         self.next.setDefault(True)
         self.next.clicked.connect(self.nextPage)
-        self.back = QtWidgets.QPushButton("Back", self)
+        self.back = QtWidgets.QPushButton("Назад", self)
         self.back.setEnabled(False)
         self.back.clicked.connect(self.backPage)
-        self.cancel = QtWidgets.QPushButton("Cancel", self)
+        self.cancel = QtWidgets.QPushButton("Отмена", self)
         self.cancel.clicked.connect(self.reject)
         layout_2 = QtWidgets.QHBoxLayout()
         layout_2.setAlignment(QtCore.Qt.AlignRight)
@@ -322,9 +322,9 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         self.funclist.addItems(funcs)
         self.funclist2.addItems(funcs)
 
-        self.reloadQuirkFuncButton = QtWidgets.QPushButton("RELOAD FUNCTIONS", self)
+        self.reloadQuirkFuncButton = QtWidgets.QPushButton("ПЕРЕЗАГРУЗИТЬ ФУНКЦИИ", self)
         self.reloadQuirkFuncButton.clicked.connect(self.reloadQuirkFuncSlot)
-        self.reloadQuirkFuncButton2 = QtWidgets.QPushButton("RELOAD FUNCTIONS", self)
+        self.reloadQuirkFuncButton2 = QtWidgets.QPushButton("ПЕРЕЗАГРУЗИТЬ ФУНКЦИИ", self)
         self.reloadQuirkFuncButton2.clicked.connect(self.reloadQuirkFuncSlot)
 
         self.funclist.setMaximumWidth(160)
@@ -332,11 +332,11 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         self.funclist2.setMaximumWidth(160)
         self.funclist2.resize(160,50)
         layout_f = QtWidgets.QVBoxLayout()
-        layout_f.addWidget(QtWidgets.QLabel("Available Regexp\nFunctions"))
+        layout_f.addWidget(QtWidgets.QLabel("Доступны Регвыр\nФункции"))
         layout_f.addWidget(self.funclist)
         layout_f.addWidget(self.reloadQuirkFuncButton)
         layout_g = QtWidgets.QVBoxLayout()
-        layout_g.addWidget(QtWidgets.QLabel("Available Regexp\nFunctions"))
+        layout_g.addWidget(QtWidgets.QLabel("Доступны Регвыр\nФункции"))
         layout_g.addWidget(self.funclist2)
         layout_g.addWidget(self.reloadQuirkFuncButton2)
 
@@ -347,14 +347,14 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         layout_select = QtWidgets.QVBoxLayout(widget)
         layout_select.setAlignment(QtCore.Qt.AlignTop)
         self.radios = []
-        self.radios.append(QtWidgets.QRadioButton("Prefix", self))
-        self.radios.append(QtWidgets.QRadioButton("Suffix", self))
-        self.radios.append(QtWidgets.QRadioButton("Simple Replace", self))
-        self.radios.append(QtWidgets.QRadioButton("Regexp Replace", self))
-        self.radios.append(QtWidgets.QRadioButton("Random Replace", self))
-        self.radios.append(QtWidgets.QRadioButton("Mispeller", self))
+        self.radios.append(QtWidgets.QRadioButton("Прификс", self))
+        self.radios.append(QtWidgets.QRadioButton("Суфикс", self))
+        self.radios.append(QtWidgets.QRadioButton("Обычная перестановка", self))
+        self.radios.append(QtWidgets.QRadioButton("Регвыр перестановка", self))
+        self.radios.append(QtWidgets.QRadioButton("Случайная перестановка", self))
+        self.radios.append(QtWidgets.QRadioButton("Ошибки", self))
 
-        layout_select.addWidget(QtWidgets.QLabel("Select Quirk Type:"))
+        layout_select.addWidget(QtWidgets.QLabel("Выберете тип правила:"))
         for r in self.radios:
             layout_select.addWidget(r)
 
@@ -363,9 +363,9 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         self.pages.addWidget(widget)
         layout_prefix = QtWidgets.QVBoxLayout(widget)
         layout_prefix.setAlignment(QtCore.Qt.AlignTop)
-        layout_prefix.addWidget(QtWidgets.QLabel("Prefix"))
+        layout_prefix.addWidget(QtWidgets.QLabel("Префикс"))
         layout_3 = QtWidgets.QHBoxLayout()
-        layout_3.addWidget(QtWidgets.QLabel("Value:"))
+        layout_3.addWidget(QtWidgets.QLabel("Значение:"))
         layout_3.addWidget(QtWidgets.QLineEdit())
         layout_prefix.addLayout(layout_3)
 
@@ -374,9 +374,9 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         self.pages.addWidget(widget)
         layout_suffix = QtWidgets.QVBoxLayout(widget)
         layout_suffix.setAlignment(QtCore.Qt.AlignTop)
-        layout_suffix.addWidget(QtWidgets.QLabel("Suffix"))
+        layout_suffix.addWidget(QtWidgets.QLabel("Суфикс"))
         layout_3 = QtWidgets.QHBoxLayout()
-        layout_3.addWidget(QtWidgets.QLabel("Value:"))
+        layout_3.addWidget(QtWidgets.QLabel("Значение:"))
         layout_3.addWidget(QtWidgets.QLineEdit())
         layout_suffix.addLayout(layout_3)
 
@@ -385,13 +385,13 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         self.pages.addWidget(widget)
         layout_replace = QtWidgets.QVBoxLayout(widget)
         layout_replace.setAlignment(QtCore.Qt.AlignTop)
-        layout_replace.addWidget(QtWidgets.QLabel("Simple Replace"))
+        layout_replace.addWidget(QtWidgets.QLabel("Обычная перестановка"))
         layout_3 = QtWidgets.QHBoxLayout()
-        layout_3.addWidget(QtWidgets.QLabel("Replace:"))
+        layout_3.addWidget(QtWidgets.QLabel("Заменить:"))
         layout_3.addWidget(QtWidgets.QLineEdit())
         layout_replace.addLayout(layout_3)
         layout_3 = QtWidgets.QHBoxLayout()
-        layout_3.addWidget(QtWidgets.QLabel("With:"))
+        layout_3.addWidget(QtWidgets.QLabel("На:"))
         layout_3.addWidget(QtWidgets.QLineEdit())
         layout_replace.addLayout(layout_3)
 
@@ -401,13 +401,13 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         layout_all = QtWidgets.QHBoxLayout(widget)
         layout_regexp = QtWidgets.QVBoxLayout()
         layout_regexp.setAlignment(QtCore.Qt.AlignTop)
-        layout_regexp.addWidget(QtWidgets.QLabel("Regexp Replace"))
+        layout_regexp.addWidget(QtWidgets.QLabel("Регвыр перестановка"))
         layout_3 = QtWidgets.QHBoxLayout()
-        layout_3.addWidget(QtWidgets.QLabel("Regexp:"))
+        layout_3.addWidget(QtWidgets.QLabel("Регвыр:"))
         layout_3.addWidget(QtWidgets.QLineEdit())
         layout_regexp.addLayout(layout_3)
         layout_3 = QtWidgets.QHBoxLayout()
-        layout_3.addWidget(QtWidgets.QLabel("Replace With:"))
+        layout_3.addWidget(QtWidgets.QLabel("Заменить на:"))
         layout_3.addWidget(QtWidgets.QLineEdit())
         layout_regexp.addLayout(layout_3)
         layout_all.addLayout(layout_f)
@@ -420,13 +420,13 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         layout_all = QtWidgets.QHBoxLayout(widget)
         layout_random = QtWidgets.QVBoxLayout()
         layout_random.setAlignment(QtCore.Qt.AlignTop)
-        layout_random.addWidget(QtWidgets.QLabel("Random Replace"))
+        layout_random.addWidget(QtWidgets.QLabel("Случайная перестановка"))
         layout_5 = QtWidgets.QHBoxLayout()
-        regexpl = QtWidgets.QLabel("Regexp:", self)
+        regexpl = QtWidgets.QLabel("Регвыр:", self)
         self.regexp = QtWidgets.QLineEdit("", self)
         layout_5.addWidget(regexpl)
         layout_5.addWidget(self.regexp)
-        replacewithl = QtWidgets.QLabel("Replace With:", self)
+        replacewithl = QtWidgets.QLabel("Заменить на:", self)
         layout_all.addLayout(layout_g)
         layout_all.addWidget(vr2)
         layout_all.addLayout(layout_random)
@@ -435,9 +435,9 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         layout_7 = QtWidgets.QHBoxLayout()
         self.replacelist = QtWidgets.QListWidget(self)
         self.replaceinput = QtWidgets.QLineEdit(self)
-        addbutton = QtWidgets.QPushButton("ADD", self)
+        addbutton = QtWidgets.QPushButton("ДОБАВИТЬ", self)
         addbutton.clicked.connect(self.addRandomString)
-        removebutton = QtWidgets.QPushButton("REMOVE", self)
+        removebutton = QtWidgets.QPushButton("УДАЛИТЬ", self)
         removebutton.clicked.connect(self.removeRandomString)
         layout_7.addWidget(addbutton)
         layout_7.addWidget(removebutton)
@@ -453,7 +453,7 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         self.pages.addWidget(widget)
         layout_mispeller = QtWidgets.QVBoxLayout(widget)
         layout_mispeller.setAlignment(QtCore.Qt.AlignTop)
-        layout_mispeller.addWidget(QtWidgets.QLabel("Mispeller"))
+        layout_mispeller.addWidget(QtWidgets.QLabel("Ошибки"))
         layout_1 = QtWidgets.QHBoxLayout()
         zero = QtWidgets.QLabel("1%", self)
         hund = QtWidgets.QLabel("100%", self)
@@ -507,13 +507,13 @@ class PesterQuirkTypes(QtWidgets.QDialog):
         if page >= c or page < 0: return
         self.back.setEnabled(page > 0)
         if page >= 1 and page <= 6:
-            self.next.setText("Finish")
+            self.next.setText("Конец")
         else:
-            self.next.setText("Next")
+            self.next.setText("Продолжить")
         self.pages.setCurrentIndex(page)
     @QtCore.pyqtSlot()
     def nextPage(self):
-        if self.next.text() == "Finish":
+        if self.next.text() == "Конец":
             self.accept()
             return
         cur = self.pages.currentIndex()
@@ -565,22 +565,22 @@ class PesterChooseQuirks(QtWidgets.QDialog):
         self.theme = theme
         self.mainwindow = parent
         self.setStyleSheet(self.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Set Quirks")
+        self.setWindowTitle("ПРАВИЛА")
 
         self.quirkList = PesterQuirkList(self.mainwindow, self)
 
-        self.addQuirkButton = QtWidgets.QPushButton("ADD QUIRK", self)
+        self.addQuirkButton = QtWidgets.QPushButton("ДОБАВИТЬ ПРАВИЛО", self)
         self.addQuirkButton.clicked.connect(self.addQuirkDialog)
 
         self.upShiftButton = QtWidgets.QPushButton("^", self)
         self.downShiftButton = QtWidgets.QPushButton("v", self)
-        self.upShiftButton.setToolTip("Move quirk up one")
-        self.downShiftButton.setToolTip("Move quirk down one")
+        self.upShiftButton.setToolTip("Двигать правило вверх на одну")
+        self.downShiftButton.setToolTip("Двигать правило вниз на одну")
         self.upShiftButton.clicked.connect(self.quirkList.upShiftQuirk)
         self.downShiftButton.clicked.connect(self.quirkList.downShiftQuirk)
 
         self.newGroupButton = QtWidgets.QPushButton("*", self)
-        self.newGroupButton.setToolTip("New Quirk Group")
+        self.newGroupButton.setToolTip("Новая группа правил")
         self.newGroupButton.clicked.connect(self.quirkList.addQuirkGroup)
 
         layout_quirklist = QtWidgets.QHBoxLayout() #the nude layout quirklist
@@ -594,9 +594,9 @@ class PesterChooseQuirks(QtWidgets.QDialog):
         layout_1 = QtWidgets.QHBoxLayout()
         layout_1.addWidget(self.addQuirkButton)
 
-        self.editSelectedButton = QtWidgets.QPushButton("EDIT", self)
+        self.editSelectedButton = QtWidgets.QPushButton("ИЗМЕНИТЬ", self)
         self.editSelectedButton.clicked.connect(self.editSelected)
-        self.removeSelectedButton = QtWidgets.QPushButton("REMOVE", self)
+        self.removeSelectedButton = QtWidgets.QPushButton("УДАЛИТЬ", self)
         self.removeSelectedButton.clicked.connect(self.quirkList.removeCurrent)
         layout_3 = QtWidgets.QHBoxLayout()
         layout_3.addWidget(self.editSelectedButton)
@@ -605,9 +605,9 @@ class PesterChooseQuirks(QtWidgets.QDialog):
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.accept)
-        self.test = QtWidgets.QPushButton("TEST QUIRKS", self)
+        self.test = QtWidgets.QPushButton("ПРОВЕРКА ПРАВИЛ", self)
         self.test.clicked.connect(self.testQuirks)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         layout_ok = QtWidgets.QHBoxLayout()
         layout_ok.addWidget(self.cancel)
@@ -692,8 +692,8 @@ class PesterChooseQuirks(QtWidgets.QDialog):
                 re.compile(vdict["from"])
             except re.error as e:
                 quirkWarning = QtWidgets.QMessageBox(self)
-                quirkWarning.setText("Not a valid regular expression!")
-                quirkWarning.setInformativeText("H3R3S WHY DUMP4SS: %s" % (e))
+                quirkWarning.setText("Не действительное регулярное выражение!")
+                quirkWarning.setInformativeText("ПОЧ3МУ ЗД3СЬ DUMP4SS: %s" % (e))
                 quirkWarning.exec_()
                 self.quirkadd = None
                 return
@@ -716,9 +716,9 @@ class PesterChooseTheme(QtWidgets.QDialog):
         self.theme = theme
         self.parent = parent
         self.setStyleSheet(self.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Pick a theme")
+        self.setWindowTitle("Выберете тему")
 
-        instructions = QtWidgets.QLabel("Pick a theme:")
+        instructions = QtWidgets.QLabel("Выберете тему:")
 
         avail_themes = config.availableThemes()
         self.themeBox = QtWidgets.QComboBox(self)
@@ -730,7 +730,7 @@ class PesterChooseTheme(QtWidgets.QDialog):
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.accept)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         layout_ok = QtWidgets.QHBoxLayout()
         layout_ok.addWidget(self.cancel)
@@ -755,7 +755,7 @@ class PesterChooseProfile(QtWidgets.QDialog):
         self.parent = parent
         self.setStyleSheet(self.theme["main/defaultwindow/style"])
 
-        self.currentHandle = QtWidgets.QLabel("CHANGING FROM %s" % userprofile.chat.handle)
+        self.currentHandle = QtWidgets.QLabel("ИЗМЕНИТЬ %s" % userprofile.chat.handle)
         self.chumHandle = QtWidgets.QLineEdit(self)
         self.chumHandle.setMinimumWidth(200)
         self.chumHandle.setObjectName("setprofilehandle")
@@ -775,14 +775,14 @@ class PesterChooseProfile(QtWidgets.QDialog):
         avail_profiles = self.config.availableProfiles()
         if avail_profiles:
             self.profileBox = QtWidgets.QComboBox(self)
-            self.profileBox.addItem("Choose a profile...")
+            self.profileBox.addItem("Выберете профиль...")
             for p in avail_profiles:
                 self.profileBox.addItem(p.chat.handle)
         else:
             self.profileBox = None
 
         self.defaultcheck = QtWidgets.QCheckBox(self)
-        self.defaultlabel = QtWidgets.QLabel("Set This Profile As Default", self)
+        self.defaultlabel = QtWidgets.QLabel("Поставить Профиль Как Стандартный", self)
         layout_2 = QtWidgets.QHBoxLayout()
         layout_2.addWidget(self.defaultlabel)
         layout_2.addWidget(self.defaultcheck)
@@ -790,10 +790,10 @@ class PesterChooseProfile(QtWidgets.QDialog):
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.validateProfile)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         if not collision and avail_profiles:
-            self.delete = QtWidgets.QPushButton("DELETE", self)
+            self.delete = QtWidgets.QPushButton("УДАЛИТЬ", self)
             self.delete.clicked.connect(self.deleteProfile)
         layout_ok = QtWidgets.QHBoxLayout()
         layout_ok.addWidget(self.cancel)
@@ -801,13 +801,13 @@ class PesterChooseProfile(QtWidgets.QDialog):
 
         layout_0 = QtWidgets.QVBoxLayout()
         if collision:
-            collision_warning = QtWidgets.QLabel("%s is taken already! Pick a new profile." % (collision))
+            collision_warning = QtWidgets.QLabel("%s уже занято! Выберете новый профиль." % (collision))
             layout_0.addWidget(collision_warning)
         else:
             layout_0.addWidget(self.currentHandle, alignment=QtCore.Qt.AlignHCenter)
         layout_0.addLayout(layout_1)
         if avail_profiles:
-            profileLabel = QtWidgets.QLabel("Or choose an existing profile:", self)
+            profileLabel = QtWidgets.QLabel("Или выберете существующий профиль:", self)
             layout_0.addWidget(profileLabel)
             layout_0.addWidget(self.profileBox)
         layout_0.addLayout(layout_ok)
@@ -836,10 +836,10 @@ class PesterChooseProfile(QtWidgets.QDialog):
         if not self.profileBox or self.profileBox.currentIndex() == 0:
             handle = str(self.chumHandle.text())
             if not PesterProfile.checkLength(handle):
-                self.errorMsg.setText("PROFILE HANDLE IS TOO LONG")
+                self.errorMsg.setText("КОРЕШНИК СЛИШКОМ ДЛИННЫЙ")
                 return
             if not PesterProfile.checkValid(handle)[0]:
-                self.errorMsg.setText("NOT A VALID CHUMTAG. REASON:\n%s" % (PesterProfile.checkValid(handle)[1]))
+                self.errorMsg.setText("НЕ ДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК. ПРИЧИНА:\n%s" % (PesterProfile.checkValid(handle)[1]))
                 return
         self.accept()
 
@@ -852,16 +852,16 @@ class PesterChooseProfile(QtWidgets.QDialog):
                 # karxi Will probably change this to its own name later.
                 problem.setObjectName("errmsg")
                 problem.setStyleSheet(self.theme["main/defaultwindow/style"])
-                problem.setWindowTitle("Problem!")
-                problem.setInformativeText("You can't delete the profile you're currently using!")
+                problem.setWindowTitle("Проблема!")
+                problem.setInformativeText("Вы не можете удалить профиль, который сейчас используете!")
                 problem.setStandardButtons(QtWidgets.QMessageBox.Ok)
                 problem.exec_()
                 return
             # TODO: Make this select 'no' as the default, as usual.
             msgbox = QtWidgets.QMessageBox()
             msgbox.setStyleSheet(self.theme["main/defaultwindow/style"])
-            msgbox.setWindowTitle("WARNING!")
-            msgbox.setInformativeText("Are you sure you want to delete the profile: %s" % (handle))
+            msgbox.setWindowTitle("ВНИМАНИЕ!")
+            msgbox.setInformativeText("Вы уверены, что хотите удалить профиль %s?" % (handle))
             msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok | QtWidgets.QMessageBox.Cancel)
             ret = msgbox.exec_()
             if ret == QtWidgets.QMessageBox.Ok:
@@ -871,15 +871,15 @@ class PesterChooseProfile(QtWidgets.QDialog):
                     problem = QtWidgets.QMessageBox()
                     problem.setObjectName("errmsg")
                     problem.setStyleSheet(self.theme["main/defaultwindow/style"])
-                    problem.setWindowTitle("Problem!")
-                    problem.setInformativeText("There was a problem deleting the profile: %s" % (handle))
+                    problem.setWindowTitle("ПРОБЛЕМА!")
+                    problem.setInformativeText("При удалении профиля возникла проблема: %s" % (handle))
                     problem.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     problem.exec_()
 
 class PesterMentions(QtWidgets.QDialog):
     def __init__(self, window, theme, parent):
         QtWidgets.QDialog.__init__(self, parent)
-        self.setWindowTitle("Mentions")
+        self.setWindowTitle("Упоминание")
         self.setModal(True)
         self.mainwindow = window
         self.theme = theme
@@ -888,12 +888,12 @@ class PesterMentions(QtWidgets.QDialog):
         self.mentionlist = QtWidgets.QListWidget(self)
         self.mentionlist.addItems(self.mainwindow.userprofile.getMentions())
 
-        self.addBtn = QtWidgets.QPushButton("ADD MENTION", self)
+        self.addBtn = QtWidgets.QPushButton("ДОБАВИТЬ УПОМИНАНИЕ", self)
         self.addBtn.clicked.connect(self.addMention)
 
-        self.editBtn = QtWidgets.QPushButton("EDIT", self)
+        self.editBtn = QtWidgets.QPushButton("ИЗМЕНИТЬ", self)
         self.editBtn.clicked.connect(self.editSelected)
-        self.rmBtn = QtWidgets.QPushButton("REMOVE", self)
+        self.rmBtn = QtWidgets.QPushButton("УДАЛИТЬ", self)
         self.rmBtn.clicked.connect(self.removeCurrent)
         layout_1 = QtWidgets.QHBoxLayout()
         layout_1.addWidget(self.editBtn)
@@ -902,7 +902,7 @@ class PesterMentions(QtWidgets.QDialog):
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.accept)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         layout_2 = QtWidgets.QHBoxLayout()
         layout_2.addWidget(self.cancel)
@@ -925,18 +925,18 @@ class PesterMentions(QtWidgets.QDialog):
 
     @QtCore.pyqtSlot()
     def addMention(self, mitem=None):
-        d = {"label": "Mention:", "inputname": "value" }
+        d = {"label": "Упоминание:", "inputname": "value" }
         if mitem is not None:
             d["value"] = str(mitem.text())
-        pdict = MultiTextDialog("ENTER MENTION", self, d).getText()
+        pdict = MultiTextDialog("ВВЕДИТЕ УПОМИНАНИЕ", self, d).getText()
         if pdict is None:
             return
         try:
             re.compile(pdict["value"])
         except re.error as e:
             quirkWarning = QtWidgets.QMessageBox(self)
-            quirkWarning.setText("Not a valid regular expression!")
-            quirkWarning.setInformativeText("H3R3S WHY DUMP4SS: %s" % (e))
+            quirkWarning.setText("Не действительное регулярное выражение!")
+            quirkWarning.setInformativeText("ПОЧ3МУ ЗД3СЬ DUMP4SS: %s" % (e))
             quirkWarning.exec_()
         else:
             if mitem is None:
@@ -953,7 +953,7 @@ class PesterMentions(QtWidgets.QDialog):
 class PesterOptions(QtWidgets.QDialog):
     def __init__(self, config, theme, parent):
         QtWidgets.QDialog.__init__(self, parent)
-        self.setWindowTitle("Options")
+        self.setWindowTitle("Настройки")
         self.setModal(False)
         self.config = config
         self.theme = theme
@@ -970,8 +970,8 @@ class PesterOptions(QtWidgets.QDialog):
 
         self.tabs = QtWidgets.QButtonGroup(self)
         self.tabs.buttonClicked[int].connect(self.changePage)
-        tabNames = ["Chum List", "Conversations", "Interface", "Sound", "Notifications", "Logging", "Idle/Updates", "Theme", "Connection"]
-        if parent.advanced: tabNames.append("Advanced")
+        tabNames = ["Корешлист", "Беседы", "Интерфейс", "Звук", "Уведомления", "Логирование", "AFK/Обновления", "Тема", "Соединение"]
+        if parent.advanced: tabNames.append("Особое")
         for t in tabNames:
             button = QtWidgets.QPushButton(t)
             self.tabs.addButton(button)
@@ -980,50 +980,50 @@ class PesterOptions(QtWidgets.QDialog):
         self.tabs.button(-2).setChecked(True)
         self.pages = QtWidgets.QStackedWidget(self)
 
-        self.bandwidthcheck = QtWidgets.QCheckBox("Low Bandwidth", self)
+        self.bandwidthcheck = QtWidgets.QCheckBox("Малая пропускная способность", self)
         if self.config.lowBandwidth():
             self.bandwidthcheck.setChecked(True)
-        bandwidthLabel = QtWidgets.QLabel("(Stops you for receiving the flood of MOODS,\n"
-                                      " though stops chumlist from working properly)")
+        bandwidthLabel = QtWidgets.QLabel("(Останавливает у вас получение состояния Настрояния каждого кореша,\n"
+                                      "что уменьшает занимаемы поток, но мешает правильной работе корешлиста)")
         font = bandwidthLabel.font()
         font.setPointSize(8)
         bandwidthLabel.setFont(font)
 
-        self.autonickserv = QtWidgets.QCheckBox("Auto-Identify with NickServ", self)
+        self.autonickserv = QtWidgets.QCheckBox("Автоматическая индетификация при помощи NickServ", self)
         self.autonickserv.setChecked(parent.userprofile.getAutoIdentify())
         self.autonickserv.stateChanged[int].connect(self.autoNickServChange)
         self.nickservpass = QtWidgets.QLineEdit(self)
-        self.nickservpass.setPlaceholderText("NickServ Password")
+        self.nickservpass.setPlaceholderText("NickServ Пароль")
         self.nickservpass.setEchoMode(QtWidgets.QLineEdit.PasswordEchoOnEdit)
         self.nickservpass.setText(parent.userprofile.getNickServPass())
 
         self.autojoinlist = QtWidgets.QListWidget(self)
         self.autojoinlist.addItems(parent.userprofile.getAutoJoins())
-        self.addAutoJoinBtn = QtWidgets.QPushButton("Add", self)
+        self.addAutoJoinBtn = QtWidgets.QPushButton("Добавить", self)
         self.addAutoJoinBtn.clicked.connect(self.addAutoJoin)
-        self.delAutoJoinBtn = QtWidgets.QPushButton("Remove", self)
+        self.delAutoJoinBtn = QtWidgets.QPushButton("УДАЛИТЬ", self)
         self.delAutoJoinBtn.clicked.connect(self.delAutoJoin)
 
-        self.tabcheck = QtWidgets.QCheckBox("Tabbed Conversations", self)
+        self.tabcheck = QtWidgets.QCheckBox("Вкладки бесед", self)
         if self.config.tabs():
             self.tabcheck.setChecked(True)
-        self.tabmemocheck = QtWidgets.QCheckBox("Tabbed Memos", self)
+        self.tabmemocheck = QtWidgets.QCheckBox("Вкладки меморандумов", self)
         if self.config.tabMemos():
             self.tabmemocheck.setChecked(True)
-        self.hideOffline = QtWidgets.QCheckBox("Hide Offline Chums", self)
+        self.hideOffline = QtWidgets.QCheckBox("Скрывать оффлайн корешей", self)
         if self.config.hideOfflineChums():
             self.hideOffline.setChecked(True)
 
-        self.soundcheck = QtWidgets.QCheckBox("Sounds On", self)
+        self.soundcheck = QtWidgets.QCheckBox("Звук включен", self)
         self.soundcheck.stateChanged[int].connect(self.soundChange)
-        self.chatsoundcheck = QtWidgets.QCheckBox("Pester Sounds", self)
+        self.chatsoundcheck = QtWidgets.QCheckBox("Звук корешей", self)
         self.chatsoundcheck.setChecked(self.config.chatSound())
-        self.memosoundcheck = QtWidgets.QCheckBox("Memo Sounds", self)
+        self.memosoundcheck = QtWidgets.QCheckBox("Звук меморандумов", self)
         self.memosoundcheck.setChecked(self.config.memoSound())
         self.memosoundcheck.stateChanged[int].connect(self.memoSoundChange)
-        self.memopingcheck = QtWidgets.QCheckBox("Memo Ping", self)
+        self.memopingcheck = QtWidgets.QCheckBox("Оповещение меморандума", self)
         self.memopingcheck.setChecked(self.config.memoPing())
-        self.namesoundcheck = QtWidgets.QCheckBox("Memo Mention (initials)", self)
+        self.namesoundcheck = QtWidgets.QCheckBox("Упоминание меморандума (инициалы)", self)
         self.namesoundcheck.setChecked(self.config.nameSound())
         if self.config.soundOn():
             self.soundcheck.setChecked(True)
@@ -1034,9 +1034,9 @@ class PesterOptions(QtWidgets.QDialog):
             self.memosoundcheck.setEnabled(False)
             self.memoSoundChange(0)
 
-        self.editMentions = QtWidgets.QPushButton("Edit Mentions", self)
+        self.editMentions = QtWidgets.QPushButton("Изменить упоминания", self)
         self.editMentions.clicked.connect(self.openMentions)
-        self.editMentions2 = QtWidgets.QPushButton("Edit Mentions", self)
+        self.editMentions2 = QtWidgets.QPushButton("Изменить упоминания", self)
         self.editMentions2.clicked.connect(self.openMentions)
 
         self.volume = QtWidgets.QSlider(QtCore.Qt.Horizontal, self)
@@ -1054,40 +1054,40 @@ class PesterOptions(QtWidgets.QDialog):
         else:
             # We can't set the volume....
             self.currentVol = QtWidgets.QLabel(
-                    "(Disabled: Sound Mixer Error)", self)
+                    "(Отключено: Ошибка Звукового Микшера)", self)
             self.volume.setEnabled(False)
         self.currentVol.setAlignment(QtCore.Qt.AlignHCenter)
 
 
-        self.timestampcheck = QtWidgets.QCheckBox("Time Stamps", self)
+        self.timestampcheck = QtWidgets.QCheckBox("Тип времени", self)
         if self.config.showTimeStamps():
             self.timestampcheck.setChecked(True)
 
         self.timestampBox = QtWidgets.QComboBox(self)
-        self.timestampBox.addItem("12 hour")
-        self.timestampBox.addItem("24 hour")
+        self.timestampBox.addItem("12-часовая")
+        self.timestampBox.addItem("24-часовая")
         if self.config.time12Format():
             self.timestampBox.setCurrentIndex(0)
         else:
             self.timestampBox.setCurrentIndex(1)
-        self.secondscheck = QtWidgets.QCheckBox("Show Seconds", self)
+        self.secondscheck = QtWidgets.QCheckBox("Показ секунд", self)
         if self.config.showSeconds():
             self.secondscheck.setChecked(True)
 
-        self.memomessagecheck = QtWidgets.QCheckBox("Show OP and Voice Messages in Memos", self)
+        self.memomessagecheck = QtWidgets.QCheckBox("Показ OP и Голосовых Сообщений в меморандумах", self)
         if self.config.opvoiceMessages():
             self.memomessagecheck.setChecked(True)
 
         if not ostools.isOSXBundle():
-            self.animationscheck = QtWidgets.QCheckBox("Use animated smilies", self)
+            self.animationscheck = QtWidgets.QCheckBox("Использовать анимированные смайлы", self)
             if self.config.animations():
                 self.animationscheck.setChecked(True)
-            animateLabel = QtWidgets.QLabel("(Disable if you leave chats open for LOOOONG periods of time)")
+            animateLabel = QtWidgets.QLabel("(Отключите, если вы оставляете чаты открытыми на ДООООЛГОЕ время.)")
             font = animateLabel.font()
             font.setPointSize(8)
             animateLabel.setFont(font)
 
-        self.userlinkscheck = QtWidgets.QCheckBox("Disable #Memo and @User Links", self)
+        self.userlinkscheck = QtWidgets.QCheckBox("Отключить #Memo и @User ссылки", self)
         self.userlinkscheck.setChecked(self.config.disableUserLinks())
         self.userlinkscheck.setVisible(False)
 
@@ -1095,16 +1095,16 @@ class PesterOptions(QtWidgets.QDialog):
         # Will add ability to turn off groups later
         #self.groupscheck = QtGui.QCheckBox("Use Groups", self)
         #self.groupscheck.setChecked(self.config.useGroups())
-        self.showemptycheck = QtWidgets.QCheckBox("Show Empty Groups", self)
+        self.showemptycheck = QtWidgets.QCheckBox("Показывать пустые группы", self)
         self.showemptycheck.setChecked(self.config.showEmptyGroups())
-        self.showonlinenumbers = QtWidgets.QCheckBox("Show Number of Online Chums", self)
+        self.showonlinenumbers = QtWidgets.QCheckBox("Показывать число онлайн корешей", self)
         self.showonlinenumbers.setChecked(self.config.showOnlineNumbers())
 
-        sortLabel = QtWidgets.QLabel("Sort Chums")
+        sortLabel = QtWidgets.QLabel("Сортировка корешей")
         self.sortBox = QtWidgets.QComboBox(self)
-        self.sortBox.addItem("Alphabetically")
-        self.sortBox.addItem("By Mood")
-        self.sortBox.addItem("Manually")
+        self.sortBox.addItem("Алфавитно")
+        self.sortBox.addItem("По настроению")
+        self.sortBox.addItem("Самостаятельно")
         method = self.config.sortMethod()
         if method >= 0 and method < self.sortBox.count():
             self.sortBox.setCurrentIndex(method)
@@ -1112,16 +1112,16 @@ class PesterOptions(QtWidgets.QDialog):
         layout_3.addWidget(sortLabel)
         layout_3.addWidget(self.sortBox, 10)
 
-        self.logpesterscheck = QtWidgets.QCheckBox("Log all Pesters", self)
+        self.logpesterscheck = QtWidgets.QCheckBox("Логи со всеми корешами", self)
         if self.config.logPesters() & self.config.LOG:
             self.logpesterscheck.setChecked(True)
-        self.logmemoscheck = QtWidgets.QCheckBox("Log all Memos", self)
+        self.logmemoscheck = QtWidgets.QCheckBox("Логи всех меморандумов", self)
         if self.config.logMemos() & self.config.LOG:
             self.logmemoscheck.setChecked(True)
-        self.stamppestercheck = QtWidgets.QCheckBox("Log Time Stamps for Pesters", self)
+        self.stamppestercheck = QtWidgets.QCheckBox("Лог Времени с корещами", self)
         if self.config.logPesters() & self.config.STAMP:
             self.stamppestercheck.setChecked(True)
-        self.stampmemocheck = QtWidgets.QCheckBox("Log Time Stamps for Memos", self)
+        self.stampmemocheck = QtWidgets.QCheckBox("Лог Времени меморандумов", self)
         if self.config.logMemos() & self.config.STAMP:
             self.stampmemocheck.setChecked(True)
 
@@ -1130,7 +1130,7 @@ class PesterOptions(QtWidgets.QDialog):
         self.idleBox.setRange(1, 1440)
         self.idleBox.setValue(self.config.idleTime())
         layout_5 = QtWidgets.QHBoxLayout()
-        layout_5.addWidget(QtWidgets.QLabel("Minutes before Idle:"))
+        layout_5.addWidget(QtWidgets.QLabel("Минут до AFK:"))
         layout_5.addWidget(self.idleBox)
 
         #self.updateBox = QtWidgets.QComboBox(self)
@@ -1149,7 +1149,7 @@ class PesterOptions(QtWidgets.QDialog):
         #    self.mspaCheck = QtWidgets.QCheckBox("Check for MSPA Updates", self)
         #    self.mspaCheck.setChecked(self.config.checkMSPA())
 
-        self.randomscheck = QtWidgets.QCheckBox("Receive Random Encounters")
+        self.randomscheck = QtWidgets.QCheckBox("Получить Случайный Встречи")
         self.randomscheck.setChecked(parent.userprofile.randoms)
         if not parent.randhandler.running:
             self.randomscheck.setEnabled(False)
@@ -1161,12 +1161,12 @@ class PesterOptions(QtWidgets.QDialog):
             self.themeBox.addItem(t)
             if (not notheme and t == theme.name) or (notheme and t == "pesterchum"):
                 self.themeBox.setCurrentIndex(i)
-        self.refreshtheme = QtWidgets.QPushButton("Refresh current theme", self)
+        self.refreshtheme = QtWidgets.QPushButton("Обновить текущую тему", self)
         self.refreshtheme.clicked.connect(parent.themeSelectOverride)
         self.ghostchum = QtWidgets.QCheckBox("Pesterdunk Ghostchum!!", self)
         self.ghostchum.setChecked(self.config.ghostchum())
 
-        self.buttonOptions = ["Minimize to Taskbar", "Minimize to Tray", "Quit"]
+        self.buttonOptions = ["Свернуть на панель задач", "Свернуть в трей", "Выход"]
         self.miniBox = QtWidgets.QComboBox(self)
         self.miniBox.addItems(self.buttonOptions)
         self.miniBox.setCurrentIndex(self.config.minimizeAction())
@@ -1174,20 +1174,20 @@ class PesterOptions(QtWidgets.QDialog):
         self.closeBox.addItems(self.buttonOptions)
         self.closeBox.setCurrentIndex(self.config.closeAction())
         layout_mini = QtWidgets.QHBoxLayout()
-        layout_mini.addWidget(QtWidgets.QLabel("Minimize"))
+        layout_mini.addWidget(QtWidgets.QLabel("Свернуть"))
         layout_mini.addWidget(self.miniBox)
         layout_close = QtWidgets.QHBoxLayout()
-        layout_close.addWidget(QtWidgets.QLabel("Close"))
+        layout_close.addWidget(QtWidgets.QLabel("Закрыть"))
         layout_close.addWidget(self.closeBox)
 
-        self.pesterBlink = QtWidgets.QCheckBox("Blink Taskbar on Pesters", self)
+        self.pesterBlink = QtWidgets.QCheckBox("Мигающая панель задач когда достают", self)
         if self.config.blink() & self.config.PBLINK:
             self.pesterBlink.setChecked(True)
-        self.memoBlink = QtWidgets.QCheckBox("Blink Taskbar on Memos", self)
+        self.memoBlink = QtWidgets.QCheckBox("Мигающая панель задач когда пишут в меморандуме", self)
         if self.config.blink() & self.config.MBLINK:
             self.memoBlink.setChecked(True)
 
-        self.notifycheck = QtWidgets.QCheckBox("Toast Notifications", self)
+        self.notifycheck = QtWidgets.QCheckBox("Уведомления", self)
         if self.config.notify():
             self.notifycheck.setChecked(True)
         self.notifycheck.stateChanged[int].connect(self.notifyChange)
@@ -1199,23 +1199,23 @@ class PesterOptions(QtWidgets.QDialog):
             if t == cur:
                 self.notifyOptions.setCurrentIndex(i)
                 break
-        self.notifyTypeLabel = QtWidgets.QLabel("Type", self)
+        self.notifyTypeLabel = QtWidgets.QLabel("Тип", self)
         layout_type = QtWidgets.QHBoxLayout()
         layout_type.addWidget(self.notifyTypeLabel)
         layout_type.addWidget(self.notifyOptions)
-        self.notifySigninCheck   = QtWidgets.QCheckBox("Chum signs in", self)
+        self.notifySigninCheck   = QtWidgets.QCheckBox("Кореш входит", self)
         if self.config.notifyOptions() & self.config.SIGNIN:
             self.notifySigninCheck.setChecked(True)
-        self.notifySignoutCheck  = QtWidgets.QCheckBox("Chum signs out", self)
+        self.notifySignoutCheck  = QtWidgets.QCheckBox("Кореш выходит", self)
         if self.config.notifyOptions() & self.config.SIGNOUT:
             self.notifySignoutCheck.setChecked(True)
-        self.notifyNewMsgCheck   = QtWidgets.QCheckBox("New messages", self)
+        self.notifyNewMsgCheck   = QtWidgets.QCheckBox("Новое сообщение", self)
         if self.config.notifyOptions() & self.config.NEWMSG:
             self.notifyNewMsgCheck.setChecked(True)
-        self.notifyNewConvoCheck = QtWidgets.QCheckBox("Only new conversations", self)
+        self.notifyNewConvoCheck = QtWidgets.QCheckBox("Только новые беседы", self)
         if self.config.notifyOptions() & self.config.NEWCONVO:
             self.notifyNewConvoCheck.setChecked(True)
-        self.notifyMentionsCheck = QtWidgets.QCheckBox("Memo Mentions (initials)", self)
+        self.notifyMentionsCheck = QtWidgets.QCheckBox("Упоминания меморандума (инициалы)", self)
         if self.config.notifyOptions() & self.config.INITIALS:
             self.notifyMentionsCheck.setChecked(True)
         self.notifyChange(self.notifycheck.checkState())
@@ -1224,13 +1224,13 @@ class PesterOptions(QtWidgets.QDialog):
             # NOTE: This doesn't do anything right now - so change it!
             self.modechange = QtWidgets.QLineEdit(self)
             layout_change = QtWidgets.QHBoxLayout()
-            layout_change.addWidget(QtWidgets.QLabel("Change:"))
+            layout_change.addWidget(QtWidgets.QLabel("Изменить:"))
             layout_change.addWidget(self.modechange)
 
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.accept)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         layout_2 = QtWidgets.QHBoxLayout()
         layout_2.addWidget(self.cancel)
@@ -1295,7 +1295,7 @@ class PesterOptions(QtWidgets.QDialog):
         layout_indent.setContentsMargins(22,0,0,0)
         layout_sound.addLayout(layout_indent)
         layout_sound.addSpacing(15)
-        mvol = QtWidgets.QLabel("Master Volume:", self)
+        mvol = QtWidgets.QLabel("Основная громкость:", self)
         # If we can't set the volume, grey this out as well
         #~mvol.setEnabled(parent.canSetVolume())
         # Normally we'd grey this out, but that presently makes things
@@ -1350,7 +1350,7 @@ class PesterOptions(QtWidgets.QDialog):
         widget = QtWidgets.QWidget()
         layout_theme = QtWidgets.QVBoxLayout(widget)
         layout_theme.setAlignment(QtCore.Qt.AlignTop)
-        layout_theme.addWidget(QtWidgets.QLabel("Pick a Theme:"))
+        layout_theme.addWidget(QtWidgets.QLabel("Выбрать тему:"))
         layout_theme.addWidget(self.themeBox)
         layout_theme.addWidget(self.refreshtheme)
         layout_theme.addWidget(self.ghostchum)
@@ -1367,7 +1367,7 @@ class PesterOptions(QtWidgets.QDialog):
         layout_indent.addWidget(self.nickservpass)
         layout_indent.setContentsMargins(22,0,0,0)
         layout_connect.addLayout(layout_indent)
-        layout_connect.addWidget(QtWidgets.QLabel("Auto-Join Memos:"))
+        layout_connect.addWidget(QtWidgets.QLabel("Авто-подключение к меморандумам:"))
         layout_connect.addWidget(self.autojoinlist)
         layout_8 = QtWidgets.QHBoxLayout()
         layout_8.addWidget(self.addAutoJoinBtn)
@@ -1380,7 +1380,7 @@ class PesterOptions(QtWidgets.QDialog):
             widget = QtWidgets.QWidget()
             layout_advanced = QtWidgets.QVBoxLayout(widget)
             layout_advanced.setAlignment(QtCore.Qt.AlignTop)
-            layout_advanced.addWidget(QtWidgets.QLabel("Current User Mode: %s" % parent.modes))
+            layout_advanced.addWidget(QtWidgets.QLabel("Текужий пользовательский режим: %s" % parent.modes))
             layout_advanced.addLayout(layout_change)
             self.pages.addWidget(widget)
 
@@ -1427,10 +1427,10 @@ class PesterOptions(QtWidgets.QDialog):
 
     @QtCore.pyqtSlot()
     def addAutoJoin(self, mitem=None):
-        d = {"label": "Memo:", "inputname": "value" }
+        d = {"label": "Меморандум:", "inputname": "value" }
         if mitem is not None:
             d["value"] = str(mitem.text())
-        pdict = MultiTextDialog("ENTER MEMO", self, d).getText()
+        pdict = MultiTextDialog("ВВЕДИТЕ МЕМОРАНДУМ", self, d).getText()
         if pdict is None:
             return
         pdict["value"] = "#" + pdict["value"]
@@ -1508,7 +1508,7 @@ class PesterUserlist(QtWidgets.QDialog):
         self.searchbox.setPlaceholderText("Search")
         self.searchbox.textChanged['QString'].connect(self.updateUsers)
 
-        self.label = QtWidgets.QLabel("USERLIST")
+        self.label = QtWidgets.QLabel("КОРЕШЛИСТ")
         self.userarea = RightClickList(self)
         self.userarea.setStyleSheet(self.theme["main/chums/style"])
         self.userarea.optionsMenu = QtWidgets.QMenu(self)
@@ -1611,15 +1611,15 @@ class PesterMemoList(QtWidgets.QDialog):
         self.theme = parent.theme
         self.mainwindow = parent
         self.setStyleSheet(self.theme["main/defaultwindow/style"])
-        self.resize(460, 300)
+        self.resize(660, 400)
 
-        self.label = QtWidgets.QLabel("MEMOS")
+        self.label = QtWidgets.QLabel("МЕМОРАНДУМЫ")
         self.channelarea = RightClickTree(self)
         self.channelarea.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
         self.channelarea.setStyleSheet(self.theme["main/chums/style"])
         self.channelarea.optionsMenu = QtWidgets.QMenu(self)
         self.channelarea.setColumnCount(2)
-        self.channelarea.setHeaderLabels(["Memo", "Users"])
+        self.channelarea.setHeaderLabels(["Меморандум", "Онлайн"])
         self.channelarea.setIndentation(0)
         self.channelarea.setColumnWidth(0,200)
         self.channelarea.setColumnWidth(1,10)
@@ -1627,18 +1627,18 @@ class PesterMemoList(QtWidgets.QDialog):
         self.channelarea.sortByColumn(0, QtCore.Qt.AscendingOrder)
         self.channelarea.itemDoubleClicked[QtWidgets.QTreeWidgetItem, int].connect(self.AcceptSelection)
 
-        self.orjoinlabel = QtWidgets.QLabel("OR MAKE A NEW MEMO:")
+        self.orjoinlabel = QtWidgets.QLabel("ИЛИ СОЗДАЙТЕ СВОЙ МЕМОРАНДУМ:")
         self.newmemo = QtWidgets.QLineEdit(channel, self)
-        self.secretChannel = QtWidgets.QCheckBox("HIDDEN CHANNEL?", self)
-        self.inviteChannel = QtWidgets.QCheckBox("INVITATION ONLY?", self)
+        self.secretChannel = QtWidgets.QCheckBox("СКРЫВАТЬ?", self)
+        self.inviteChannel = QtWidgets.QCheckBox("ТОЛЬКО ПО ПРИГЛАШЕНИЯ?", self)
 
-        self.timelabel = QtWidgets.QLabel("TIMEFRAME:")
+        self.timelabel = QtWidgets.QLabel("ПЕРИОД ВЕРМЕНИ:")
         self.timeslider = TimeSlider(QtCore.Qt.Horizontal, self)
         self.timeinput = TimeInput(self.timeslider, self)
 
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
-        self.join = QtWidgets.QPushButton("JOIN", self)
+        self.join = QtWidgets.QPushButton("ПОДКЛЮЧИТЬСЯ", self)
         self.join.setDefault(True)
         self.join.clicked.connect(self.AcceptIfSelectionMade)
         layout_ok = QtWidgets.QHBoxLayout()
@@ -1709,9 +1709,9 @@ class LoadingScreen(QtWidgets.QDialog):
         self.mainwindow = parent
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
 
-        self.loadinglabel = QtWidgets.QLabel("CONN3CT1NG", self)
-        self.cancel = QtWidgets.QPushButton("QU1T >:?", self)
-        self.ok = QtWidgets.QPushButton("R3CONN3CT >:]", self)
+        self.loadinglabel = QtWidgets.QLabel("П0ДКЛЮЧ3НИ3", self)
+        self.cancel = QtWidgets.QPushButton("ВЫХ0Д >:?", self)
+        self.ok = QtWidgets.QPushButton("П3Р3СО3ДИН3НИ3 >:]", self)
         # Help reduce the number of accidental Pesterchum closures... :|
         self.cancel.setAutoDefault(False)
         self.ok.setAutoDefault(True)
@@ -1756,7 +1756,7 @@ class AboutPesterchum(QtWidgets.QDialog):
         self.mainwindow = parent
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
 
-        self.title = QtWidgets.QLabel("P3ST3RCHUM %s" % (_pcVersion))
+        self.title = QtWidgets.QLabel("Д0СТ4НЬК0Р3ША %s" % (_pcVersion))
         self.credits = QtWidgets.QLabel("Programming by:\n\
   illuminatedwax (ghostDunk)\n\
   Kiooeht (evacipatedBox)\n\
@@ -1775,7 +1775,8 @@ Art by:\n\
 Special Thanks:\n\
   ABT\n\
   gamblingGenocider\n\
-  Eco-Mono")
+  Eco-Mono\n\
+Русификацией занимался Daosp")
 
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.clicked.connect(self.reject)
@@ -1793,18 +1794,18 @@ class UpdatePesterchum(QtWidgets.QDialog):
         self.url = url
         self.mainwindow = parent
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Pesterchum v%s Update" % (ver))
+        self.setWindowTitle("ДОСТАНЬКОРЕША v%s Update" % (ver))
         self.setModal(False)
 
-        self.title = QtWidgets.QLabel("An update to Pesterchum is available!")
+        self.title = QtWidgets.QLabel("Обновление ДОСТАНЬКОРЕША уже доступно!/nВНИМАНИЕ!/nЕсли вы сейчас обновите, то перевод уберётся...")
 
         layout_0 = QtWidgets.QVBoxLayout()
         layout_0.addWidget(self.title)
 
-        self.ok = QtWidgets.QPushButton("D0WNL04D 4ND 1NST4LL N0W", self)
+        self.ok = QtWidgets.QPushButton("СК4Ч47Ь И УС74НОВИ7Ь С3ЙЧ4С", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.accept)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         layout_2 = QtWidgets.QHBoxLayout()
         layout_2.addWidget(self.cancel)
@@ -1820,23 +1821,25 @@ class AddChumDialog(QtWidgets.QDialog):
 
         self.mainwindow = parent
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
-        self.setWindowTitle("Enter Chum Handle")
+        self.setWindowTitle("НОВЫЙ КОРЕШ")
         self.setModal(True)
 
-        self.title = QtWidgets.QLabel("Enter Chum Handle")
+        self.title = QtWidgets.QLabel("Введите корешник:")
         self.chumBox = QtWidgets.QLineEdit(self)
+        self.title2 = QtWidgets.QLabel("Выберете группу:")
         self.groupBox = QtWidgets.QComboBox(self)
         avail_groups.sort()
         avail_groups.pop(avail_groups.index("Chums"))
         avail_groups.insert(0, "Chums")
         for g in avail_groups:
             self.groupBox.addItem(g)
-        self.newgrouplabel = QtWidgets.QLabel("Or make a new group:")
+        self.newgrouplabel = QtWidgets.QLabel("Или создайте новую группу:")
         self.newgroup = QtWidgets.QLineEdit(self)
 
         layout_0 = QtWidgets.QVBoxLayout()
         layout_0.addWidget(self.title)
         layout_0.addWidget(self.chumBox)
+        layout_0.addWidget(self.title2)
         layout_0.addWidget(self.groupBox)
         layout_0.addWidget(self.newgrouplabel)
         layout_0.addWidget(self.newgroup)
@@ -1844,7 +1847,7 @@ class AddChumDialog(QtWidgets.QDialog):
         self.ok = QtWidgets.QPushButton("OK", self)
         self.ok.setDefault(True)
         self.ok.clicked.connect(self.accept)
-        self.cancel = QtWidgets.QPushButton("CANCEL", self)
+        self.cancel = QtWidgets.QPushButton("ОТМЕНА", self)
         self.cancel.clicked.connect(self.reject)
         layout_2 = QtWidgets.QHBoxLayout()
         layout_2.addWidget(self.cancel)

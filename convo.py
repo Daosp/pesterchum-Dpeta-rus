@@ -551,12 +551,12 @@ class PesterText(QtWidgets.QTextEdit):
             hconn.request("POST", "/index.php", params, headers)
             response = hconn.getresponse()
             if response.status == 200:
-                self.sending.sendinglabel.setText("SUCC3SS!")
+                self.sending.sendinglabel.setText("УСП3111Н0!")
             else:
-                self.sending.sendinglabel.setText("F41L3D: %s %s" % (response.status, response.reason))
+                self.sending.sendinglabel.setText("О111ИБК4: %s %s" % (response.status, response.reason))
             hconn.close()
         except Exception as e:
-            self.sending.sendinglabel.setText("F41L3D: %s" % (e))
+            self.sending.sendinglabel.setText("О111ИБК4: %s" % (e))
         del self.sending
 
 class PesterInput(QtWidgets.QLineEdit):
@@ -649,15 +649,15 @@ class PesterConvo(QtWidgets.QFrame):
         # Easiest solution: Implement a 'Mute' option that overrides all
         # notifications for that window, save for mentions.
         # TODO: Look into setting up theme support here.
-        self._beepToggle = QtWidgets.QAction("Beep on Message", self)
+        self._beepToggle = QtWidgets.QAction("Биип при сообщении", self)
         self._beepToggle.setCheckable(True)
         self._beepToggle.toggled[bool].connect(self.toggleBeep)
 
-        self._flashToggle = QtWidgets.QAction("Flash on Message", self)
+        self._flashToggle = QtWidgets.QAction("Мигает при сообщении", self)
         self._flashToggle.setCheckable(True)
         self._flashToggle.toggled[bool].connect(self.toggleFlash)
 
-        self._muteToggle = QtWidgets.QAction("Mute Notifications", self)
+        self._muteToggle = QtWidgets.QAction("Отключить уведомления", self)
         self._muteToggle.setCheckable(True)
         self._muteToggle.toggled[bool].connect(self.toggleMute)
 

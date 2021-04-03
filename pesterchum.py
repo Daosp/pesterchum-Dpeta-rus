@@ -136,7 +136,7 @@ canon_handles = ["apocalypseArisen", "arsenicCatnip", "arachnidsGrip", "adiosTor
                  "caligulasAquarium", "cuttlefishCuller", "carcinoGeneticist", "centaursTesticle", \
                  "grimAuxiliatrix", "gallowsCalibrator", "gardenGnostic", "ectoBiologist", \
                  "twinArmageddons", "terminallyCapricious", "turntechGodhead", "tentacleTherapist"]
-CUSTOMBOTS = ["CALSPRITE", RANDNICK.upper()]
+CUSTOMBOTS = ["келСпрайт", RANDNICK.upper()]
 BOTNAMES = ["NICKSERV", "CHANSERV", "MEMOSERV", "OPERSERV", "HELPSERV"]
 BOTNAMES.extend(CUSTOMBOTS)
 
@@ -190,14 +190,14 @@ class chumListing(QtWidgets.QTreeWidgetItem):
                 #print "OFFLINE NOTIFY: " + self.handle
                 uri = self.mainwindow.theme["toasts/icon/signout"]
                 n = self.mainwindow.tm.Toast(self.mainwindow.tm.appName,
-                                          "%s is Offline" % (self.handle), uri)
+                                          "%s в Оффлайне" % (self.handle), uri)
                 n.show()
             elif self.mainwindow.config.notifyOptions() & self.mainwindow.config.SIGNIN and \
                  mood.name() != "offline" and self.chum.mood.name() == "offline":
                 #print "ONLINE NOTIFY: " + self.handle
                 uri = self.mainwindow.theme["toasts/icon/signin"]
                 n = self.mainwindow.tm.Toast(self.mainwindow.tm.appName,
-                                          "%s is Online" % (self.handle), uri)
+                                          "%s в Онлайне" % (self.handle), uri)
                 n.show()
         login = False
         logout = False
@@ -283,7 +283,7 @@ class chumArea(RightClickTree):
         self.logchum.triggered.connect(self.openChumLogs)
         self.reportchum = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/report"], self)
         self.reportchum.triggered.connect(self.reportChum)
-        self.findalts = QtWidgets.QAction("Find Alts", self)
+        self.findalts = QtWidgets.QAction("Найдены альты", self)
         self.findalts.triggered.connect(self.findAlts)
         self.removegroup = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/removegroup"], self)
         self.removegroup.triggered.connect(self.removeGroup)
@@ -329,7 +329,7 @@ class chumArea(RightClickTree):
 
     @QtCore.pyqtSlot()
     def beginNotify(self):
-        print("BEGIN NOTIFY")
+        print("НАЧАТЬ УВЕДОМЛЕНИЕ")
         self.notify = True
 
     def getOptionsMenu(self):
@@ -799,7 +799,7 @@ class chumArea(RightClickTree):
         currentChum = self.currentItem()
         if not currentChum:
             return
-        self.mainwindow.sendMessage.emit("ALT %s" % (currentChum.chum.handle) , "calSprite")
+        self.mainwindow.sendMessage.emit("АЛЬТ %s" % (currentChum.chum.handle) , "келСпрайт")
     @QtCore.pyqtSlot()
     def openChumLogs(self):
         currentChum = self.currentItem()
@@ -820,7 +820,7 @@ class chumArea(RightClickTree):
         currentChum = self.currentItem()
         if not currentChum:
             return
-        (notes, ok) = QtWidgets.QInputDialog.getText(self, "Notes", "Enter your notes...")
+        (notes, ok) = QtWidgets.QInputDialog.getText(self, "Записи", "Введите новую запись...")
         if ok:
             notes = str(notes)
             self.mainwindow.chumdb.setNotes(currentChum.handle, notes)
@@ -830,13 +830,13 @@ class chumArea(RightClickTree):
         if not hasattr(self, 'renamegroupdialog'):
             self.renamegroupdialog = None
         if not self.renamegroupdialog:
-            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Rename Group", "Enter a new name for the group:")
+            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Переименовать группу", "Введите название новой группы:")
             if ok:
                 gname = str(gname)
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
                     msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-                    msgbox.setInformativeText("THIS IS NOT A VALID GROUP NAME")
+                    msgbox.setInformativeText("ЭТО НЕ ДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     ret = msgbox.exec_()
                     self.addgroupdialog = None
@@ -966,9 +966,9 @@ class TrollSlumWindow(QtWidgets.QFrame):
         self.trollslum = trollSlum(trolls, self.mainwindow, self)
         self.trollslum.unblockChumSignal.connect(self.removeCurrentTroll)
         layout_1 = QtWidgets.QHBoxLayout()
-        self.addButton = QtWidgets.QPushButton("ADD", self)
+        self.addButton = QtWidgets.QPushButton("ДОБАВИТЬ", self)
         self.addButton.clicked.connect(self.addTrollWindow)
-        self.removeButton = QtWidgets.QPushButton("REMOVE", self)
+        self.removeButton = QtWidgets.QPushButton("УДАЛИТЬ", self)
         self.removeButton.clicked.connect(self.removeCurrentTroll)
         layout_1.addWidget(self.addButton)
         layout_1.addWidget(self.removeButton)
@@ -1013,13 +1013,13 @@ class TrollSlumWindow(QtWidgets.QFrame):
         if self.addtrolldialog:
             return
         self.addtrolldialog = QtWidgets.QInputDialog(self)
-        (handle, ok) = self.addtrolldialog.getText(self, "Add Troll", "Enter Troll Handle:")
+        (handle, ok) = self.addtrolldialog.getText(self, "Добавить тролля", "Введите тролльник:")
         if ok:
             handle = str(handle)
             if not (PesterProfile.checkLength(handle) and
                     PesterProfile.checkValid(handle)[0]):
                 errormsg = QtWidgets.QErrorMessage(self)
-                errormsg.showMessage("THIS IS NOT A VALID CHUMTAG!")
+                errormsg.showMessage("ЭТО НЕ ДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК!")
                 self.addchumdialog = None
                 return
 
@@ -1106,9 +1106,9 @@ class PesterWindow(MovingWindow):
         except ThemeException as inst:
             logging.error("Caught: " + inst.parameter)
             themeWarning = QtWidgets.QMessageBox(self)
-            themeWarning.setText("Theme Error: %s" % inst)
+            themeWarning.setText("Ошибка темы: %s" % inst)
             themeWarning.exec_()
-            self.theme = pesterTheme("pesterchum")
+            self.theme = pesterTheme("ДОСТАНЬКОРЕША")
 
         extraToasts = {'default': PesterToast}
         if pytwmn.confExists():
@@ -1158,7 +1158,7 @@ class PesterWindow(MovingWindow):
 
         self.console = AttrDict(dict(
             window = None,
-            action = QtWidgets.QAction("Console".upper(), self),
+            action = QtWidgets.QAction("Консоль".upper(), self),
             is_open = False
             ))
         self.console.shortcuts = AttrDict(dict(
@@ -1229,7 +1229,7 @@ class PesterWindow(MovingWindow):
         self.chanServAction.triggered.connect(self.loadChanServ)
         self.aboutAction = QtWidgets.QAction(self.theme["main/menus/help/about"], self)
         self.aboutAction.triggered.connect(self.aboutPesterchum)
-        self.reportBugAction = QtWidgets.QAction("REPORT BUG", self)
+        self.reportBugAction = QtWidgets.QAction("НАШЛИ ОШИБКУ?", self)
         self.reportBugAction.triggered.connect(self.reportBug)
         helpmenu = self.menu.addMenu(self.theme["main/menus/help/_name"])
         self.helpmenu = helpmenu
@@ -1399,22 +1399,22 @@ class PesterWindow(MovingWindow):
         # notify
         if self.config.notifyOptions() & self.config.NEWMSG:
             if handle not in self.convos:
-                t = self.tm.Toast("New Conversation", "From: %s" % handle)
+                t = self.tm.Toast("Новая беседа", "От: %s" % handle)
                 t.show()
             elif not self.config.notifyOptions() & self.config.NEWCONVO:
                 if msg[:11] != "PESTERCHUM:":
                     if handle.upper() not in BOTNAMES:
-                        t = self.tm.Toast("From: %s" % handle, re.sub("</?c(=.*?)?>", "", msg))
+                        t = self.tm.Toast("От: %s" % handle, re.sub("</?c(=.*?)?>", "", msg))
                         t.show()
                 else:
                     if msg == "PESTERCHUM:CEASE":
-                        t = self.tm.Toast("Closed Conversation", handle)
+                        t = self.tm.Toast("Закрыта беседа", handle)
                         t.show()
                     elif msg == "PESTERCHUM:BLOCK":
-                        t = self.tm.Toast("Blocked", handle)
+                        t = self.tm.Toast("Заблокирован", handle)
                         t.show()
                     elif msg == "PESTERCHUM:UNBLOCK":
-                        t = self.tm.Toast("Unblocked", handle)
+                        t = self.tm.Toast("Разблокирован", handle)
                         t.show()
         if handle not in self.convos:
             if msg == "PESTERCHUM:CEASE": # ignore cease after we hang up
@@ -1870,9 +1870,9 @@ class PesterWindow(MovingWindow):
             themeChecker(theme)
         except ThemeException as inst:
             themeWarning = QtWidgets.QMessageBox(self)
-            themeWarning.setText("Theme Error: %s" % inst)
+            themeWarning.setText("Ошибка темы: %s" % inst)
             themeWarning.exec_()
-            theme = pesterTheme("pesterchum")
+            theme = pesterTheme("ДОСТАНЬКОРЕША")
             return
         self.theme = theme
         # do self
@@ -2022,12 +2022,12 @@ class PesterWindow(MovingWindow):
     def deliverNotice(self, handle, msg):
         h = str(handle)
         m = str(msg)
-        if h.upper() == "NICKSERV" and m.startswith("Your nickname is now being changed to"):
+        if h.upper() == "NICKSERV" and m.startswith("Ваш ник теперь"):
             changedto = m[39:-1]
             msgbox = QtWidgets.QMessageBox()
             msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-            msgbox.setText("This chumhandle has been registered; you may not use it.")
-            msgbox.setInformativeText("Your handle is now being changed to %s." % (changedto))
+            msgbox.setText("Ваш корешник занят, вы не можете его использовать.")
+            msgbox.setInformativeText("Ваш ник теперь %s." % (changedto))
             msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
             ret = msgbox.exec_()
         elif h == self.randhandler.randNick:
@@ -2042,9 +2042,9 @@ class PesterWindow(MovingWindow):
     @QtCore.pyqtSlot(QString, QString)
     def deliverInvite(self, handle, channel):
         msgbox = QtWidgets.QMessageBox()
-        msgbox.setText("You're invited!")
+        msgbox.setText("Вы приглашены!!")
         msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-        msgbox.setInformativeText("%s has invited you to the memo: %s\nWould you like to join them?" % (handle, channel))
+        msgbox.setInformativeText("%s пригласил(а) вас в меморандум: %s\nПринять приглашение?" % (handle, channel))
         msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok | QtWidgets.QMessageBox.Cancel)
         # Find the Cancel button and make it default
         for b in msgbox.buttons():
@@ -2154,12 +2154,12 @@ class PesterWindow(MovingWindow):
                 if not (PesterProfile.checkLength(handle) and
                         PesterProfile.checkValid(handle)[0]):
                     errormsg = QtWidgets.QErrorMessage(self)
-                    errormsg.showMessage("THIS IS NOT A VALID CHUMTAG!")
+                    errormsg.showMessage("ЭТО НЕ ДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК!")
                     self.addchumdialog = None
                     return
                 if re.search("[^A-Za-z0-9_\s]", group) is not None:
                     errormsg = QtWidgets.QErrorMessage(self)
-                    errormsg.showMessage("THIS IS NOT A VALID GROUP NAME")
+                    errormsg.showMessage("ЭТО НЕ ДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ!")
                     self.addchumdialog = None
                     return
                 if newgroup:
@@ -2173,9 +2173,9 @@ class PesterWindow(MovingWindow):
     def removeChum(self, chumlisting):
         self.config.removeChum(chumlisting)
     def reportChum(self, handle):
-        (reason, ok) = QtWidgets.QInputDialog.getText(self, "Report User", "Enter the reason you are reporting this user (optional):")
+        (reason, ok) = QtWidgets.QInputDialog.getText(self, "Подать жалобу на пользователя", "Введите причину жалобы (необязательно):")
         if ok:
-            self.sendMessage.emit("REPORT %s %s" % (handle, reason) , "calSprite")
+            self.sendMessage.emit("ЖАЛОБА %s %s" % (handle, reason) , "келСпрайт")
 
     @QtCore.pyqtSlot(QString)
     def blockChum(self, handle):
@@ -2439,7 +2439,7 @@ class PesterWindow(MovingWindow):
         if not hasattr(self, "openchatdialog"):
             self.openchatdialog = None
         if not self.openchatdialog:
-            (chum, ok) = QtWidgets.QInputDialog.getText(self, "Pester Chum", "Enter a handle to pester:")
+            (chum, ok) = QtWidgets.QInputDialog.getText(self, "Достать кореша", "Введите корешник:")
             try:
                 if ok:
                     self.newConversation(str(chum))
@@ -2468,12 +2468,12 @@ class PesterWindow(MovingWindow):
         if not hasattr(self, 'addgroupdialog'):
             self.addgroupdialog = None
         if not self.addgroupdialog:
-            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Add Group", "Enter a name for the new group:")
+            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Добавить группу", "Введите название новой группы:")
             if ok:
                 gname = str(gname)
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
-                    msgbox.setInformativeText("THIS IS NOT A VALID GROUP NAME")
+                    msgbox.setInformativeText("ЭТО НАЗВАНИЕ ГРУППЫ НЕ ДЕЙСТВИТЕЛЬНО")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")#Style :) (memos/style or convo/style works :3 )
                     ret = msgbox.exec_()
@@ -2785,7 +2785,7 @@ class PesterWindow(MovingWindow):
                 self.changeTheme(pesterTheme(themename))
             except ValueError as e:
                 themeWarning = QtWidgets.QMessageBox(self)
-                themeWarning.setText("Theme Error: %s" % (e))
+                themeWarning.setText("Ошибка темы: %s" % (e))
                 themeWarning.exec_()
                 self.choosetheme = None
                 return
@@ -2861,8 +2861,8 @@ class PesterWindow(MovingWindow):
     def switchProfile(self):
         if self.convos:
             closeWarning = QtWidgets.QMessageBox()
-            closeWarning.setText("WARNING: CHANGING PROFILES WILL CLOSE ALL CONVERSATION WINDOWS!")
-            closeWarning.setInformativeText("i warned you about windows bro!!!! i told you dog!")
+            closeWarning.setText("ВНИМАНИЕ: ПРИ ПЕРЕХОДЕ НА ДРУГОЙ ПРОФИЛЬ У ВАС ЗАКРОЮТСЯ ОКНА ЧАТОВ!")
+            closeWarning.setInformativeText("я тебя предупреждал насчёт окон бро!!!! я тебе говорил об этом!")
             closeWarning.setStandardButtons(QtWidgets.QMessageBox.Cancel | QtWidgets.QMessageBox.Ok)
             closeWarning.setDefaultButton(QtWidgets.QMessageBox.Ok)
             ret = closeWarning.exec_()
@@ -2878,7 +2878,7 @@ class PesterWindow(MovingWindow):
         self.aboutwindow = None
     @QtCore.pyqtSlot()
     def loadCalsprite(self):
-        self.newConversation("calSprite")
+        self.newConversation("келСпрайт")
     @QtCore.pyqtSlot()
     def loadChanServ(self):
         self.newConversation("chanServ")
@@ -2929,8 +2929,8 @@ class PesterWindow(MovingWindow):
     @QtCore.pyqtSlot()
     def tooManyPeeps(self):
         msg = QtWidgets.QMessageBox(self)
-        msg.setText("D: TOO MANY PEOPLE!!!")
-        msg.setInformativeText("The server has hit max capacity. Please try again later.")
+        msg.setText("D: СЛИШКОМ МНОГО ЛЮДЕЙ!!!")
+        msg.setInformativeText("Сервер уже максимално занят. Пожалуйста, попробуйте чуть позже.")
         msg.show()
 
     @QtCore.pyqtSlot()
@@ -3022,7 +3022,7 @@ class MainProgram(QtCore.QObject):
             # Back to our scheduled program.
 
         self.app = QtWidgets.QApplication(sys.argv)
-        self.app.setApplicationName("Pesterchum")
+        self.app.setApplicationName("ДОСТАНЬКОРЕША")
         self.app.setQuitOnLastWindowClosed(False)
 
         options = self.oppts(sys.argv[1:])
@@ -3081,7 +3081,7 @@ class MainProgram(QtCore.QObject):
 
         self.trayicon = PesterTray(PesterIcon(self.widget.theme["main/icon"]), self.widget, self.app)
         self.traymenu = QtWidgets.QMenu()
-        moodMenu = self.traymenu.addMenu("SET MOOD")
+        moodMenu = self.traymenu.addMenu("ПОСТАВИТЬ НАСТРОЕНИЕ")
         moodCategories = {}
         for k in Mood.moodcats:
             moodCategories[k] = moodMenu.addMenu(k.upper())
@@ -3092,9 +3092,9 @@ class MainProgram(QtCore.QObject):
             maction.triggered.connect(mobj.updateMood)
             self.moodactions[i] = mobj
             moodCategories[Mood.revmoodcats[m]].addAction(maction)
-        miniAction = QtWidgets.QAction("MINIMIZE", self)
+        miniAction = QtWidgets.QAction("СВЕРНУТЬ", self)
         miniAction.triggered.connect(self.widget.showMinimized)
-        exitAction = QtWidgets.QAction("EXIT", self)
+        exitAction = QtWidgets.QAction("ВЫХОД", self)
         exitAction.triggered.connect(PesterWindow.quit)
         self.traymenu.addAction(miniAction)
         self.traymenu.addAction(exitAction)
@@ -3142,9 +3142,9 @@ class MainProgram(QtCore.QObject):
     def trayiconShow(self):
         self.trayicon.show()
         if self.widget.config.trayMessage():
-            self.trayicon.showMessage("Pesterchum", "Pesterchum is still running in the system tray.\n\
-Right click to close it.\n\
-Click this message to never see this again.")
+            self.trayicon.showMessage("ДОСТАНЬКОРЕША", "Достанькореша уже запущен в трее.\n\
+Нажмите правой кнопкой, чтобы закрыть.\n\
+Нажмите на это сообщение, чтобы больше никогда его не видеть.")
 
     @QtCore.pyqtSlot()
     def trayMessageClick(self):
@@ -3284,7 +3284,7 @@ Click this message to never see this again.")
             self.widget.pcUpdate.emit(new_url[0], new_url[1])
         q.task_done()
 
-    def showLoading(self, widget, msg="CONN3CT1NG"):
+    def showLoading(self, widget, msg="СО3Д1Н3Н13"):
         self.widget.show()
         if len(msg) > 60:
             newmsg = []
@@ -3355,16 +3355,16 @@ Click this message to never see this again.")
             self.connectWidgets(self.irc, self.widget)
             self.irc.start()
             if self.attempts == 1:
-                msg = "R3CONN3CT1NG"
+                msg = "П3Р3ПОДКЛЮЧ3Н13"
             elif self.attempts > 1:
-                msg = "R3CONN3CT1NG %d" % (self.attempts)
+                msg = "П3Р3ПОДКЛЮЧ3Н13 %d" % (self.attempts)
             else:
-                msg = "CONN3CT1NG"
+                msg = "СО3Д1Н3Н13"
             self.reconnectok = False
             self.showLoading(self.widget, msg)
         else:
             self.reconnectok = True
-            self.showLoading(self.widget, "F41L3D: %s" % stop)
+            self.showLoading(self.widget, "0Ш1БКА: %s" % stop)
 
     def oppts(self, argv):
         options = {}

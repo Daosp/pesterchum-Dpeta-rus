@@ -1,14 +1,14 @@
 # Hardcoded messages that NickServ sends and what to display to the user instead
 
 messages = {
-    "Your nick isn't registered.":
+    "Ваш корешник нельзя зарегестрировать.":
         "", # display the same
-    "Password accepted - you are now recognized.":
+    "Пароль принят - теперь вы признаны":
         "", # display the same
-    "If you do not change within one minute, I will change your nick.":
-        "You have 1 minute to identify.",
-    "If you do not change within 20 seconds, I will change your nick.":
-        "You have 20 seconds to identify."
+    "Если вы не поменяете в течение 1 минуты, я поменяю ваш ник.":
+        "У вас есть 1 минута, чтобы определить.",
+    "Если вы не поменяете в течение 20 секунд, я поменяю ваш ник.":
+        "У вас есть 20 секунд, чтобы определить."
 }
 
 def translate(msg):

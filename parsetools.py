@@ -343,11 +343,11 @@ def _max_msg_len(mask=None, target=None):
     return limit
 
 def kxsplitMsg(lexed, fmt="pchum", maxlen=None, debug=False):
-    """Split messages so that they don't go over the length limit.
-    Returns a list of the messages, neatly split.
+    """Разделяйте сообщения так, чтобы они не превышали лимит длины.
+    Возвращает аккуратно разделенный список сообщений.
     
-    Keep in mind that there's a little bit of magic involved in this at the
-    moment; some unsafe assumptions are made."""
+    Имейте в виду, что на данный момент в этом есть немного магии,
+    то есть некоторые опасные допущения."""
 
     # NOTE: Keep in mind that lexercon CTag objects convert to "r,g,b" format.
     # This means that they're usually going to be fairly long.
@@ -385,8 +385,8 @@ def kxsplitMsg(lexed, fmt="pchum", maxlen=None, debug=False):
     msglen = 0
 
     def efflenleft():
-        """Get the remaining space we have to work with, accounting for closing
-        tags that will be needed."""
+        """Получите оставшееся пространство, с которым мы должны работать,
+        с учетом закрывающих тегов, которые потребуются."""
         return maxlen - curlen - (len(open_ctags) * 4)
 
     safekeeping = lexed[:]
@@ -674,9 +674,9 @@ def splitMessage(msg, format="ctag"):
     return output
 
 def _is_ooc(msg, strict=True):
-    """Check if a line is OOC. Note that Pesterchum *is* kind enough to strip
-    trailing spaces for us, even in the older versions, but we don't do that in
-    this function. (It's handled by the calling one.)"""
+    """Проверьте, является ли линия OOC. Обратите внимание, что Достанькореш
+    * любезно * убирает за нас конечные пробелы даже в старых версиях,
+    но мы не делаем этого в этой функции. (Этим занимается вызывающий.)"""
     # Define the matching braces.
     braces = (
             ('(', ')'),
@@ -700,9 +700,9 @@ def _is_ooc(msg, strict=True):
     return False
 
 def kxhandleInput(ctx, text=None, flavor=None):
-    """The function that user input that should be sent to the server is routed
-    through. Handles lexing, splitting, and quirk application, as well as
-    sending."""
+    """То что вводит пользователь, которое должно быть отправлено на сервер,
+    обрабатывается через функцию. Лексический анализ,
+    разбиение и приложение к правилам, а также отправку."""
     # TODO: This needs a 'dryrun' option, and ways to specify alternative
     # outputs and such, if it's to handle all of these.
     # Flavor is important for logic, ctx is 'self'.
@@ -710,7 +710,7 @@ def kxhandleInput(ctx, text=None, flavor=None):
     # files for the original sentMessage variants.
 
     if flavor is None:
-        raise ValueError("A flavor is needed to determine suitable logic!")
+        raise ValueError("Нужен вкус, чтобы определить подходящую логику!")
 
     if text is None:
         # Fetch the raw text from the input box.
@@ -769,8 +769,8 @@ def kxhandleInput(ctx, text=None, flavor=None):
             # Tell the user we couldn't do quirk things.
             # TODO: Include the actual error...and the quirk it came from?
             msgbox = QtWidgets.QMessageBox()
-            msgbox.setText("Whoa there! There seems to be a problem.")
-            err_info = "A quirk seems to be having a problem. (Error: {!s})"
+            msgbox.setText("Эй, там! Кажется, есть проблема.")
+            err_info = "Кажется, пробема в правилах. (Error: {!s})"
             err_info = err_info.format(err)
             msgbox.setInformativeText(err_info)
             msgbox.exec_()
@@ -918,29 +918,29 @@ def timeProtocol(cmd):
 
 def timeDifference(td):
     if td == timedelta(microseconds=1): # mysteryTime replacement :(
-        return "??:?? FROM ????"
+        return "??:?? С ????"
     if td < timedelta(0):
-        when = "AGO"
+        when = "НАЗАД"
     else:
-        when = "FROM NOW"
+        when = "СПУСТЯ В БУДУЩЕМ"
     atd = abs(td)
     minutes = (atd.days*86400 + atd.seconds) // 60
     hours = minutes // 60
     leftoverminutes = minutes % 60
     if atd == timedelta(0):
-        timetext = "RIGHT NOW"
+        timetext = "ПРЯМО СЕЙЧАС"
     elif atd < timedelta(0,3600):
         if minutes == 1:
-            timetext = "%d MINUTE %s" % (minutes, when)
+            timetext = "%d МИНУТА %s" % (minutes, when)
         else:
-            timetext = "%d MINUTES %s" % (minutes, when)
+            timetext = "%d МИНУТЫ %s" % (minutes, when)
     elif atd < timedelta(0,3600*100):
         if hours == 1 and leftoverminutes == 0:
-            timetext = "%d:%02d HOUR %s" % (hours, leftoverminutes, when)
+            timetext = "%d:%02d ЧАС %s" % (hours, leftoverminutes, when)
         else:
-            timetext = "%d:%02d HOURS %s" % (hours, leftoverminutes, when)
+            timetext = "%d:%02d ЧАСЫ %s" % (hours, leftoverminutes, when)
     else:
-        timetext = "%d HOURS %s" % (hours, when)
+        timetext = "%d ЧАСЫ %s" % (hours, when)
     return timetext
 
 def nonerep(text):
@@ -1158,4 +1158,4 @@ def themeChecker(theme):
         try:
             theme[n]
         except KeyError:
-            raise ThemeException("Missing theme requirement: %s" % (n))
+            raise ThemeException("Отсутствие требовании к теме: %s" % (n))

@@ -24,7 +24,7 @@ class DefaultToast(object):
         if t.title == self.title and t.msg == self.msg and t.icon == self.icon:
             self.machine.toasts.pop(0)
             self.machine.displaying = False
-            print("Done")
+            print("Готово")
 
 class ToastMachine(object):
     class __Toast__(object):

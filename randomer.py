@@ -60,8 +60,8 @@ class RandomHandler(QtCore.QObject):
             if l[1] == "x":
                 from PyQt5 import QtGui, QtWidgets
                 msgbox = QtWidgets.QMessageBox()
-                msgbox.setText("Unable to fetch you a random encounter!")
-                msgbox.setInformativeText("Try again later :(")
+                msgbox.setText("Невозможно вам дать случайную встречу!")
+                msgbox.setInformativeText("Попробуйте позже :(")
                 msgbox.exec_()
                 return
             name = str(l[1])

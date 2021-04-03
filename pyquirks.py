@@ -27,7 +27,7 @@ class PythonQuirks(ScriptQuirks):
                         raise Exception
                 except:
                     #print("Quirk malformed: %s" % (obj.command))
-                    logging.error("Quirk malformed: %s" % (obj.command))
+                    logging.error("Правило искажено: %s" % (obj.command))
 
                     # Since this is executed before QApplication is constructed,
                     # This prevented pesterchum from starting entirely when a quirk was malformed :/
@@ -35,8 +35,8 @@ class PythonQuirks(ScriptQuirks):
                     
                     if QtWidgets.QApplication.instance() != None:
                         msgbox = QtWidgets.QMessageBox()
-                        msgbox.setWindowTitle("Error!")
-                        msgbox.setText("Quirk malformed: %s" % (obj.command))
+                        msgbox.setWindowTitle("Ошибка!")
+                        msgbox.setText("Правило искажено: %s" % (obj.command))
                         msgbox.exec_()
                 else:
                     self.quirks[obj.command] = obj
