@@ -6,11 +6,22 @@
 Проверьте файл [CHANGELOG.md], чтобы узнать что изменилось!
 Проверьте файл [TODO.md], чтобы увидеть текущие цели основного репозитория >:3c
 
-Старые файлы README и гайды смотрите в папке [docs]. (Dpeta удалил macBuilds от Lexicality, так как он больше не применим)
-
 [CHANGELOG.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/CHANGELOG.md
-[docs]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/
 [TODO.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/TODO.md
+
+## GUIDES
+
+Старые файлы README и руководства смотрите в папке [docs].
+Dpeta настоятельно рекомендует вам взглянуть на следующие файлы, если вы новичок в Достанькореше:
+- [README-pesterchum.mkdn]
+- [trollquirks.mkdn]
+
+Руководства по особенностям и темам Python также находятся в папке [docs]. Если вы хотите настроить градиентное правило (gradient quirk), вам следует взглянуть на [этот руководство][gradient-guide].
+
+[gradient-guide]: https://paste.0xfc.de/?e60df5a155e93583#AmcgN9cRnCcBycmVMvw6KJ1YLKPXGbaSzZLbgAhoNCQD
+[trollquirks.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/docs/trollquirks.mkdn
+[README-pesterchum.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/docs/README-pesterchum.mkdn
+[docs]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/
 
 ## УСТАНОВКА
 Загрузите соответствующий выпуск для своей платформы с [releases][releases]. Если вы работаете в Windows, вы можете использовать установщик, для ручной установки загрузите zip-файл и извлеките его в любой каталог, а затем запустите исполняемый файл : )
