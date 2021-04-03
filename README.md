@@ -9,7 +9,7 @@
 [CHANGELOG.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/CHANGELOG.md
 [TODO.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/TODO.md
 
-## Руководства
+## РУКОВОДСТВА
 
 Старые файлы README и руководства смотрите в папке [docs]
 Dpeta крайне рекомендует прочитать эти руководства, если вы новичок в Достанькореше:
