@@ -52,7 +52,7 @@ bdist_mac_options = {
     'bundle_name': "Pesterchum"
 }
 
-description = "Instant messaging client copying the look and feel of clients from Andrew Hussie's webcomic Homestuck."
+description = "Клиент мгновенного обмена сообщениями, копирующий внешний вид клиентов из веб-комикса Эндрю Хасси Homestuck."
 icon = "pesterchum.ico"
 
 # See https://stackoverflow.com/questions/15734703/use-cx-freeze-to-create-an-msi-that-adds-a-shortcut-to-the-desktop
@@ -96,9 +96,9 @@ bdist_msi_options = {'data': msi_data,
                      'install_icon': "pesterchum.ico"}
 
 setup(
-            name = "Pesterchum",
+            name = "Достанькореша",
             version = buildVersion,
-            url = "https://github.com/Dpeta/pesterchum-alt-servers",
+            url = "https://github.com/Daosp/pesterchum-Dpeta-altservers-rus",
             description = description,#"P3ST3RCHUM",
             options = {"build_exe": build_exe_options,
                        "bdist_msi": bdist_msi_options,
