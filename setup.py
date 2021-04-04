@@ -59,7 +59,7 @@ icon = "pesterchum.ico"
 shortcut_table = [
     ("DesktopShortcut",        # Shortcut
      "DesktopFolder",          # Directory_
-     "Pesterchum",             # Name
+     "Достанькореша",             # Name
      "TARGETDIR",              # Component_
      "[TARGETDIR]pesterchum.exe",# Target
      None,                     # Arguments
@@ -72,7 +72,7 @@ shortcut_table = [
      ),
     ("StartMenuShortcut",        # Shortcut
      "StartMenuFolder",          # Directory_
-     "Pesterchum",             # Name
+     "Достанькореша",             # Name
      "TARGETDIR",              # Component_
      "[TARGETDIR]pesterchum.exe",# Target
      None,                     # Arguments
@@ -96,7 +96,7 @@ bdist_msi_options = {'data': msi_data,
                      'install_icon': "pesterchum.ico"}
 
 setup(
-            name = "Достанькореша",
+            name = "Pesterchum",
             version = buildVersion,
             url = "https://github.com/Daosp/pesterchum-Dpeta-altservers-rus",
             description = description,#"P3ST3RCHUM",
