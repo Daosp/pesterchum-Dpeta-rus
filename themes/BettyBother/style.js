@@ -4,7 +4,7 @@
   "size": [665, 506],
   "icon": "$path/bettybother.png",
   "newmsgicon": "$path/tbettybother2.png",
-  "windowtitle": "BettyBother",
+  "windowtitle": "БэттиБеспокоить",
   "close": { "image": "$path/x.png",
              "loc": [214, 100]},
   "minimize": { "image": "$path/m.png",
@@ -430,7 +430,7 @@
                  "uparrow": "height:17px;border:0px solid #c48a00;",
                  "uarrowstyle": "image:url($path/uparrow.png);"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "margin-bottom: 7px; margin-top: 10px; background:  rgba(255, 255, 0, 0%); color: white; border:0px; font-size: 16px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,

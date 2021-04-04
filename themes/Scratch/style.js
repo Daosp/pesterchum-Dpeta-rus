@@ -4,7 +4,7 @@
   "size": [650, 650],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Scratch",
+  "windowtitle": "÷арапина",
   "close": { "image": "$path/x.png",
              "loc": [466, 54]},
   "minimize": { "image": "$path/m.png",
@@ -210,14 +210,14 @@
       "tabstyle": 0
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!"
+      "beganpester": "начал доставать",
+      "ceasepester": "прекратил доставать",
+      "blocked": "заблокировал",
+      "unblocked": "разблокировал",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответила на меморандум",
+      "closememo": "перестал отвечать на меморандум",
+      "kickedmemo": "¬ы забанены на этой доске!"
   },
   "systemMsgColor": "#646464"
  },
@@ -231,7 +231,7 @@
       "newmsgcolor": "red",
       "tabstyle": 0
   },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "ƒоска ќбъ€влений: $channel",
              "style": "background-image:url($path/chumlabelbg.png);background-color:rgb(180,0,0); background-repeat: no-repeat; color: white; padding: 2px; border:1px solid #c2c2c2; margin-bottom: 4px;",
              "align": { "h": "left", "v": "center" },
              "minheight": 18,

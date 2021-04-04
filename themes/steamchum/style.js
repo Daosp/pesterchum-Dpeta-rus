@@ -4,7 +4,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "STEAMCHUM",
+  "windowtitle": "ПАРКОРЕШ",
   "menu" : { "style": "font-family: 'arial'; font-size: 12px; color: #bebdb7; background-color: #3d3b3a;border:1px solid #4d4b48",
              "menuitem": "margin-right:10px;",
              "selected": "background-color: #314159",
@@ -281,14 +281,14 @@
        
   },
   "text": {
-      "beganpester": "began messaging",
-      "ceasepester": "stopped messaging",
-      "blocked": "blocked",
-      "unblocked": "mercifully forgave",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!"
+      "beganpester": "начал беседу с",
+      "ceasepester": "прекратил общаться с",
+      "blocked": "заблокировал",
+      "unblocked": "милосердно простил",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответила на меморандум",
+      "closememo": "перестал отвечать на меморандум",
+      "kickedmemo": "Вы забанены на этой доске!"
   },
   "systemMsgColor": "#d1cfcd"
  },
@@ -314,7 +314,7 @@
                  "uparrow": "background: #1b1a19;height:17px;",
                  "uarrowstyle": "image:url($path/uparrow.png);"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "margin-bottom: 21px;background: #383635; color: #7db5d9; border:0px; font-size: 14px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,

@@ -4,7 +4,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Sweet Bro",
+  "windowtitle": "Клёвый Бро",
   "menu" : { "style": "font-family: 'Comic Sans'; font: bold; font-size: 14px; background-color: #06E8FF;border:2px solid #F84107" },
   "menubar": { "style": "font-family: 'Comic Sans'; font:bold; font-size: 14px; color:#000000; allign:center;" },
   "close": { "image": "$path/x.png",

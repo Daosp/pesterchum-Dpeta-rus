@@ -4,7 +4,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "TROLLIAN",
+  "windowtitle": "ТРОЛЛИАН",
   "menu" : { "style": "font-family: 'Arial'; font: bold; font-size: 14px; background-color: #e5000f;border:2px solid #c20f00", "loc": [3, 6] },
   "menubar": { "style": "font-family: 'Arial'; font:bold; font-size: 14px;" },
   "close": { "image": "$path/x.png",
@@ -161,14 +161,14 @@
          "style": ""
      },
   "text": {
-      "beganpester": "began trolling",
-      "ceasepester": "gave up trolling",
-      "blocked": "blocked",
-      "unblocked": "mercifully forgave",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!"
+      "beganpester": "начал троллить",
+      "ceasepester": "прекратил троллить",
+      "blocked": "заблокировал",
+      "unblocked": "милосердно простил",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответила на меморандум",
+      "closememo": "перестал отвечать на меморандум",
+      "kickedmemo": "Вы забанены на этой доске!"
   },
      "tabs": {
          "style": "",
@@ -180,7 +180,8 @@
  "memos":
  { "size": [600,425],
    "style": "background-color: #e5000f;border:2px solid #780000; font-family: 'Arial';",
-   "label": { "style": "margin-bottom: 21px;background: #ffa4a4; color: white; border:0px; font-size: 14px;"
+   "label": {"text": "Доска Объявлений: $channel",
+             "style": "margin-bottom: 21px;background: #ffa4a4; color: white; border:0px; font-size: 14px;"
             },
    "textarea": {
        "style": "background: white;  font-size: 14px;font:bold; border:2px solid #ffa4a4;text-align:center; margin-right:10px; margin-left:10px;font-family: 'Arial'"

@@ -4,7 +4,7 @@
   "size": [333, 290],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Tanglechum",
+  "windowtitle": "Клубоккореш",
   "close": { "image": "$path/x.png",
              "loc": [315, 26]},
   "minimize": { "image": "$path/m.png",
@@ -263,15 +263,15 @@
       "tabstyle": 0
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-      "blockedmsg": "did not receive message from",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!",
+      "beganpester": "начал доставать",
+      "ceasepester": "прекратил доставать",
+      "blocked": "заблокировал",
+      "unblocked": "разблокировал",
+      "blockedmsg": "не может получать письма",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответила на меморандум",
+      "closememo": "перестал отвечать на меморандум",
+      "kickedmemo": "Вы забанены на этой доске!",
       "idle": "is now an idle chum!"
   },
   "systemMsgColor": "#646464"
@@ -293,7 +293,7 @@
                  "uparrow": "height:17px;border:0px solid #00B2C6;",
                  "uarrowstyle": "image:url($path/uparrow.png);"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "margin-bottom: 7px; margin-top: 10px; background:  rgba(255, 255, 202, 0%); color: #81CD97; border:0px; font-size: 16px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,

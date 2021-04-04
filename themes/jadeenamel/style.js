@@ -4,7 +4,7 @@
   "size": [801, 555],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Harleychum",
+  "windowtitle": "Харликореш",
   "close": { "image": "$path/x.gif",
              "loc": [315, 26]},
   "minimize": { "image": "$path/m.gif",
@@ -274,15 +274,15 @@
       "style": "background: #4DD869; font-family: 'Century Gothic'"
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-      "blockedmsg": "did not receive message from",
-      "openmemo": "looked at",
-      "joinmemo": "answered the memo",
-      "closememo": "went away from the memo",
-      "kickedmemo": "You have been banned from this memo!!",
+      "beganpester": "начал доставать",
+      "ceasepester": "прекратил доставать",
+      "blocked": "заблокировал",
+      "unblocked": "разблокировал",
+      "blockedmsg": "не может получать письма",
+      "openmemo": "смотрит",
+      "joinmemo": "ответить на меморандум",
+      "joinmemo": "ушел отсюда",
+      "kickedmemo": "Вас забанили здесь!!",
       "idle": "is now an idle chum!!"
   },
   "systemMsgColor": "#393939"
@@ -303,7 +303,7 @@
                  "uparrow": "height:17px;border:0px;",
                  "uarrowstyle": "image:url();"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "margin-bottom: 7px; margin-top: 10px; background-color: rgba (0,0,0,0) ; background-image:url($path/nothing.png); color: #C6FFA9; border:0px; font-size: 16px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,

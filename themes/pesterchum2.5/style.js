@@ -5,7 +5,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "PESTERCHUM",
+  "windowtitle": "ДОСТАНЬКОРЕША",
   "menu" : { "style": "font-family: 'Courier'; font: bold; font-size: 14px; color: #000000; background-color: #fdb302;border:2px solid #ffff00",
                          "menuitem": "font-size:14px;" },
   "menubar": { "style": "font-family: 'Courier'; font:bold; font-size: 14px; color: #000000;" },
@@ -34,21 +34,21 @@
   "addchum":  { "style": "background: rgba(255, 255, 0, 100%); border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
                 "loc": [15,380],
                 "size": [90, 30],
-                "text": "ADD CHUM"
+                "text": "ДОБАВИТЬ КОРЕША"
               },
   "pester": { "style": "background:  rgba(255, 255, 0, 100%); border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
               "loc": [193,380],
               "size": [89, 30],
-              "text": "PESTER!"
+              "text": "ДОСТАТЬ!"
             },
   "block": { "style": "background: #F00000; border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
              "loc": [104,380],
              "size": [90, 30],
-             "text": "BLOCK"
+             "text": "БЛОКИРОВАТЬ"
            },
   "moodlabel": { "style": "font:bold;font-family:'Courier';color:black;",
                                  "loc": [12, 466],
-                                 "text": "MOOD:"
+                                 "text": "НАСТРОЕНИЕ:"
                            },
   "moods": [
       { "style": "text-align:left; background:#ffff00;border:2px solid #c48a00;color: black; font-family:'Courier'; font:bold; padding-left:3px;",

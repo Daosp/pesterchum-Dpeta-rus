@@ -5,7 +5,7 @@
   "size": [650, 450],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "TROLLIAN",
+  "windowtitle": "ТРОЛЛИАН",
   "close": { "image": "$path/x.png",
              "loc": [639, 4]},
   "minimize": { "image": "$path/m.png",

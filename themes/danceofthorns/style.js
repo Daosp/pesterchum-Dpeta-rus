@@ -4,7 +4,7 @@
   "size": [513,749],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Terrorchum",
+  "windowtitle": "Терроркореш",
   "menu" : { "style": "font-family: 'Verdana'; font-size: 14px; font: bold; color: black; background-color: #A78DB3; border:2px solid #B969D7;",
              "selected": "background-color: #AE6BB9",
              "menuitem": "margin-right:14px;",

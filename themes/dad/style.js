@@ -272,7 +272,7 @@
         "selected": "text-align:center; background:#C6C6C6; border:2px solid #222222; color: black; font-family:'Courier'; font:bold; padding-left:3px;",
         "loc": [135, 545],
         "size": [150, 30],
-        "text": "UNAVAILABLE",
+        "text": "НЕДОСТУПНЫЙ",
         "icon": "$path/offline.png",
         "mood": 2
       }

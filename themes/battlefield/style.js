@@ -4,7 +4,7 @@
   "size": [810, 555],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Battlefield",
+  "windowtitle": "Поле боя",
   "close": { "image": "$path/x.png",
              "loc": [430, 21]},
   "minimize": { "image": "$path/m.png",
@@ -286,7 +286,7 @@
                  "uparrow": "height:17px;border:0px;",
                  "uarrowstyle": "image:url();"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "margin-bottom: 7px; margin-top: 10px; background-color: #78D2DF ; background-image:url($path/nothing.png); color: #000000; border:0px; font-size: 16px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,

@@ -1,25 +1,29 @@
 HOW TO MAKE YOUR OWN THEMES:
 
-Pesterchum 3.14 themes are very flexible and allow you to create
-almost any kind of main window you can imagine (notable exception
-being animation). This document should help you make your own themes
-or make adjustments to existing themes!
+Инструменты тем Достанькореша очень гибкие и позволяют создавать
+практически любое окно, которое вы можете себе представить (заметное
+исключение - анимации). Этот документ должен помочь вам создавать
+свои собственные темы или внести изменения в существующие темы!
 
-Try following along with existing themes -- it'll make this document
-much less confusing!
+Попробуйте следовать существующим темам - это сделает этот
+документ менее запутанным!
 
-A note on editing existing themes: Don't edit current themes! If you
-make changes in the existing themes directory, they *will* be
-overwritten when you install any updates. 
+Примечание по редактированию существующих тем:
+Не редактируйте текущие темы! Если вы внесёте изменения
+в существующие темы, они * будут * перезаписывается
+при установке обновлений.
 
-CREATING A THEME
+PS от Daosp: Если у вас будет хорошо переведённая тема,
+то я могу добавить его в свою сборку.
+
+СОЗДАНИЕ ТЕМЫ
 ----------------
 Every theme is just a separate directory in the "themes"
 directory. That directory contains all the images used in that theme
 as well as a "style.js" file which is the configuration file for the
 theme.
 
-FORMAT
+ФОРМАТИРОВАНИЕ
 ------
 The theme file is unlike most configuration files. It uses a format
 called JSON, which at its core looks like this:
@@ -53,7 +57,7 @@ or even
             "size": 50" } 
 }
 
-SETTINGS
+НАСТРОЙКИ
 --------
 
 INHERITS: You can make writing themes easier on yourself by using the
@@ -173,7 +177,7 @@ to the right and 60 pixels down.
 
 OK, onto the main event:
 
-MAIN
+MAIN СЕКЦИЯ
 ----
 
 "main": { .... }
@@ -206,24 +210,24 @@ when you have a new message.
 Example:
 "close": {"image": "$path/x.png", "loc": [210,2]}
 
-"minimize": Category. Same as "close" but for the minimize button.
+"minimize": Категория. Same as "close" but for the minimize button.
 
-"menubar": Category. Contains one element:
+"menubar": Категория. Contains one element:
   "style": Style of the main menubar.
 
-"menu": Category.
+"menu": Категория.
   "style": Style of each individual menu.
   "menuitem": Affects each menu item on the main menu. Usually used
   for spacing.
   "selected": Style information for when you hover over a menu option.
   "loc": Location of the main menubar.
 
-"sounds": Category.
+"sounds": Категория.
   "alertsound": Path to the alert sound. Should be a wav.
   "ceasesound": Path to the sound when people cease pestering.
 
-"menus": Category. This is where you change the text of the menus.
-  "client": Category. The client menu.
+"menus": Категория. This is where you change the text of the menus.
+  "client": Категория. The client menu.
     "_name": The text for the client menu header.
     (These are self explanatory:)
     "options"
@@ -233,17 +237,17 @@ Example:
     "reconnect"
     "idle"
     "exit"
-  "profile": Category. Profile menu.
+  "profile": Категория. Profile menu.
     "_name": Text of the profile menu header.
     "switch"
     "color"
     "theme"
     "block"
     "quirks"
-  "help": Category. Help menu.
+  "help": Категория. Help menu.
     "_name": Text of the help menu header
     "about"
-  "rclickchumlist": Category. Text for right click menus.
+  "rclickchumlist": Категория. Text for right click menus.
     "pester"
     "removechum"
     "blockchum"
@@ -253,14 +257,14 @@ Example:
     "opuser"
     "quirksoff"
 
-"chums": Category. Creates your chumroll, where all the users are. All
+"chums": Категория. Creates your chumroll, where all the users are. All
 of them.
 
   "style": Style for the chumroll
   "loc": Location of the chumroll
   "size": Size of the chumroll
   "userlistcolor": Default text color of the users
-  "moods": Category. Contains a list of mood icons and colors; when a
+  "moods": Категория. Contains a list of mood icons and colors; when a
   user has that mood, their handle will appear with that icon and text
   color. Basically follows the form "mood": { "icon": "$path/file.png", "color": "colorname" }
   Moods are:
@@ -272,36 +276,36 @@ of them.
     (Note: blocked is not technically a "mood", but the icon is used
     when you block someone.)
 
-  "trollslum": Category. The settings for the trollslum.
+  "trollslum": Категория. The settings for the trollslum.
     "style": Style for the trollslum.
     "size": Size of the window.
-    "label": Category. Sets the label of the trollslum.
+    "label": Категория. Sets the label of the trollslum.
       "style": Style of the label.
       "text": The text displayed.
-    "chumroll": Category.
+    "chumroll": Категория.
       "style": Sets the style for the list of users.
   
-  "mychumhandle": Category. Settings for the text label, the user's
+  "mychumhandle": Категория. Settings for the text label, the user's
   current handle, and color swatch.
-    "label": Category.
+    "label": Категория.
       "text": Text of label indicating chumhandle.
       "loc": Location of label.
       "style": Style of label.
-    "handle": Category. User's current handle.
+    "handle": Категория. User's current handle.
       "style": Style of handle.
       "loc": Location of handle.
       "size": Size of handle.
-    "colorswatch": Category. Color swatch.
+    "colorswatch": Категория. Color swatch.
       "loc": Location of swatch.
       "size": Size of swatch.
       "text": Text displayed inside swatch.
     "currentmood": Location of icon of user's current mood.
 
-  "defaultwindow": Category.
+  "defaultwindow": Категория.
     "style": Style of the default window. (Quirks, profile changer,
     etc)
 
-  "addchum": Category. Add chum button.
+  "addchum": Категория. Add chum button.
     "style": Style of button.
     "pressed": Style of button when pressed down.
     "loc": Location of button.
@@ -312,7 +316,7 @@ of them.
   "block": Button to block selected user.
 
   "defaultmood": Default mood of this theme.
-  "moodlabel": Category. Text label indicating mood buttons.
+  "moodlabel": Категория. Text label indicating mood buttons.
     "style": Style of label.
     "loc": Location of label.
     "text": Text of label.
@@ -334,40 +338,41 @@ of them.
     "mood": Mood # of the button. See mood numbers -> mood names index
     at the end of this document.
 
-CONVO SECTION
+СЕКЦИЯ CONVO
 -------------
 
 {"main": { ... },
  "convo": { ... }
 
-This controls the conversation windows.
+Это контролирует окно бесед.
 
-  "style": Style of the conversation window. Only affects the main
+  "style": Стиль окна бесед. Влияет только на основные
   window; does not cascade to the other parts.
-  "scrollbar": Category. This item is OPTIONAL. It can be a little
-  complicated: if you add this item, you MUST specify ALL of the
-  settings yourself. If you don't add this item, it will use default
-  system scrollbars. If you are inheriting a theme that does have
-  scrollbar customization and you want to remove it, enter "scrollbar: null".
+  "scrollbar": Категория. Это НЕОБЯЗАТЕЛЬНО. Это может быть
+   немного сложно: если вы добавляете этот элемент, вы ДОЛЖНЫ
+   указать ВСЕ настройки самостоятельно. Если вы не добавите
+   этот элемент, он будет использовать системные полосы прокрутки
+   по умолчанию. Если вы наследуете тему с настройкой полосы прокрутки
+   и хотите ее удалить, введите «scrollbar: null».
 
-    Anyway, onto the scrollbar options:
-    "style": General style of whole scrollbar.
-    "handle": Style for the handle of the scrollbar.
-    "downarrow": Style for the down arrow.
-    "darrowstyle": Generally this is where you set the image of the
-    down arrow with "image:url($path/downarrow.png)".
-    "uparrow": Same as down arrow.
-    "uarrowstyle": Same as darrowstyle but for up arrow.
+    Во всяком случае, на параметры scrollbar:
+     "style": General style of whole scrollbar.
+     "handle": Style for the handle of the scrollbar.
+     "downarrow": Стиль для стрелки вниз.
+     "darrowstyle": Обычно здесь вы устанавливаете изображение
+	 стрелки вниз с помощью "image:url($path/downarrow.png)".
+     "uparrow": То же, что и downarrow.
+     "uarrowstyle": То же, что и darrowstyle, но для стрелки вверх.
 
-  "margins": Category. Sets the margins around the contents of the
+  "margins": Категория. Sets the margins around the contents of the
   conversation window.
     "top": Top margin
     "bottom", "left", "right"
 
   "size": Initial size of the conversation window.
-  "chumlabel": Category. The part that says who youre chatting with.
+  "chumlabel": Категория. The part that says who youre chatting with.
     "style": Style for the chumlabel.
-    "align": Category.
+    "align": Категория.
       "h": Horizontal alignment
       "v": Vertical alignment
     "minheight": The minimum height the chum label can be.
@@ -375,16 +380,16 @@ This controls the conversation windows.
     "text": The text of the label. Use $handle to represent the name
     of the person you're talking to. Example: ":: $handle ::"
 
-  "textarea": Category. The window with the pesterlog in it.
+  "textarea": Категория. The window with the pesterlog in it.
     "style": Style of the window.
 
-  "input": Category. The place where you type.
+  "input": Категория. The place where you type.
     "style": Style of the input area.
 
-  "tabwindow": Category. The window that holds the tabs.
+  "tabwindow": Категория. The window that holds the tabs.
     "style": Style of the window.
 
-  "tabs": Category. Style of the tabs in tabbed conversation.
+  "tabs": Категория. Style of the tabs in tabbed conversation.
     "style": Style of the tabs.
     "selectedstyle": Style of the currently selected tabs.
     "newmsgcolor": The color the text should turn when you get a new
@@ -392,62 +397,62 @@ This controls the conversation windows.
     "tabstyle": Usually 0. See the Qt Stylesheets for more
     information.
 
-  "text": Category. Flavor text for system messages. In the following
+  "text": Категория. Flavor text for system messages. In the following
     examples, the text in all caps will be replaced with these values:
     "beganpester": "<user> BEGAN PESTERING <you> at <time>"
     "ceasepester": "<user> CEASED PESTERING <you> at <time>"
     "blocked": "<user> BLOCKED <user>"
     "unblocked": "<user> UNBLOCKED <user>"
-    "blockedmsg": "<user> DID NOT RECEIVE MESSAGE FROM <you>"
+    //УСТАРЕЛО - "blockedmsg": "<user> DID NOT RECEIVE MESSAGE FROM <you>"
     "openmemo": "<user> OPENED MEMO ON BOARD <memo>"
     "joinmemo": "<user> RESPONDED TO MEMO <memo>"
     "closememo": "<user> CEASED RESPONDING TO MEMO"
     "kickedmemo": "YOU HAVE BEEN BANNED FROM THIS MEMO!"
-    "idle": "<user> IS NOW AN IDLE CHUM!"
+    //УСТАРЕЛО - "idle": "<user> IS NOW AN IDLE CHUM!"
 
   "systemMsgColor": The color of system messages.
 
-MEMOS SECTION
+СЕКЦИЯ MEMO
 ------------
 
 {"main": { .... }
  "convo": { .... }
  "memos": { .... }
 
-This controls the memos. It is almost identical to conversations,
-with a few additions.
+Это контролирует меморандумы. Это почти идентично беседам,
+с небольшими дополнениями.
 
-  "style": Same as convos.
-  "size": Same as convos.
-  "tabs": Same as convos.
-  "scrollbar": Same as convos.
-  "label": Same as convos.
-  "input": Same as convos.
-  "textarea": Same as convos.
-  "margins": Same as convos.
-  "userlist": Category. The list of users currently in the memo.
+  "style": То же, что и Convos.
+  "size": То же, что и Convos.
+  "tabs": То же, что и Convos.
+  "scrollbar": То же, что и Convos.
+  "label": То же, что и Convos.
+  "input": То же, что и Convos.
+  "textarea": То же, что и Convos.
+  "margins": То же, что и Convos.
+  "userlist": Категория. The list of users currently in the memo.
     "width": Width.
     "style": Style of the userlist.
-  "time": Category. The time slider area.
-    "text": Category.
+  "time": Категория. The time slider area.
+    "text": Категория.
       "width": Width of time text.
       "style": Style of time text.
-    "slider": Category. Time slider.
+    "slider": Категория. Time slider.
       "style": Style of slider.
       "groove": Style of the groove of the slider.
       "handle": Style of the handle of the slider.
-    "buttons": Category. Controls the time buttons.
+    "buttons": Категория. Controls the time buttons.
       "style": Style of the buttons.
-    "arrows": Category. Controls the time arrows.
+    "arrows": Категория. Controls the time arrows.
       "left": Path to image of left arrow.
       "right" Path to image of right arrow.
       "style": Style of arrow boxes.
 
-  "systemMsgColor": Color of system messges.
-  "op": Category. 
-    "icon": Icon that is shown next to the ops of the memo in the userlist.
+  "systemMsgColor": Цвет системных сообщений.
+  "op": Категория. 
+    "icon": Значок, который отображается рядом с OP меморандума в списке пользователей.
 
-Number -> Mood List
+Число -> Насроение
 -------------------
 0: "chummy"
 1: "rancorous"

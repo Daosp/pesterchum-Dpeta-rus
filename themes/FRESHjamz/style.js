@@ -4,7 +4,7 @@
   "size": [613, 401],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "FRESHjamz",
+  "windowtitle": "СВЕЖИЕхиты",
   "close": { "image": "$path/x.png",
          "size": [13, 13],
              "loc": [101, 362]},
@@ -217,14 +217,14 @@
       "tabstyle": 0
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!"
+      "beganpester": "начал доставать",
+      "ceasepester": "прекратил доставать",
+      "blocked": "заблокировал",
+      "unblocked": "разблокировал",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответила на меморандум",
+      "closememo": "перестал отвечать на меморандум",
+      "kickedmemo": "Вы забанены на этой доске!"
   },
   "systemMsgColor": "#646464"
  },
@@ -238,7 +238,7 @@
       "newmsgcolor": "red",
       "tabstyle": 0
   },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "background-image:url($path/chumlabelbg.png);background-color:#393939; background-repeat: no-repeat; color: #ff168f; padding: 2px; border:1px solid #c2c2c2; margin-bottom: 4px;",
              "align": { "h": "left", "v": "center" },
              "minheight": 18,

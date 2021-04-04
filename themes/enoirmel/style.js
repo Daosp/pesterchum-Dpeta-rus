@@ -4,7 +4,7 @@
   "size": [810, 555],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Slayerchum",
+  "windowtitle": "”бицокореш",
   "close": { "image": "$path/x.png",
              "loc": [430, 36]},
   "minimize": { "image": "$path/m.png",
@@ -259,15 +259,15 @@
       "style": "background: black; font-family: 'Courier'"
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-      "blockedmsg": "did not receive message from",
-      "openmemo": "looked at",
-      "joinmemo": "answered the memo",
-      "closememo": "went away from the memo",
-      "kickedmemo": "You have been banned from this memo",
+      "beganpester": "начал доставать",
+      "ceasepester": "прекратил доставать",
+      "blocked": "заблокировал",
+      "unblocked": "разблокировал",
+      "blockedmsg": "не может получать письма",
+      "openmemo": "смотрит",
+      "joinmemo": "ответить на меморандум",
+      "joinmemo": "ушел отсюда",
+      "kickedmemo": "¬ы забанены тут!",
       "idle": "is now an idle chum"
   },
   "systemMsgColor": "#393939"
@@ -289,7 +289,7 @@
                  "uparrow": "height:17px;border:0px;",
                  "uarrowstyle": "image:url();"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "ƒоска ќбъ€влений: $channel",
              "style": "margin-bottom: 7px; margin-top: 10px; background-color: #C70000 ; background-image:url($path/nothing.png); color: #000000; border:0px; font-size: 16px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,
