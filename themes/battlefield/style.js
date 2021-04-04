@@ -30,8 +30,12 @@
                         "theme": "Флаг",
                         "block": "Мишени",
                         "quirks": "Ввод"},
-            "help": { "_name": "Кавалерия",
-                      "О программе": "Создатели" },
+            "help": { "_name": "Кавалерия",,
+                      "about": "Создатели",
+                      "help": "Подкрепелние",
+                      "calsprite": "келСпрайт",
+                      "chanserv": "Ревизия каналов",
+                      "nickserv": "Ревизия ников"},
             "rclickchumlist": {"pester": "Переговоры",
                                "removechum": "Убрать",
                                "blockchum": "Уничтожить",
@@ -47,7 +51,7 @@
   "chums": { "style": "font-size: 16px; background-image:url($path/chumbg.png); background-color: #C2C4EB; background-repeat: no-repeat; font-family: 'Arial'; border: 0px; selection-background-color: #222222; color: black;",
              "loc": [440, 211],
              "size": [289, 275],
-              "text": "",
+          "text": "",
              "userlistcolor": "black",
              "loc": [440, 211],
              "size": [289, 275],
@@ -59,7 +63,7 @@
 
                  "offline": { "icon": "$path/offline.gif", "color": "#4a4a4a"},
 
-			     
+                 
                  "pleasant": { "icon": "$path/pleasant.gif", "color": "white" },
 
                  "distraught": { "icon": "$path/distraught.gif", "color": "white" },
@@ -87,7 +91,7 @@
                  "devious": { "icon": "$path/devious.gif", "color": "#88319A" },
 
                  "sleek": { "icon": "$path/sleek.gif", "color": "#88319A" },
-			     
+                 
                  "detestful": { "icon": "$path/detestful.gif", "color": "#88319A" },
 
                  "mirthful": { "icon": "$path/mirthful.gif", "color": "#88319A" },
@@ -109,7 +113,7 @@
   "trollslum": { 
       "style": "background: #7AB2D4; border:2px solid #50C5FF; font-family: 'Courier'",
       "size": [195, 200],
-      "label": { "text": "ENEMIES OF THE STATE",
+      "label": { "text": "ВРАГИ ГОСУДАРСТВА",
                  "style": "color: rgba(0, 0, 0, 100%) ;font:bold; font-family: 'Courier';border:0px;" },
       "chumroll": {"style": "border:2px solid #50C5FF; background-color: black;color: #DBF4FF;font: bold;font-family: 'Courier';selection-background-color:#393939; " }
   },
@@ -121,7 +125,7 @@
                                 "size": [0, 0] },
                     "colorswatch": { "loc": [0,0],
                                      "size": [0,0],
-                                     "text": "" },
+                                 "text": "" },
                     "currentMood": [1500, 1500]
                   },
   "defaultwindow": { "style": "background: #B9C9FF; font-family:'Courier';font:bold;selection-background-color:#919191; " 
@@ -129,97 +133,97 @@
   "addchum":  { "style": "background: rgba(130, 230, 80, 0%); border:0px; color: rgba(0, 0, 0, 0%);",
               "loc": [443,144],
               "size": [284, 60],
-                "text": ""
+            "text": ""
               },
   "pester": { "style": "background:  rgba(130, 230, 80, 0%); border:0px; font: bold; color:  rgba(130, 230, 80, 0%); font-family:'Courier';",
               "pressed" : "background-image:url($path/pesterhold.png);",
                 "loc": [0,0],
                 "size": [0, 0],
-              "text": ""
+          "text": ""
             },
   "block": { "style": "background:  rgba(130, 230, 80, 0%); border:2px solid #88319A; font: bold; color:  rgba(130, 230, 80, 0%); font-family:'Courier';",
              "loc": [0,0],
              "size": [0, 0],
-             "text": ""
+         "text": ""
            },
   "defaultmood": 18,
   "moodlabel": { "style": "",
-				 "loc": [20, 430],
-				 "text": ""
-			   },
+                 "loc": [20, 430],
+                 "text": ""
+               },
   "moods": [
       { "style": "background-image:url($path/mood1.png); border:0px;", 
-		"selected": "background-image:url($path/mood1c.png); border:0px;",
-		"loc": [0, 208],
-		"size": [100,160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 0
-	  },
+        "selected": "background-image:url($path/mood1c.png); border:0px;",
+        "loc": [0, 208],
+        "size": [100,160],
+        "text": "",
+        "icon": "",
+        "mood": 0
+      },
       { "style": "background-image:url($path/mood2.png); border:0px;", 
-		"selected": "background-image:url($path/mood2c.png); border:0px;",
-		"loc": [106, 208],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 19
-	  },
+        "selected": "background-image:url($path/mood2c.png); border:0px;",
+        "loc": [106, 208],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 19
+      },
       { "style": "background-image:url($path/mood3.png); border:0px;", 
-		"selected": "background-image:url($path/mood3c.png); border:0px;",
-		"loc": [212, 208],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 6
-	  },
+        "selected": "background-image:url($path/mood3c.png); border:0px;",
+        "loc": [212, 208],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 6
+      },
       { "style": "background-image:url($path/mood4.png); border:0px;", 
-		"selected": "background-image:url($path/mood4c.png); border:0px;",
-		"loc": [318, 382],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 22
-	  },
+        "selected": "background-image:url($path/mood4c.png); border:0px;",
+        "loc": [318, 382],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 22
+      },
       { "style": "background-image:url($path/mood5.png); border:0px;", 
-		"selected": "background-image:url($path/mood5c.png); border:0px;",
-		"loc": [0, 382],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 4
-	  },
+        "selected": "background-image:url($path/mood5c.png); border:0px;",
+        "loc": [0, 382],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 4
+      },
       { "style": "background-image:url($path/mood6.png); border:0px;", 
-		"selected": "background-image:url($path/mood6c.png); border:0px;",
-		"loc": [106, 382],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 20
-	  },
+        "selected": "background-image:url($path/mood6c.png); border:0px;",
+        "loc": [106, 382],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 20
+      },
       { "style": "background-image:url($path/mood7.png); border:0px;", 
-		"selected": "background-image:url($path/mood7c.png); border:0px;",
-		"loc": [212, 382],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 3
-	  },
+        "selected": "background-image:url($path/mood7c.png); border:0px;",
+        "loc": [212, 382],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 3
+      },
       { "style": "background-image:url($path/mood8.png); border:0px;", 
-		"selected": "background-image:url($path/mood8c.png); border:0px;",
-		"loc": [318, 208],
-		"size": [100, 160],
-	   	 "text": "",
-		"icon": "",
-		"mood": 1
-	  },
+        "selected": "background-image:url($path/mood8c.png); border:0px;",
+        "loc": [318, 208],
+        "size": [100, 160],
+        "text": "",
+        "icon": "",
+        "mood": 1
+      },
       { "style": "border:0px;", 
-		"selected": "border:0px;",
-		"loc": [0, 0],
-		"size": [100, 100],
-	   	 "text": "",
-		"icon": "",
-		"mood": 2
-	  }
+        "selected": "border:0px;",
+        "loc": [0, 0],
+        "size": [100, 100],
+        "text": "",
+        "icon": "",
+        "mood": 2
+      }
   ]
  },
  "convo":
@@ -249,19 +253,19 @@
       "tabstyle": 0
   },
   "tabwindow" : {
-	  "style": "background: #EED128; font-family: 'Courier'"
+      "style": "background: #EED128; font-family: 'Courier'"
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-	  "blockedmsg": "did not receive message from",
-      "openmemo": "coveted",
-      "joinmemo": "answered the memo",
-      "closememo": "went away from the memo",
-      "kickedmemo": "You have been overthrown",
-	  "idle": "has abdicated"
+      "beganpester": "начал докучать",
+      "ceasepester": "перестал докучать",
+      "blocked": "выдал ультиматум молчания",
+      "unblocked": "помиловал",
+      "blockedmsg": "не получил писем от",
+      "openmemo": "пришел почитать доску объявлений",
+      "joinmemo": "ответил на заметку",
+      "closememo": "ушел от доски объявлений",
+      "kickedmemo": "У вас отобрали право прочтения этой доски...",
+      "idle": "пошел погулять по саду"
   },
   "systemMsgColor": "#393939"
  },

@@ -25,7 +25,7 @@
                        "userlist": "Список собеседников",
                        "addgroup": "Добавить группу",
                        "import": "Импорт",
-               "talk": "Поговорить",
+                       "talk": "Поговорить",
                        "reconnect": "Пересоединиться",
                        "idle": "Отойти и почитать",
                        "exit": "Выход"},
@@ -37,8 +37,8 @@
                         "quirks": "Правила"},
             "help": { "_name": "MSPA",
                       "about": "О программе" },
-            "rclickchumlist": {"pester": "Pester",
- "removechum": "Удалить собеседника",
+            "rclickchumlist": {"pester": "Поговорить",
+                               "removechum": "Удалить собеседника",
                                "report": "Пожаловаться",
                                "blockchum": "Заблокировать",
                                "addchum": "Добавить собеседника",
@@ -90,7 +90,7 @@
                  "devious": { "icon": "$path/devious.png", "color": "red" },
 
                  "sleek": { "icon": "$path/sleek.png", "color": "red" },
-                 
+
                  "detestful": { "icon": "$path/detestful.png", "color": "red" },
 
                  "mirthful": { "icon": "$path/mirthful.png", "color": "red" },
@@ -150,7 +150,7 @@
   "defaultmood": 1,
   "moodlabel": { "style": "",
                  "loc": [409, 361],
-                 "text": "MOODS"
+                 "text": "НАСТРОЕНИЯ"
                },
   "moods": [
       { "style": "text-align:left; border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier'", 
@@ -195,16 +195,16 @@
       "tabstyle": 0
   },
   "text": {
-      "beganpester": "began pestering",
-      "ceasepester": "ceased pestering",
-      "blocked": "blocked",
-      "unblocked": "unblocked",
-      "blockedmsg": "did not receive message from",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!",
-      "idle": "is now an idle chum!"
+      "beganpester": "начинает разговор с",
+      "ceasepester": "перестаёт разговаривать с",
+      "blocked": "заблокировал",
+      "unblocked": "разблокировал",
+      "blockedmsg": "не смог получить сообщение от",
+      "openmemo": "зашел посмотреть доску заметок",
+      "joinmemo": "начал отвечать на памятки",
+      "closememo": "перестал отвечать на заметки",
+      "kickedmemo": "Вы заблокированы здесь!",
+      "idle": "ушел за чаем!"
   },
   "systemMsgColor": "#646464"
  },
@@ -225,7 +225,7 @@
                  "uparrow": "height:17px;border:0px;",
                  "uarrowstyle": "image:url($path/uparrow.png);"
                },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Меморандума: $channel",
              "style": "margin-bottom: 21px; background:  #bebebe; color: white; border:0px; font-size: 14px;",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,

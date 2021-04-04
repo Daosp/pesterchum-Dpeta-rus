@@ -33,21 +33,21 @@
   "addchum":  { "style": "background: rgba(0, 255, 0, 100%); border:2px solid green; font: bold; color: black; font-family:'Courier';",
                 "loc": [15,410],
                 "size": [90, 30],
-                "text": "ADD A FUCKER"
+                "text": "ДОБАВИТЬ ЗАСРАНЦА"
               },
   "pester": { "style": "background:  rgba(0, 255, 0, 100%); border:2px solid green; font: bold; color: black; font-family:'Courier';",
               "loc": [193,410],
               "size": [89, 30],
-              "text": "FUCK WITH!"
+              "text": "ВЫЕБАТЬ ЕГО!"
             },
   "block": { "style": "background: #F00000; border:2px solid green; font: bold; color: black; font-family:'Courier';",
              "loc": [104,410],
              "size": [90, 30],
-             "text": "BITCHSLAP"
+             "text": "СУКАСЛУМ"
            },
   "moodlabel": { "style": "font:bold;font-family:'Courier';color:black;",
                  "loc": [12, 480],
-                 "text": "MOOD:"
+                 "text": "НАСТРОЕНИЕ:"
                },
   "moods": [
       { "style": "text-align:left;  background-image:url($path/mellow.jpg);border:2px solid green;color: black; font-family:'Courier'; font:bold; padding-left:3px;", 
@@ -88,14 +88,18 @@
   ]
  },
  "convo": {
-     "style": "background-color: #00ff00;border:2px solid green; font-family: 'Courier';",
-     "tabstyle": "background-color: #00ff00; font-family: 'Courier'",
-     "size": [487, 466],
-     "chumlabel": { "style": "margin-bottom: 21px;background: rgb(0, 150, 0); color: white; border:0px; font-size: 14px;",
-                    "align": { "h": "center", "v": "center" },
-                    "minheight": 47,
-                    "maxheight": 65
-                  }
+    "text": {"beganpester": "начал бесить",
+             "ceasepester": "ушел с позором от",
+             "blocked": "зарезал глотку",
+             "unblocked": "позволил гавкать",
+             "blockedmsg": "не слушает",
+             "openmemo": "зашел на хату",
+             "joinmemo": "начал гавкать в",
+             "closememo": "перестал гавкать в",
+             "kickedmemo": "ТЕБЯ ВЫГНАЛИ, КУСОК ДЕРЬМА!",
+             "idle": "пошел срать!"
+  },
+  "systemMsgColor": "#646464"
  },
  "memos":
  { "size": [600,425] }

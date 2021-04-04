@@ -33,7 +33,7 @@
             "help": { "_name": "            ",
                       "about": "О программе",
                       "help": "Помощь",
-                      "calsprite": "Лусус",
+                      "calsprite": "Келспрайт",
               "chanserv": "Проверка канала",
                       "nickserv": "Сервер ников" },
             "rclickchumlist": {"pester": "Написать",

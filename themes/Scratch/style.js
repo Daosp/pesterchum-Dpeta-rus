@@ -36,7 +36,7 @@
                         "quirks": "Жаргон" },
             "help": { "_name": "Инфо",
                       "help": "Инфо",
-                      "calsprite": "Лусус",
+                      "calsprite": "Келспрайт",
                       "nickserv": "Сервер ников",
                       "about": "Сделка" },
             "rclickchumlist": {"pester": "Покровительствовать",
