@@ -16,34 +16,38 @@
              "loc": [30,415]
            },
   "sounds": { "alertsound": "$path/alarm.wav",
-			  "ceasesound": "$path/cease.wav" },
-  "menus": {"client": {"_name": "crOSby ",
-                       "options": "Preferences",
-                       "memos": "Memos",
-                       "logviewer": "Pesterlogs",
-                       "userlist": "Userlist",
-                       "import": "Import",
-					   "idle": "Idle",
-					   "reconnect": "Reconnect",
-                       "exit": "Cease"},
+              "ceasesound": "$path/cease.wav" },
+   "menus": {"client": {"_name": "            ",
+                       "options": "Настройки",
+                       "memos": "Группы",
+                       "logviewer": "Библиотека",
+                       "randen": "Случайный собеседник",
+                       "userlist": "Список собеседников",
+                       "addgroup": "Добавить группу",
+                       "import": "Импорт",
+               "talk": "Поговорить",
+                       "reconnect": "Пересоединиться",
+                       "idle": "Отойти и почитать",
+                       "exit": "Выход"},
             "profile": {"_name": "PC6.0",
-                        "switch": "Handle",
-                        "color": "Color",
-                        "theme": "Theme",
-                        "block": "Blocked",
-                        "quirks": "Quirks"},
+                        "switch": "Аккаунт",
+                        "color": "Цвет",
+                        "theme": "Тема",
+                        "block": "Лист блокировки",
+                        "quirks": "Правила"},
             "help": { "_name": "MSPA",
-                      "about": "About" },
+                      "about": "О программе" },
             "rclickchumlist": {"pester": "Pester",
-                               "removechum": "Remove",
-                               "report": "Report",
-                               "blockchum": "Block",
-                               "addchum": "Add Chum",
-                               "viewlog": "View Pesterlog",
-                               "unblockchum": "Forgive",
-                               "banuser": "Expel User",
-                               "opuser": "Promote",
-                               "quirksoff": "Quirks Off"
+ "removechum": "Удалить собеседника",
+                               "report": "Пожаловаться",
+                               "blockchum": "Заблокировать",
+                               "addchum": "Добавить собеседника",
+                               "viewlog": "Посмотреть историю",
+                               "notes": "Изменить заметку...",
+                               "unblockchum": "Разблокировать собеседника",
+                               "banuser": "Уничтожить пользователя",
+                               "opuser": "Проверить",
+                               "quirksoff": "Игнорировать правила"
                               }
            },
   "chums": { "style": "border:0px; background-color: 444444; font: bold;font-family: 'Courier';selection-background-color: black; ",
@@ -58,7 +62,7 @@
 
                  "offline": { "icon": "$path/offline.png", "color": "#646464"},
 
-			     
+                 
                  "pleasant": { "icon": "$path/pleasant.png", "color": "333333" },
 
                  "distraught": { "icon": "$path/distraught.png", "color": "333333" },
@@ -86,7 +90,7 @@
                  "devious": { "icon": "$path/devious.png", "color": "red" },
 
                  "sleek": { "icon": "$path/sleek.png", "color": "red" },
-			     
+                 
                  "detestful": { "icon": "$path/detestful.png", "color": "red" },
 
                  "mirthful": { "icon": "$path/mirthful.png", "color": "red" },
@@ -145,26 +149,26 @@
            },
   "defaultmood": 1,
   "moodlabel": { "style": "",
-				 "loc": [409, 361],
-				 "text": "MOODS"
-			   },
+                 "loc": [409, 361],
+                 "text": "MOODS"
+               },
   "moods": [
       { "style": "text-align:left; border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier'", 
-		"selected": "text-align:left; background-image:url($path/moodcheck1.png); border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
-		"loc": [351, 413],
-		"size": [62, 9],
-	    "text": "",
-		"icon": "",
-		"mood": 1
-	  },
+        "selected": "text-align:left; background-image:url($path/moodcheck1.png); border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
+        "loc": [351, 413],
+        "size": [62, 9],
+        "text": "",
+        "icon": "",
+        "mood": 1
+      },
       { "style": "text-align:left; border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier'", 
-		"selected": "text-align:left; background-image:url($path/moodcheck2.png); border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
-		"loc": [410, 385],
-		"size": [70, 50],
-		"text": "",
-		"icon": "",
-		"mood": 2
-	  }
+        "selected": "text-align:left; background-image:url($path/moodcheck2.png); border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
+        "loc": [410, 385],
+        "size": [70, 50],
+        "text": "",
+        "icon": "",
+        "mood": 2
+      }
   ]
  },
  "convo":
@@ -195,12 +199,12 @@
       "ceasepester": "ceased pestering",
       "blocked": "blocked",
       "unblocked": "unblocked",
-	  "blockedmsg": "did not receive message from",
+      "blockedmsg": "did not receive message from",
       "openmemo": "opened memo on board",
       "joinmemo": "responded to memo",
       "closememo": "ceased responding to memo",
       "kickedmemo": "You have been banned from this memo!",
-	  "idle": "is now an idle chum!"
+      "idle": "is now an idle chum!"
   },
   "systemMsgColor": "#646464"
  },

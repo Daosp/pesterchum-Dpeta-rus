@@ -11,52 +11,54 @@
              "disabled": "color: tan",
              "loc": [9,10]
            },
-	"menubar": { "style": "font-family: 'arial';  font-size: 14px; color: #000000;" },
+    "menubar": { "style": "font-family: 'arial';  font-size: 14px; color: #000000;" },
    "menus": {"client": {"_name": "            ",
-                       "options": "Options",
-                       "memos": "Memos",
-                       "logviewer": "Library",
-                       "randen": "Random Encounter",
-                       "userlist": "Userlist",
-                       "addgroup": "Add Group",
-                       "import": "Import",
-                       "reconnect": "Reconnect",
-                       "idle": "Idle",
-                       "exit": "Log Off"},
+                       "options": "Настройки",
+                       "memos": "Группы",
+                       "logviewer": "Библиотека",
+                       "randen": "Случайный собеседник",
+                       "userlist": "Список собеседников",
+                       "addgroup": "Добавить группу",
+                       "import": "Импорт",
+               "talk": "Поговорить",
+                       "reconnect": "Пересоединиться",
+                       "idle": "Отойти и почитать",
+                       "exit": "Выход"},
             "profile": {"_name": "           ",
-                        "switch": "Switch",
-                        "color": "Color",
-                        "theme": "Theme",
-                        "block": "Block List",
-                        "quirks": "Quirks"},
+                        "switch": "Аккаунт",
+                        "color": "Цвет",
+                        "theme": "Тема",
+                        "block": "Лист блокировки",
+                        "quirks": "Правила"},
             "help": { "_name": "            ",
-                      "about": "About",
-                      "help": "Help",
-                      "calsprite": "Calsprite",
-                      "nickserv": "Nickserv" },
-            "rclickchumlist": {"pester": "Message",
-                               "removechum": "Remove",
-                               "report": "Report",
-                               "blockchum": "Block",
-                               "addchum": "Add",
-                               "viewlog": "View Pesterlogs",
-                               "notes": "Edit Notes",
-                               "unblockchum": "Unblock",
-                               "removegroup": "Remove Group",
-                               "renamegroup": "Rename Group",
-                               "movechum": "Move",
-                               "banuser": "Ban",
-                               "opuser": "Give OP",
-                               "voiceuser": "Give Voice",
-                               "quirkkill": "Kill Quirk",
-                               "quirksoff": "Quirks Off",
-							   "ooc": "OOC",
-                               "invitechum": "Invite",
-                               "memosetting": "Memo Settings",
-                               "memonoquirk": "Disable Quirks",
-                               "memohidden": "Hidden",
-                               "memoinvite": "Invite Only",
-                               "memomute": "Mute Memo"
+                      "about": "О программе",
+                      "help": "Помощь",
+                      "calsprite": "Лусус",
+              "chanserv": "Проверка канала",
+                      "nickserv": "Сервер ников" },
+            "rclickchumlist": {"pester": "Написать",
+                               "removechum": "Удалить собеседника",
+                               "report": "Пожаловаться",
+                               "blockchum": "Заблокировать",
+                               "addchum": "Добавить собеседника",
+                               "viewlog": "Посмотреть историю",
+                               "notes": "Изменить заметку...",
+                               "unblockchum": "Разблокировать собеседника",
+                               "removegroup": "Удалить группу",
+                               "renamegroup": "Переименовать группу",
+                               "movechum": "Переместить в ",
+                               "banuser": "Отправить в баню",
+                               "opuser": "Проверить",
+                               "voiceuser": "Получить голос",
+                               "quirkkill": "Удалить правила",
+                               "quirksoff": "Игнорировать правила",
+                               "ooc": "Вставлять скобки",
+                               "invitechum": "Пригласить",
+                               "memosetting": "Настройки группы",
+                               "memonoquirk": "Отключить доставание",
+                               "memohidden": "Скрыть группу от посторонних",
+                               "memoinvite": "Только по приглашениям",
+                               "memomute": "Молчать в группе"
                               }
            },
   "close": { "image": "$path/m.png",
@@ -64,14 +66,14 @@
   "minimize": { "image": "$path/m.png",
                 "loc": [262, 9]},
   "chums": { "style": "background:  url($path/chumbg.png) repeat-x top left; background-attachment: fixed;border:0px solid dicks;font-size:14px;font-family: 'arial'; color: #3e240d",
-				
-				
-				"loc": [12, 110],
-				"size": [278, 339],
-				
-				
+                
+                
+                "loc": [12, 110],
+                "size": [278, 339],
+                
+                
 
-				"moods": {
+                "moods": {
 
                  "chummy": { "icon": "$path/chummy.png", "color": "#3e240d" },
 
@@ -124,9 +126,9 @@
 
                  "blocked": { "icon": "$path/blocked.png", "color": "red" }
                          }
-						 
+                         
            },
-		   
+           
   "trollslum": {
       "style": "background: #9b896c; border:1px solid #4d4b48; font-family: 'Arial'",
       "size": [195, 200],
@@ -134,8 +136,8 @@
                  "style": "color: #3e240d; font-family: 'Arial';border:0px;" },
       "chumroll": {"style": "border:1px solid #4d4b48; background-color: #9b896c;color: 3e240d; font-family: 'Arial';selection-background-color:#314159; " }
   },
-		   
-	"mychumhandle": { 
+           
+    "mychumhandle": { 
             "handle": { "loc": [40,507],
                     "size": [233, 18],
                     "style": "background: transparent; color: #614023; font-family:'arial'; text-align:left;"
@@ -145,9 +147,9 @@
                                      "text": "C" },
                     "currentMood": [21, 508]
                   },
-	"defaultwindow": { "style": "background: #9b896c; color: #3e240d; font-family:arial;selection-background-color:#314159; "
+    "defaultwindow": { "style": "background: #9b896c; color: #3e240d; font-family:arial;selection-background-color:#314159; "
                    },
-				  
+                  
   "addchum":  { "style": "background: transparent;",
                 "loc": [19,462],
                 "size": [102, 17]
@@ -210,7 +212,7 @@
                 "icon": "$path/smooth.png",
                 "mood": 6
           },
-		  
+          
       { "style": "text-align:left; background:#9b896c; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [110, 581],
@@ -218,17 +220,17 @@
             "text": "Relaxed",
                 "icon": "$path/relaxed.png",
                 "mood": 8
-          },		  
+          },          
 
       { "style": "text-align:left; background:#9b896c; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [190, 537],
                 "size": [90, 18],
-				"text": "Insolent",
+                "text": "Insolent",
                 "icon": "$path/insolent.png",
                 "mood": 21
           },
-		  
+          
 
       { "style": "text-align:left; background:#9b896c; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
@@ -237,8 +239,8 @@
             "text": "Devious",
                 "icon": "$path/devious.png",
                 "mood": 10
-          },		  
-		  
+          },          
+          
       { "style": "text-align:left; background:black;color: #1f1308; font-family:'arial'; padding-left:3px;",
                 "selected": "text-align:left; background: #314159; color: #1f1308; font-family:'arial';  padding-left:3px;",
                 "loc": [190, 581],
@@ -276,7 +278,7 @@
       "selectedstyle": "background: #eeeae2 url($path/tabbg.png) repeat-x top left; color: #f7fffd; padding-bottom: 10px",
        "newmsgcolor": "#FF724C",
        "tabstyle": 0
-	   
+       
   },
   "text": {
       "beganpester": "began messaging",
@@ -299,7 +301,7 @@
       "selectedstyle": "",
        "newmsgcolor": "#FF724C",
        "tabstyle": 0
-	   
+       
   },
     "tabwindow" : {
       "style": "background: #9b896c; font-family: Arial;"

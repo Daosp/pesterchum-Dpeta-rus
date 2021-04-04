@@ -15,33 +15,40 @@
              "selected": "background-color: #AB6B6B",
              "loc": [480,30]
            },
-  "menus": {"client": {"_name": "Heists",
-                       "options": "Options",
-                       "memos": "Memos",
-                       "logviewer": "Memories",
-                       "userlist": "Users",
-                       "import": "Import",
-                       "reconnect": "Reconnect",
-					   "idle": "Idle",
-                       "exit": "Exit"},
-            "profile": {"_name": "Alias",
-                        "switch": "Change",
-                        "color": "Colour",
-                        "theme": "Theme",
-                        "block": "Rivals",
-                        "quirks": "Quirks"},
-            "help": { "_name": "Assistance",
-                      "about": "About!" },
-            "rclickchumlist": {"pester": "Meet Up With",
-                               "removechum": "Remove Chum",
-                               "blockchum": "Stab",
-                               "report": "Report",
-                               "addchum": "Add Chum",
-                               "viewlog": "View Chitty",
-                               "unblockchum": "Unblock",
-                               "banuser": "Slay User",
-                               "opuser": "Make Sidekick",
-                               "quirksoff": "No Frills"
+  "menus": {"client": {"_name": "Ограбить",
+                       "options": "Настройки",
+                       "memos": "Группы",
+                       "logviewer": "Библиотека",
+                       "randen": "Случайный собеседник",
+                       "userlist": "Список собеседников",
+                       "addgroup": "Добавить группу",
+                       "import": "Импорт",
+               "talk": "Поговорить",
+                       "reconnect": "Пересоединиться",
+                       "idle": "Отойти",
+                       "exit": "Выход"},
+            "profile": {"_name": "Правила",
+                        "switch": "Сменить аккаунт",
+                        "color": "Цвет",
+                        "theme": "Тема",
+                        "block": "Соперники",
+                        "quirks": "Правила"},
+            "help": { "_name": "Позвать на помощь",
+                      "about": "О программе",
+                      "help": "Помощь",
+                      "calsprite": "Лусус",
+              "chanserv": "Проверка канала",
+                      "nickserv": "Сервер ников" },
+            "rclickchumlist": {"pester": "Встретиться с ",
+                               "removechum": "Удалить приятеля",
+                               "blockchum": "Заблокировать",
+                               "report": "Составить отчёт",
+                               "addchum": "Добавить приятеля",
+                               "viewlog": "Посмотреть историю",
+                               "unblockchum": "Разблокировать",
+                               "banuser": "Убить приятеля",
+                               "opuser": "Ударить с вертушки в щи",
+                               "quirksoff": "Не зажираться"
                               }
            },
   "chums": { "style": "font-size: 16px; background-image:url($path/chumbg.png); background-color: #C2C4EB; background-repeat: no-repeat; font-family: 'Arial'; border: 0px; selection-background-color: #222222; color: black;",
@@ -59,7 +66,7 @@
 
                  "offline": { "icon": "$path/offline.gif", "color": "#4a4a4a"},
 
-			     
+                 
                  "pleasant": { "icon": "$path/pleasant.gif", "color": "white" },
 
                  "distraught": { "icon": "$path/distraught.gif", "color": "white" },
@@ -87,7 +94,7 @@
                  "devious": { "icon": "$path/devious.gif", "color": "#007200" },
 
                  "sleek": { "icon": "$path/sleek.gif", "color": "#007200" },
-			     
+                 
                  "detestful": { "icon": "$path/detestful.gif", "color": "#007200" },
 
                  "mirthful": { "icon": "$path/mirthful.gif", "color": "#007200" },
@@ -144,82 +151,82 @@
            },
   "defaultmood": 6,
   "moodlabel": { "style": "",
-				 "loc": [20, 430],
-				 "text": ""
-			   },
+                 "loc": [20, 430],
+                 "text": ""
+               },
   "moods": [
       { "style": "background-image:url($path/mood1.png); border:0px;", 
-		"selected": "background-image:url($path/mood1c.png); border:0px;",
-		"loc": [0, 258],
-		"size": [100,110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 0
-	  },
+        "selected": "background-image:url($path/mood1c.png); border:0px;",
+        "loc": [0, 258],
+        "size": [100,110],
+            "text": "",
+        "icon": "",
+        "mood": 0
+      },
       { "style": "background-image:url($path/mood2.png); border:0px;", 
-		"selected": "background-image:url($path/mood2c.png); border:0px;",
-		"loc": [106, 258],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 19
-	  },
+        "selected": "background-image:url($path/mood2c.png); border:0px;",
+        "loc": [106, 258],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 19
+      },
       { "style": "background-image:url($path/mood3.png); border:0px;", 
-		"selected": "background-image:url($path/mood3c.png); border:0px;",
-		"loc": [212, 258],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 22
-	  },
+        "selected": "background-image:url($path/mood3c.png); border:0px;",
+        "loc": [212, 258],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 22
+      },
       { "style": "background-image:url($path/mood4.png); border:0px;", 
-		"selected": "background-image:url($path/mood4c.png); border:0px;",
-		"loc": [318, 258],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 4
-	  },
+        "selected": "background-image:url($path/mood4c.png); border:0px;",
+        "loc": [318, 258],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 4
+      },
       { "style": "background-image:url($path/mood5.png); border:0px;", 
-		"selected": "background-image:url($path/mood5c.png); border:0px;",
-		"loc": [0, 382],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 3
-	  },
+        "selected": "background-image:url($path/mood5c.png); border:0px;",
+        "loc": [0, 382],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 3
+      },
       { "style": "background-image:url($path/mood6.png); border:0px;", 
-		"selected": "background-image:url($path/mood6c.png); border:0px;",
-		"loc": [106, 382],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 20
-	  },
+        "selected": "background-image:url($path/mood6c.png); border:0px;",
+        "loc": [106, 382],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 20
+      },
       { "style": "background-image:url($path/mood7.png); border:0px;", 
-		"selected": "background-image:url($path/mood7c.png); border:0px;",
-		"loc": [212, 382],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 5
-	  },
+        "selected": "background-image:url($path/mood7c.png); border:0px;",
+        "loc": [212, 382],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 5
+      },
       { "style": "background-image:url($path/mood8.png); border:0px;", 
-		"selected": "background-image:url($path/mood8c.png); border:0px;",
-		"loc": [318, 382],
-		"size": [100, 110],
-	   	 "text": "",
-		"icon": "",
-		"mood": 1
-	  },
+        "selected": "background-image:url($path/mood8c.png); border:0px;",
+        "loc": [318, 382],
+        "size": [100, 110],
+            "text": "",
+        "icon": "",
+        "mood": 1
+      },
       { "style": "border:0px;", 
-		"selected": "border:0px;",
-		"loc": [0, 0],
-		"size": [100, 100],
-	   	 "text": "",
-		"icon": "",
-		"mood": 2
-	  }
+        "selected": "border:0px;",
+        "loc": [0, 0],
+        "size": [100, 100],
+            "text": "",
+        "icon": "",
+        "mood": 2
+      }
   ]
  },
  "convo":
@@ -249,19 +256,19 @@
       "tabstyle": 0
   },
   "tabwindow" : {
-	  "style": "background: black; font-family: 'Courier'"
+      "style": "background: black; font-family: 'Courier'"
   },
   "text": {
       "beganpester": "began pestering",
       "ceasepester": "ceased pestering",
       "blocked": "blocked",
       "unblocked": "unblocked",
-	  "blockedmsg": "did not receive message from",
+      "blockedmsg": "did not receive message from",
       "openmemo": "looked at",
       "joinmemo": "answered the memo",
       "closememo": "went away from the memo",
       "kickedmemo": "You have been banned from this memo",
-	  "idle": "is now an idle chum"
+      "idle": "is now an idle chum"
   },
   "systemMsgColor": "#393939"
  },
