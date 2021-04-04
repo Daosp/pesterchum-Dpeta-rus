@@ -98,7 +98,7 @@ bdist_msi_options = {'data': msi_data,
 setup(
             name = "Pesterchum",
             version = buildVersion,
-            url = "https://github.com/Daosp/pesterchum-Dpeta-altservers-rus",
+            url = "https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/releases",
             description = description,#"P3ST3RCHUM",
             options = {"build_exe": build_exe_options,
                        "bdist_msi": bdist_msi_options,
