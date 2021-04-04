@@ -297,14 +297,14 @@
       "tabstyle": 0
   },
   "text": {
-      "beganpester": "began trolling",
-      "ceasepester": "gave up trolling",
-      "blocked": "blocked",
-      "unblocked": "mercifully forgave",
-      "openmemo": "opened memo on board",
-      "joinmemo": "responded to memo",
-      "closememo": "ceased responding to memo",
-      "kickedmemo": "You have been banned from this memo!"
+      "beganpester": "начал троллить",
+      "ceasepester": "прекратил троллить",
+      "blocked": "заблокировал",
+      "unblocked": "милосердно простил",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответил на меморандум",
+      "closememo": "прекратил отвечать на меморандум.",
+      "kickedmemo": "Вы забанены в этом меморандуме!"
   },
   "systemMsgColor": "#646464"
  },
@@ -318,7 +318,7 @@
       "newmsgcolor": "red",
       "tabstyle": 0
   },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "background-image:url($path/chumlabelbg.png);background-color:rgb(255,38,18); background-repeat: no-repeat; color: white; padding: 2px; border:1px solid #c2c2c2; margin-bottom: 4px;",
              "align": { "h": "left", "v": "center" },
              "minheight": 18,

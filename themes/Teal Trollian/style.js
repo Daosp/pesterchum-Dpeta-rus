@@ -43,7 +43,7 @@
       "newmsgcolor": "#04a6be",
       "tabstyle": 0
   },
-  "label": { "text": "Bulletin Board: $channel",
+  "label": { "text": "Доска Объявлений: $channel",
              "style": "background-image:url($path/chumlabelbg.png);background-color:#12e6ff; background-repeat: no-repeat; color: white; padding: 2px; border:1px solid #c2c2c2; margin-bottom: 4px;"
            },
   "time": { "text": { "width": 75,
