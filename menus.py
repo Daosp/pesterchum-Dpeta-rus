@@ -1059,7 +1059,7 @@ class PesterOptions(QtWidgets.QDialog):
         self.currentVol.setAlignment(QtCore.Qt.AlignHCenter)
 
 
-        self.timestampcheck = QtWidgets.QCheckBox("Тип времени", self)
+        self.timestampcheck = QtWidgets.QCheckBox("Формат времени", self)
         if self.config.showTimeStamps():
             self.timestampcheck.setChecked(True)
 
@@ -1149,7 +1149,7 @@ class PesterOptions(QtWidgets.QDialog):
         #    self.mspaCheck = QtWidgets.QCheckBox("Check for MSPA Updates", self)
         #    self.mspaCheck.setChecked(self.config.checkMSPA())
 
-        self.randomscheck = QtWidgets.QCheckBox("Получить Случайный Встречи")
+        self.randomscheck = QtWidgets.QCheckBox("Получить Случайную Встречу")
         self.randomscheck.setChecked(parent.userprofile.randoms)
         if not parent.randhandler.running:
             self.randomscheck.setEnabled(False)
@@ -1199,23 +1199,23 @@ class PesterOptions(QtWidgets.QDialog):
             if t == cur:
                 self.notifyOptions.setCurrentIndex(i)
                 break
-        self.notifyTypeLabel = QtWidgets.QLabel("Тип", self)
+        self.notifyTypeLabel = QtWidgets.QLabel("Уведомлять когда:", self)
         layout_type = QtWidgets.QHBoxLayout()
         layout_type.addWidget(self.notifyTypeLabel)
         layout_type.addWidget(self.notifyOptions)
-        self.notifySigninCheck   = QtWidgets.QCheckBox("Кореш входит", self)
+        self.notifySigninCheck   = QtWidgets.QCheckBox("кореш входит", self)
         if self.config.notifyOptions() & self.config.SIGNIN:
             self.notifySigninCheck.setChecked(True)
-        self.notifySignoutCheck  = QtWidgets.QCheckBox("Кореш выходит", self)
+        self.notifySignoutCheck  = QtWidgets.QCheckBox("кореш выходит", self)
         if self.config.notifyOptions() & self.config.SIGNOUT:
             self.notifySignoutCheck.setChecked(True)
-        self.notifyNewMsgCheck   = QtWidgets.QCheckBox("Новое сообщение", self)
+        self.notifyNewMsgCheck   = QtWidgets.QCheckBox("приходит новое сообщение", self)
         if self.config.notifyOptions() & self.config.NEWMSG:
             self.notifyNewMsgCheck.setChecked(True)
-        self.notifyNewConvoCheck = QtWidgets.QCheckBox("Только новые беседы", self)
+        self.notifyNewConvoCheck = QtWidgets.QCheckBox("новые беседы", self)
         if self.config.notifyOptions() & self.config.NEWCONVO:
             self.notifyNewConvoCheck.setChecked(True)
-        self.notifyMentionsCheck = QtWidgets.QCheckBox("Упоминания меморандума (инициалы)", self)
+        self.notifyMentionsCheck = QtWidgets.QCheckBox("упоминают в меморандуме (инициалы)", self)
         if self.config.notifyOptions() & self.config.INITIALS:
             self.notifyMentionsCheck.setChecked(True)
         self.notifyChange(self.notifycheck.checkState())
@@ -1295,7 +1295,7 @@ class PesterOptions(QtWidgets.QDialog):
         layout_indent.setContentsMargins(22,0,0,0)
         layout_sound.addLayout(layout_indent)
         layout_sound.addSpacing(15)
-        mvol = QtWidgets.QLabel("Основная громкость:", self)
+        mvol = QtWidgets.QLabel("Общая громкость:", self)
         # If we can't set the volume, grey this out as well
         #~mvol.setEnabled(parent.canSetVolume())
         # Normally we'd grey this out, but that presently makes things

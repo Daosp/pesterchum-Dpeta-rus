@@ -170,7 +170,7 @@
   "defaultmood": 0,
   "moodlabel": { "style": "",
                                  "loc": [20, 430],
-                                 "text": "MOODS"
+                                 "text": "Õ¿—“–Œ≈Õ»ﬂ:"
                            },
   "moods": [
       { "style": "text-align:left; border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier'",
