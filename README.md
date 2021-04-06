@@ -81,7 +81,7 @@ Dpeta крайне рекомендует прочитать эти руково
     * остальное - Т, нужно проверять
 * [Руководство по созданию своих тем][themes.txt]
 
-Я могу ошибаться, так что отправляйте мне найденные вами ошибки перевода в [Issues][issues-rus], если ошибка связана с работой клиента, то тогда нужно обращаться к самому [Dpet'е][issues]
+Я могу ошибаться, так что отправляйте мне найденные вами ошибки перевода в [Issues][issues-rus], если ошибка связана с работой клиента, то тогда нужно обращаться к самому [Dpet'е][issues] (ДООЛ: он англоговорящий)
 
 [themes.txt]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/docs/themes.txt
 [issues-rus]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/issues
