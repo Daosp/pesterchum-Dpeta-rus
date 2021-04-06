@@ -21,7 +21,7 @@
                           "ceasesound": "$path/cease.wav" },
   "menus": {"client": {"_name": "йкхемр",
                        "options": "мюярпнийх",
-                       "memos": "дняйх оюлърнй",
+                       "memos": "лелнпюмдслш",
                        "logviewer": "днярюкнцх",
                        "randen": "яксвюимши йнпеь",
                        "userlist": "йнпеькхяр",
