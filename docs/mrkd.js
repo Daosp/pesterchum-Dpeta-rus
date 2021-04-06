@@ -1,18 +1,18 @@
 function readTextFile(file)
 {
 	let url = new URL('/pesterchum-Dpeta-altservers-rus/'.file, 'https://daosp.github.io');
-	var rawFile = new XMLHttpRequest();
-	rawFile.open("GET", url, false);
-	rawFile.onreadystatechange = function ()
-	{
-		if(rawFile.readyState === 4)
-		{
-			if(rawFile.status === 200 || rawFile.status == 0)
-			{
-				var allText = rawFile.responseText;
-				alert(allText);
-			}
-		}
-	}
-	rawFile.send(allText);
+	let xhr = new XMLHttpRequest();
+
+	xhr.open('GET', URL);
+
+	xhr.responseType = 'text';
+
+	xhr.send();
+
+	// тело ответа {"сообщение": "Привет, мир!"}
+	xhr.onload = function() {
+	  let responseObj = xhr.response;
+	  alert(responseObj.message); // Привет, мир!
+	};
+	rawFile.send(responseObj.message);
 }
