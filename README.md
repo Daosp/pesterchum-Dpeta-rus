@@ -75,20 +75,21 @@ Dpeta крайне рекомендует прочитать эти руково
 Переводом и остальным занимается Daosp (тупой челик, который хренового знает инглиш и питон)
 ### Прогресс первевода:
 * Основные файлы переведены, нужно проверять
-* Темы:
+* Темы (посмотрите в [конце][pcott]):
     * Pesterchum переведён визуально и текстово (ВТ)
     * Trollian - ВТ, нужно проверять
     * остальное - Т, нужно проверять
-* [Руководство по созданию своих тем][themes.txt]
+* [Руководство по созданию своих тем][themes.mkdn]
 
 Я могу ошибаться, так что отправляйте мне найденные вами ошибки перевода в [Issues][issues-rus], если ошибка связана с работой клиента, то тогда нужно обращаться к самому [Dpet'е][issues] (ДООЛ: он англоговорящий)
 
-[themes.txt]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/docs/themes.txt
+[pcott]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/README.md#%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B0-%D1%82%D0%B5%D0%BC
+[themes.mkdn]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/docs/themes.mkdn
 [issues-rus]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/issues
 [issues]: https://github.com/Dpeta/pesterchum-alt-servers/issues
 
 ## СМАЙЛЫ
-Просто для удобства. :3 (Взято из докментов [README-karxi.mkdn])
+Просто для удобства. :3 (Взято из [README-karxi.mkdn])
 
 * `:rancorous:`
 * `:apple:`
@@ -146,3 +147,113 @@ Dpeta крайне рекомендует прочитать эти руково
 * `:whatdidyoudo:`
 
 [README-karxi.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/README-karxi.mkdn
+
+## ПРОГРЕСС ПЕРЕВОДА ТЕМ
+* battlefield:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* BettyBother:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* Cdasl:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* crosbytop:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* dad:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* danceofthorns:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* enamel:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* enoirmel:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* FRESHjamz:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* gold:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* gold xl:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* jadeenamel:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* johntierchum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* MSChum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* niccage:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* paperchum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* pesterchum:
+- [X] Текст
+- [X] Визуал
+- [X] Проверка
+* pesterchum2.5:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* sbahj:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* Scratch:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* squiddlechum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* steamchum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* strifekind:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* Teal Trollian:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* trollian:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* trollian2.5:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* typewriter:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
