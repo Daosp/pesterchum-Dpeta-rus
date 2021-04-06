@@ -3,15 +3,8 @@
 <head>
 	<meta charset="utf-8"/>
 	<script>
-	var $_GET = {},
-		args = location.search.substr(1).split(/&/);
-	for (var i=0; i<args.length; ++i) {
-		var tmp = args[i].split(/=/);
-		if (tmp[0] != "") {
-			$_GET[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp.slice(1).join("").replace("+", " "));
-		}
-	}
-	document.title = "Чтение".$_GET[file];
+	var file = 'themes.mrkd';
+	document.title = "Чтение".file;
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script src="mrkd.js"></script>
@@ -21,8 +14,8 @@
 
 	<div id="content"></div>
 	<script>
-		document.getElementById('content').innerHTML = marked(readTextFile($_GET[file]));
-		readTextFile($_GET[file]);
+		document.getElementById('content').innerHTML = marked(readTextFile(file));
+		readTextFile(file);
 	</script>
 </body>
 </html>
