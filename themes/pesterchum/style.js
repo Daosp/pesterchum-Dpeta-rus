@@ -177,7 +177,7 @@
                 "selected": "text-align:left; background-image:url($path/moodcheck4.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [12, 288],
                 "size": [104, 22],
-            "text": "chummy",
+            "text": "йнпеьнбши",
                 "icon": "$path/chummy.png",
                 "mood": 0
           },
@@ -185,23 +185,23 @@
                 "selected": "text-align:left; background-image:url($path/moodcheck4.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [12, 308],
                 "size": [104, 22],
-                "text": "smooth",
+                "text": "яонйнимши",
                 "icon": "$path/smooth.png",
-                "mood": 3
+                "mood": 6
           },
       { "style": "text-align:left; border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier'",
                 "selected": "text-align:left; background-image:url($path/moodcheck3.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [12, 328],
                 "size": [104, 22],
-                "text": "pleasant",
+                "text": "беяекши",
                 "icon": "$path/pleasant.png",
-                "mood": 4
+                "mood": 3
           },
       { "style": "text-align:left; border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier'",
                 "selected": "text-align:left; background-image:url($path/moodcheck2.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [117, 288],
                 "size": [104, 22],
-                "text": "pranky",
+                "text": "андпши",
                 "icon": "$path/pranky.png",
                 "mood": 5
           },
@@ -209,15 +209,15 @@
                 "selected": "text-align:left; background-image:url($path/moodcheck3.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [117, 308],
                 "size": [104, 22],
-                "text": "offline",
-                "icon": "$path/offline.png",
-                "mood": 6
+                "text": "нрньек оняке мюпйнгю",
+                "icon": "$path/mystified.png",
+                "mood": 19
           },
       { "style": "text-align:left; border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier'",
                 "selected": "text-align:left; background-image:url($path/moodcheck3.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [117, 328],
                 "size": [104, 22],
-                "text": "rancorous",
+                "text": "гкни",
                 "icon": "$path/rancorous.png",
                 "mood": 1
           },
@@ -225,7 +225,7 @@
                 "selected": "text-align:left; background-image:url($path/moodcheck5.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [12, 348],
                 "size": [209, 22],
-                "text": "ABSCOND",
+                "text": "бшьек гю вюел",
                 "icon": "",
                 "mood": 2
           }
