@@ -198,7 +198,7 @@
                 "mood": 3
           },
       { "style": "text-align:left; border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier'",
-                "selected": "text-align:left; background-image:url($path/moodcheck2.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
+                "selected": "text-align:left; background-image:url($path/moodcheck3.png); border:2px solid #c48a00; padding: 5px;color: rgba(0, 0, 0, 0%); font-family:'Courier';",
                 "loc": [117, 288],
                 "size": [104, 22],
                 "text": "¡Œƒ–€…",
