@@ -75,15 +75,16 @@ Dpeta крайне рекомендует прочитать эти руково
 Переводом и остальным занимается Daosp (тупой челик, который хренового знает инглиш и питон)
 ### Прогресс первевода:
 * Основные файлы переведены, нужно проверять
-* Темы (посмотрите в конце):
+* Темы (посмотрите в [конце][pcott]):
     * Pesterchum переведён визуально и текстово (ВТ)
     * Trollian - ВТ, нужно проверять
     * остальное - Т, нужно проверять
-* [Руководство по созданию своих тем][themes.txt]
+* [Руководство по созданию своих тем][themes.mkdn]
 
 Я могу ошибаться, так что отправляйте мне найденные вами ошибки перевода в [Issues][issues-rus], если ошибка связана с работой клиента, то тогда нужно обращаться к самому [Dpet'е][issues] (ДООЛ: он англоговорящий)
 
-[themes.txt]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/docs/themes.txt
+[pcott]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/README.md#%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B0-%D1%82%D0%B5%D0%BC
+[themes.mkdn]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/docs/themes.mkdn
 [issues-rus]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/issues
 [issues]: https://github.com/Dpeta/pesterchum-alt-servers/issues
 
