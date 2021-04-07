@@ -280,7 +280,7 @@
       "unblocked": "разблокировал",
       "blockedmsg": "не может получать письма",
       "openmemo": "смотрит",
-      "joinmemo": "ответить на меморандум",
+      "joinmemo": "ответил на меморандум",
       "joinmemo": "ушел отсюда",
       "kickedmemo": "Вас забанили здесь!!",
       "idle": "is now an idle chum!!"
