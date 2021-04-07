@@ -5,7 +5,7 @@
   "size": [650, 450],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Ğ¢Ğ ĞĞ›Ğ›Ğ˜ĞĞ",
+  "windowtitle": "ÒĞÎËËÈÀÍ",
   "close": { "image": "$path/x.png",
              "loc": [639, 4]},
   "minimize": { "image": "$path/m.png",
@@ -43,7 +43,7 @@
       "newmsgcolor": "#04a6be",
       "tabstyle": 0
   },
-  "label": { "text": "Ğ”Ğ¾ÑĞºĞ° ĞĞ±ÑŠÑĞ²Ğ»ĞµĞ½Ğ¸Ğ¹: $channel",
+  "label": { "text": "Äîñêà Îáúÿâëåíèé: $channel",
              "style": "background-image:url($path/chumlabelbg.png);background-color:#12e6ff; background-repeat: no-repeat; color: white; padding: 2px; border:1px solid #c2c2c2; margin-bottom: 4px;"
            },
   "time": { "text": { "width": 75,

@@ -4,7 +4,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "–°–µ—Ä—å—ë–∑–Ω—ã–µ –¥–µ–ª–∞",
+  "windowtitle": "—Â¸∏ÁÌ˚Â ‰ÂÎ‡",
   "menu" : { "style": "font-family: 'Courier'; font: bold; font-size: 14px; background-color: #BABABA;border:2px solid #B3B3B3",
              "loc": [52,5]},
   "menubar": { "style": "font-family: 'Courier'; font:bold; font-size: 14px; color:#000000; allign:center;" },
@@ -71,7 +71,7 @@
              }
            },
   "mychumhandle": { "label": 
-                    { "text": "–ü—Å–µ–≤–¥–æ–Ω–∏–º:",
+                    { "text": "œÒÂ‚‰ÓÌËÏ:",
                       "style": "color: black ;font:bold; font-family: 'Courier';" 
                     },
                     "handle": { "style": "background-color: #C6C6C6; padding: 3px; padding-left: 25px; color:#7E7E7E; font-family:'Courier'; font:bold; text-align:left; border:2px solid #BABABA;" }
@@ -272,7 +272,7 @@
         "selected": "text-align:center; background:#C6C6C6; border:2px solid #222222; color: black; font-family:'Courier'; font:bold; padding-left:3px;",
         "loc": [135, 545],
         "size": [150, 30],
-        "text": "–ù–ï–î–û–°–¢–£–ü–ù–´–ô",
+        "text": "Õ≈ƒŒ—“”œÕ€…",
         "icon": "$path/offline.png",
         "mood": 2
       }

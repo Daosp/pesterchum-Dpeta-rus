@@ -5,7 +5,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "–î–û–°–¢–ê–ù–¨–ö–û–†–ï–®–ê",
+  "windowtitle": "ƒŒ—“¿Õ‹ Œ–≈ÿ¿",
   "menu" : { "style": "font-family: 'Courier'; font: bold; font-size: 14px; color: #000000; background-color: #fdb302;border:2px solid #ffff00",
                          "menuitem": "font-size:14px;" },
   "menubar": { "style": "font-family: 'Courier'; font:bold; font-size: 14px; color: #000000;" },
@@ -34,21 +34,21 @@
   "addchum":  { "style": "background: rgba(255, 255, 0, 100%); border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
                 "loc": [15,380],
                 "size": [90, 30],
-                "text": "–î–û–ë–ê–í–ò–¢–¨ –ö–û–†–ï–®–ê"
+                "text": "ƒŒ¡¿¬»“‹  Œ–≈ÿ¿"
               },
   "pester": { "style": "background:  rgba(255, 255, 0, 100%); border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
               "loc": [193,380],
               "size": [89, 30],
-              "text": "–î–û–°–¢–ê–¢–¨!"
+              "text": "ƒŒ—“¿“‹!"
             },
   "block": { "style": "background: #F00000; border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
              "loc": [104,380],
              "size": [90, 30],
-             "text": "–ë–õ–û–ö–ò–†–û–í–ê–¢–¨"
+             "text": "¡ÀŒ »–Œ¬¿“‹"
            },
   "moodlabel": { "style": "font:bold;font-family:'Courier';color:black;",
                                  "loc": [12, 466],
-                                 "text": "–ù–ê–°–¢–†–û–ï–ù–ò–ï:"
+                                 "text": "Õ¿—“–Œ≈Õ»≈:"
                            },
   "moods": [
       { "style": "text-align:left; background:#ffff00;border:2px solid #c48a00;color: black; font-family:'Courier'; font:bold; padding-left:3px;",

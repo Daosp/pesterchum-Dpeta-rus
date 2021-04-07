@@ -4,7 +4,7 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "РўР РћР›Р›РРђРќ",
+  "windowtitle": "ТРОЛЛИАН",
   "menu" : { "style": "font-family: 'Arial'; font: bold; font-size: 14px; background-color: #e5000f;border:2px solid #c20f00", "loc": [3, 6] },
   "menubar": { "style": "font-family: 'Arial'; font:bold; font-size: 14px;" },
   "close": { "image": "$path/x.png",
@@ -161,14 +161,14 @@
          "style": ""
      },
   "text": {
-      "beganpester": "РЅР°С‡Р°Р» С‚СЂРѕР»Р»РёС‚СЊ",
-      "ceasepester": "РїСЂРµРєСЂР°С‚РёР» С‚СЂРѕР»Р»РёС‚СЊ",
-      "blocked": "Р·Р°Р±Р»РѕРєРёСЂРѕРІР°Р»",
-      "unblocked": "РјРёР»РѕСЃРµСЂРґРЅРѕ РїСЂРѕСЃС‚РёР»",
-      "openmemo": "РѕС‚РєСЂС‹Р» РјРµРјРѕСЂР°РЅРґСѓРј РЅР° РґРѕСЃРєРµ",
-      "joinmemo": "РѕС‚РІРµС‚РёР»Р° РЅР° РјРµРјРѕСЂР°РЅРґСѓРј",
-      "closememo": "РїРµСЂРµСЃС‚Р°Р» РѕС‚РІРµС‡Р°С‚СЊ РЅР° РјРµРјРѕСЂР°РЅРґСѓРј",
-      "kickedmemo": "Р’С‹ Р·Р°Р±Р°РЅРµРЅС‹ РЅР° СЌС‚РѕР№ РґРѕСЃРєРµ!"
+      "beganpester": "начал троллить",
+      "ceasepester": "прекратил троллить",
+      "blocked": "заблокировал",
+      "unblocked": "милосердно простил",
+      "openmemo": "открыл меморандум на доске",
+      "joinmemo": "ответила на меморандум",
+      "closememo": "перестал отвечать на меморандум",
+      "kickedmemo": "Вы забанены на этой доске!"
   },
      "tabs": {
          "style": "",
@@ -180,7 +180,7 @@
  "memos":
  { "size": [600,425],
    "style": "background-color: #e5000f;border:2px solid #780000; font-family: 'Arial';",
-   "label": {"text": "Р”РѕСЃРєР° РћР±СЉСЏРІР»РµРЅРёР№: $channel",
+   "label": {"text": "Доска Объявлений: $channel",
              "style": "margin-bottom: 21px;background: #ffa4a4; color: white; border:0px; font-size: 14px;"
             },
    "textarea": {

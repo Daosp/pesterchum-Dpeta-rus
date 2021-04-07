@@ -33,21 +33,21 @@
   "addchum":  { "style": "background: rgba(0, 255, 0, 100%); border:2px solid green; font: bold; color: black; font-family:'Courier';",
                 "loc": [15,410],
                 "size": [90, 30],
-                "text": "Р”РћР‘РђР’РРўР¬ Р—РђРЎР РђРќР¦Рђ"
+                "text": "ДОБАВИТЬ ЗАСРАНЦА"
               },
   "pester": { "style": "background:  rgba(0, 255, 0, 100%); border:2px solid green; font: bold; color: black; font-family:'Courier';",
               "loc": [193,410],
               "size": [89, 30],
-              "text": "Р’Р«Р•Р‘РђРўР¬ Р•Р“Рћ!"
+              "text": "ВЫЕБАТЬ ЕГО!"
             },
   "block": { "style": "background: #F00000; border:2px solid green; font: bold; color: black; font-family:'Courier';",
              "loc": [104,410],
              "size": [90, 30],
-             "text": "РЎРЈРљРђРЎР›РЈРњ"
+             "text": "СУКАСЛУМ"
            },
   "moodlabel": { "style": "font:bold;font-family:'Courier';color:black;",
                  "loc": [12, 480],
-                 "text": "РќРђРЎРўР РћР•РќРР•:"
+                 "text": "НАСТРОЕНИЕ:"
                },
   "moods": [
       { "style": "text-align:left;  background-image:url($path/mellow.jpg);border:2px solid green;color: black; font-family:'Courier'; font:bold; padding-left:3px;", 
@@ -88,16 +88,16 @@
   ]
  },
  "convo": {
-    "text": {"beganpester": "РЅР°С‡Р°Р» Р±РµСЃРёС‚СЊ",
-             "ceasepester": "СѓС€РµР» СЃ РїРѕР·РѕСЂРѕРј РѕС‚",
-             "blocked": "Р·Р°СЂРµР·Р°Р» РіР»РѕС‚РєСѓ",
-             "unblocked": "РїРѕР·РІРѕР»РёР» РіР°РІРєР°С‚СЊ",
-             "blockedmsg": "РЅРµ СЃР»СѓС€Р°РµС‚",
-             "openmemo": "Р·Р°С€РµР» РЅР° С…Р°С‚Сѓ",
-             "joinmemo": "РЅР°С‡Р°Р» РіР°РІРєР°С‚СЊ РІ",
-             "closememo": "РїРµСЂРµСЃС‚Р°Р» РіР°РІРєР°С‚СЊ РІ",
-             "kickedmemo": "РўР•Р‘РЇ Р’Р«Р“РќРђР›Р, РљРЈРЎРћРљ Р”Р•Р Р¬РњРђ!",
-             "idle": "РїРѕС€РµР» СЃСЂР°С‚СЊ!"
+    "text": {"beganpester": "начал бесить",
+             "ceasepester": "ушел с позором от",
+             "blocked": "зарезал глотку",
+             "unblocked": "позволил гавкать",
+             "blockedmsg": "не слушает",
+             "openmemo": "зашел на хату",
+             "joinmemo": "начал гавкать в",
+             "closememo": "перестал гавкать в",
+             "kickedmemo": "ТЕБЯ ВЫГНАЛИ, КУСОК ДЕРЬМА!",
+             "idle": "пошел срать!"
   },
   "systemMsgColor": "#646464"
  },

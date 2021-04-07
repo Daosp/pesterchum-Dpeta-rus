@@ -4,7 +4,7 @@
   "size": [619,832],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "Р‘РѕРіРѕСѓСЂРѕРІРµРЅСЊ",
+  "windowtitle": "Богоуровень",
   "menu" : { "style": "font-family: 'Arial'; font:bold; font-size: 14px; color:#FFFFFF; background-color: #6277BC;border:2px solid #9BC4F2",
   "selected": "background-color: #6090C6", 
               "loc": [161,52]},
