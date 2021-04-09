@@ -87,12 +87,12 @@ class IRCClient:
         import json
 
         try:
-            with open("server.json", "r") as server_file:
+            with open(_datadir + "server.json", "r") as server_file:
                 read_file = server_file.read()
                 server_file.close()
                 server_obj = json.loads(read_file)
             TLS = server_obj['TLS']
-            print("TLS-status is: " + str(TLS))
+            #print("TLS-status is: " + str(TLS))
             if TLS == False:
                 #print("false")
                 self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -103,7 +103,7 @@ class IRCClient:
                 self.bare_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.socket = self.context.wrap_socket(self.bare_socket)
         except:
-            print("TLS except.")
+            #print("TLS except.")
             self.context = ssl.create_default_context()
             self.context.check_hostname = False
             self.context.verify_mode = ssl.CERT_NONE
@@ -258,7 +258,7 @@ class IRCClient:
         # Why does this only work 33% of the time </3
 
         # Somehow, kinda fixed :')
-        print("QUIT")
+        logging.info("QUIT")
         self.socket.send(bytes(msg + "\n", "UTF-8"))
         
 class IRCApp:
