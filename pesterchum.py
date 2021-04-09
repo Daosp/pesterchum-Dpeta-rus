@@ -136,7 +136,7 @@ canon_handles = ["apocalypseArisen", "arsenicCatnip", "arachnidsGrip", "adiosTor
                  "caligulasAquarium", "cuttlefishCuller", "carcinoGeneticist", "centaursTesticle", \
                  "grimAuxiliatrix", "gallowsCalibrator", "gardenGnostic", "ectoBiologist", \
                  "twinArmageddons", "terminallyCapricious", "turntechGodhead", "tentacleTherapist"]
-CUSTOMBOTS = ["келСпрайт", RANDNICK.upper()]
+CUSTOMBOTS = ["кэлСпрайт", RANDNICK.upper()]
 BOTNAMES = ["NICKSERV", "CHANSERV", "MEMOSERV", "OPERSERV", "HELPSERV"]
 BOTNAMES.extend(CUSTOMBOTS)
 
@@ -190,7 +190,7 @@ class chumListing(QtWidgets.QTreeWidgetItem):
                 #print "OFFLINE NOTIFY: " + self.handle
                 uri = self.mainwindow.theme["toasts/icon/signout"]
                 n = self.mainwindow.tm.Toast(self.mainwindow.tm.appName,
-                                          "%s в Оффлайне" % (self.handle), uri)
+                                          "%s в Офлайне" % (self.handle), uri)
                 n.show()
             elif self.mainwindow.config.notifyOptions() & self.mainwindow.config.SIGNIN and \
                  mood.name() != "offline" and self.chum.mood.name() == "offline":
@@ -283,7 +283,7 @@ class chumArea(RightClickTree):
         self.logchum.triggered.connect(self.openChumLogs)
         self.reportchum = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/report"], self)
         self.reportchum.triggered.connect(self.reportChum)
-        self.findalts = QtWidgets.QAction("Найдены альты", self)
+        self.findalts = QtWidgets.QAction("Найдены Alt'ы", self)
         self.findalts.triggered.connect(self.findAlts)
         self.removegroup = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/removegroup"], self)
         self.removegroup.triggered.connect(self.removeGroup)
@@ -329,7 +329,7 @@ class chumArea(RightClickTree):
 
     @QtCore.pyqtSlot()
     def beginNotify(self):
-        print("НАЧАТЬ УВЕДОМЛЕНИЕ")
+        print("BEGIN NOTIFY")
         self.notify = True
 
     def getOptionsMenu(self):
@@ -799,7 +799,7 @@ class chumArea(RightClickTree):
         currentChum = self.currentItem()
         if not currentChum:
             return
-        self.mainwindow.sendMessage.emit("АЛЬТ %s" % (currentChum.chum.handle) , "келСпрайт")
+        self.mainwindow.sendMessage.emit("ALT %s" % (currentChum.chum.handle) , "кэлСпрайт")
     @QtCore.pyqtSlot()
     def openChumLogs(self):
         currentChum = self.currentItem()
@@ -830,13 +830,13 @@ class chumArea(RightClickTree):
         if not hasattr(self, 'renamegroupdialog'):
             self.renamegroupdialog = None
         if not self.renamegroupdialog:
-            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Переименовать группу", "Введите название новой группы:")
+            (gname, ok) = QtWidgets.QInputDialog.getText(self, "Переименовать группу", "Введите новое название группы:")
             if ok:
                 gname = str(gname)
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
                     msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-                    msgbox.setInformativeText("ЭТО НЕ ДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ")
+                    msgbox.setInformativeText("ЭТО НЕДЕЙСТТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     ret = msgbox.exec_()
                     self.addgroupdialog = None
@@ -1013,13 +1013,13 @@ class TrollSlumWindow(QtWidgets.QFrame):
         if self.addtrolldialog:
             return
         self.addtrolldialog = QtWidgets.QInputDialog(self)
-        (handle, ok) = self.addtrolldialog.getText(self, "Добавить тролля", "Введите тролльник:")
+        (handle, ok) = self.addtrolldialog.getText(self, "Добавить тролля", "Введите ТРОЛЛЬНИК:")
         if ok:
             handle = str(handle)
             if not (PesterProfile.checkLength(handle) and
                     PesterProfile.checkValid(handle)[0]):
                 errormsg = QtWidgets.QErrorMessage(self)
-                errormsg.showMessage("ЭТО НЕ ДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК!")
+                errormsg.showMessage("ЭТО НЕДЕЙСТВИТЕЛЬНЫЙ ТРОЛЛЬНИК!")
                 self.addchumdialog = None
                 return
 
@@ -1077,7 +1077,7 @@ class PesterWindow(MovingWindow):
         except:
             self.userprofile = userProfile(PesterProfile("pesterClient%d" % (random.randint(100,999)), QtGui.QColor("black"), Mood(0)))
             self.theme = self.userprofile.getTheme()
-
+            
         # karxi: For the record, these are set via commandline arguments. By
         # default, they aren't usable any other way - you can't set them via
         # the config files.
@@ -1106,9 +1106,9 @@ class PesterWindow(MovingWindow):
         except ThemeException as inst:
             logging.error("Caught: " + inst.parameter)
             themeWarning = QtWidgets.QMessageBox(self)
-            themeWarning.setText("Ошибка темы: %s" % inst)
+            themeWarning.setText("Theme Error: %s" % inst)
             themeWarning.exec_()
-            self.theme = pesterTheme("ДОСТАНЬКОРЕША")
+            self.theme = pesterTheme("pesterchum")
 
         extraToasts = {'default': PesterToast}
         if pytwmn.confExists():
@@ -1165,7 +1165,7 @@ class PesterWindow(MovingWindow):
         else:
             self.console = AttrDict(dict(
                 window = None,
-                action = QtWidgets.QAction("Console", self),
+                action = QtWidgets.QAction("Консоль", self),
                 is_open = False
                 ))
         self.console.shortcuts = AttrDict(dict(
@@ -1236,7 +1236,7 @@ class PesterWindow(MovingWindow):
         self.chanServAction.triggered.connect(self.loadChanServ)
         self.aboutAction = QtWidgets.QAction(self.theme["main/menus/help/about"], self)
         self.aboutAction.triggered.connect(self.aboutPesterchum)
-        self.reportBugAction = QtWidgets.QAction("НАШЛИ ОШИБКУ?", self)
+        self.reportBugAction = QtWidgets.QAction("СООБЩИТЬ ОБ ОШИБКЕ", self)
         self.reportBugAction.triggered.connect(self.reportBug)
         helpmenu = self.menu.addMenu(self.theme["main/menus/help/_name"])
         self.helpmenu = helpmenu
@@ -1274,7 +1274,7 @@ class PesterWindow(MovingWindow):
         self.moodsLabel = QtWidgets.QLabel(self.theme["main/moodlabel/text"], self)
         self.moodsLabel.setObjectName("moodlabel")
         # Padding so it fits. I, don't know how to fix this properly :/
-        self.mychumhandleLabel = QtWidgets.QLabel(self.theme["main/mychumhandle/label/text"]+ "     ", self)
+        self.mychumhandleLabel = QtWidgets.QLabel(self.theme["main/mychumhandle/label/text"] + "     ", self)
         self.mychumhandleLabel.setObjectName("myhandlelabel")
         self.mychumhandle = QtWidgets.QPushButton(self.profile().handle, self)
         self.mychumhandle.setFlat(True)
@@ -1292,7 +1292,7 @@ class PesterWindow(MovingWindow):
         #self.mychumhandleLabel.setStyleSheet("QLabel {);};")
 
         self.hide()
-
+        
         self.waitingMessages = waitingMessageHolder(self)
 
         self.idler = AttrDict(dict(
@@ -1328,8 +1328,8 @@ class PesterWindow(MovingWindow):
         self.lastping = int(time())
         self.pingtimer.start(1000*90)
 
-    self.changeServerAskedToReset = False
-    self.changeServer()
+        self.changeServerAskedToReset = False
+        self.changeServer()
     
     @QtCore.pyqtSlot(QString, QString)
     def updateMsg(self, ver, url):
@@ -1416,13 +1416,13 @@ class PesterWindow(MovingWindow):
                         t.show()
                 else:
                     if msg == "PESTERCHUM:CEASE":
-                        t = self.tm.Toast("Закрыта беседа", handle)
+                        t = self.tm.Toast("Закрыть беседу", handle)
                         t.show()
                     elif msg == "PESTERCHUM:BLOCK":
-                        t = self.tm.Toast("Заблокирован", handle)
+                        t = self.tm.Toast("Заблокировать", handle)
                         t.show()
                     elif msg == "PESTERCHUM:UNBLOCK":
-                        t = self.tm.Toast("Разблокирован", handle)
+                        t = self.tm.Toast("Разблокировать", handle)
                         t.show()
         if handle not in self.convos:
             if msg == "PESTERCHUM:CEASE": # ignore cease after we hang up
@@ -1891,9 +1891,9 @@ class PesterWindow(MovingWindow):
             themeChecker(theme)
         except ThemeException as inst:
             themeWarning = QtWidgets.QMessageBox(self)
-            themeWarning.setText("Ошибка темы: %s" % inst)
+            themeWarning.setText("Theme Error: %s" % inst)
             themeWarning.exec_()
-            theme = pesterTheme("ДОСТАНЬКОРЕША")
+            theme = pesterTheme("pesterchum")
             return
         self.theme = theme
         # do self
@@ -2043,12 +2043,12 @@ class PesterWindow(MovingWindow):
     def deliverNotice(self, handle, msg):
         h = str(handle)
         m = str(msg)
-        if h.upper() == "NICKSERV" and m.startswith("Ваш ник теперь"):
+        if h.upper() == "NICKSERV" and m.startswith("Вашим ником теперь является"):
             changedto = m[39:-1]
             msgbox = QtWidgets.QMessageBox()
             msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-            msgbox.setText("Ваш корешник занят, вы не можете его использовать.")
-            msgbox.setInformativeText("Ваш ник теперь %s." % (changedto))
+            msgbox.setText("Этот корешник уже зарегестрирован, вы не можете его выбрать")
+            msgbox.setInformativeText("Ваш корещник был изменёни на %s." % (changedto))
             msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
             ret = msgbox.exec_()
         elif h == self.randhandler.randNick:
@@ -2063,9 +2063,9 @@ class PesterWindow(MovingWindow):
     @QtCore.pyqtSlot(QString, QString)
     def deliverInvite(self, handle, channel):
         msgbox = QtWidgets.QMessageBox()
-        msgbox.setText("Вы приглашены!!")
+        msgbox.setText("Вы приглашены!")
         msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-        msgbox.setInformativeText("%s пригласил(а) вас в меморандум: %s\nПринять приглашение?" % (handle, channel))
+        msgbox.setInformativeText("%s пригласил вас на меморандум: %s\nЖелаете присоедениться?" % (handle, channel))
         msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok | QtWidgets.QMessageBox.Cancel)
         # Find the Cancel button and make it default
         for b in msgbox.buttons():
@@ -2175,12 +2175,12 @@ class PesterWindow(MovingWindow):
                 if not (PesterProfile.checkLength(handle) and
                         PesterProfile.checkValid(handle)[0]):
                     errormsg = QtWidgets.QErrorMessage(self)
-                    errormsg.showMessage("ЭТО НЕ ДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК!")
+                    errormsg.showMessage("ЭТО НЕДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК!")
                     self.addchumdialog = None
                     return
                 if re.search("[^A-Za-z0-9_\s]", group) is not None:
                     errormsg = QtWidgets.QErrorMessage(self)
-                    errormsg.showMessage("ЭТО НЕ ДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ!")
+                    errormsg.showMessage("ЭТО НЕДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ!")
                     self.addchumdialog = None
                     return
                 if newgroup:
@@ -2194,9 +2194,9 @@ class PesterWindow(MovingWindow):
     def removeChum(self, chumlisting):
         self.config.removeChum(chumlisting)
     def reportChum(self, handle):
-        (reason, ok) = QtWidgets.QInputDialog.getText(self, "Подать жалобу на пользователя", "Введите причину жалобы (необязательно):")
+        (reason, ok) = QtWidgets.QInputDialog.getText(self, "Пожаловаться на пользователя", "Введите причину жалобы на пользователя (необязательно):")
         if ok:
-            self.sendMessage.emit("ЖАЛОБА %s %s" % (handle, reason) , "келСпрайт")
+            self.sendMessage.emit("ЖАЛОБА %s %s" % (handle, reason) , "кэлСпрайт")
 
     @QtCore.pyqtSlot(QString)
     def blockChum(self, handle):
@@ -2460,7 +2460,7 @@ class PesterWindow(MovingWindow):
         if not hasattr(self, "openchatdialog"):
             self.openchatdialog = None
         if not self.openchatdialog:
-            (chum, ok) = QtWidgets.QInputDialog.getText(self, "Достать кореша", "Введите корешник:")
+            (chum, ok) = QtWidgets.QInputDialog.getText(self, "Достать кореша", "Введите корешник того, кого хотите достать:")
             try:
                 if ok:
                     self.newConversation(str(chum))
@@ -2494,7 +2494,7 @@ class PesterWindow(MovingWindow):
                 gname = str(gname)
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
-                    msgbox.setInformativeText("ЭТО НАЗВАНИЕ ГРУППЫ НЕ ДЕЙСТВИТЕЛЬНО")
+                    msgbox.setInformativeText("ЭТО НЕДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ!")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")#Style :) (memos/style or convo/style works :3 )
                     ret = msgbox.exec_()
@@ -2806,7 +2806,7 @@ class PesterWindow(MovingWindow):
                 self.changeTheme(pesterTheme(themename))
             except ValueError as e:
                 themeWarning = QtWidgets.QMessageBox(self)
-                themeWarning.setText("Ошибка темы: %s" % (e))
+                themeWarning.setText("Theme Error: %s" % (e))
                 themeWarning.exec_()
                 self.choosetheme = None
                 return
@@ -2882,8 +2882,8 @@ class PesterWindow(MovingWindow):
     def switchProfile(self):
         if self.convos:
             closeWarning = QtWidgets.QMessageBox()
-            closeWarning.setText("ВНИМАНИЕ: ПРИ ПЕРЕХОДЕ НА ДРУГОЙ ПРОФИЛЬ У ВАС ЗАКРОЮТСЯ ОКНА ЧАТОВ!")
-            closeWarning.setInformativeText("я тебя предупреждал насчёт окон бро!!!! я тебе говорил об этом!")
+            closeWarning.setText("WARNING: ЕСЛИ ВЫ ПОМЕНЯЕТЕ ПРОФИЛЬ, ТО ЗАКРОЮТСЯ ВСЕ ОКНА БЕСЕД!")
+            closeWarning.setInformativeText("я тебя предупреждал бро!!!! я говорил про это!")
             closeWarning.setStandardButtons(QtWidgets.QMessageBox.Cancel | QtWidgets.QMessageBox.Ok)
             closeWarning.setDefaultButton(QtWidgets.QMessageBox.Ok)
             ret = closeWarning.exec_()
@@ -2899,7 +2899,7 @@ class PesterWindow(MovingWindow):
         self.aboutwindow = None
     @QtCore.pyqtSlot()
     def loadCalsprite(self):
-        self.newConversation("келСпрайт")
+        self.newConversation("кэлСпрайт")
     @QtCore.pyqtSlot()
     def loadChanServ(self):
         self.newConversation("chanServ")
@@ -2908,11 +2908,11 @@ class PesterWindow(MovingWindow):
         self.newConversation("nickServ")
     @QtCore.pyqtSlot()
     def launchHelp(self):
-        QtGui.QDesktopServices.openUrl(QtCore.QUrl("https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/issues", QtCore.QUrl.TolerantMode))
+        QtGui.QDesktopServices.openUrl(QtCore.QUrl("https://github.com/Dpeta/pesterchum-alt-servers/issues", QtCore.QUrl.TolerantMode))
         QtGui.QDesktopServices.openUrl(QtCore.QUrl("https://forum.homestuck.xyz/viewtopic.php?f=7&t=467", QtCore.QUrl.TolerantMode))
     @QtCore.pyqtSlot()
     def reportBug(self):
-        QtGui.QDesktopServices.openUrl(QtCore.QUrl("https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/issues", QtCore.QUrl.TolerantMode))
+        QtGui.QDesktopServices.openUrl(QtCore.QUrl("https://github.com/Dpeta/pesterchum-alt-servers/issues", QtCore.QUrl.TolerantMode))
         return
 
     @QtCore.pyqtSlot(QString, QString)
@@ -2950,8 +2950,8 @@ class PesterWindow(MovingWindow):
     @QtCore.pyqtSlot()
     def tooManyPeeps(self):
         msg = QtWidgets.QMessageBox(self)
-        msg.setText("D: СЛИШКОМ МНОГО ЛЮДЕЙ!!!")
-        msg.setInformativeText("Сервер уже максимално занят. Пожалуйста, попробуйте чуть позже.")
+        msg.setText("СЛИШКОМ МНОГО ЛЮДЕЙ И ТРОЛЛЕЙ!!! :(")
+        msg.setInformativeText("Сервер максимально заполнен. Повторите вход позже.")
         msg.show()
 
     @QtCore.pyqtSlot()
@@ -2967,74 +2967,74 @@ class PesterWindow(MovingWindow):
     def passIRC(self, irc):
         self.irc = irc
 
-        def updateServerJson(self):
-            logging.info(self.customServerPrompt_qline.text() + " chosen")
+    def updateServerJson(self):
+        logging.info(self.customServerPrompt_qline.text() + " chosen")
 
-            server_and_port = self.customServerPrompt_qline.text().split(':')
+        server_and_port = self.customServerPrompt_qline.text().split(':')
 
-            try:
-                server = {
-                    "server": server_and_port[0],
-                    "port": server_and_port[1],
-                    "TLS": self.TLS_checkbox.isChecked()
+        try:
+            server = {
+                "server": server_and_port[0],
+                "port": server_and_port[1],
+                "TLS": self.TLS_checkbox.isChecked()
                 }
-                logging.info("server:    " + str(server))
-            except:
-                msgbox = QtWidgets.QMessageBox()
-                msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-                msgbox.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-                msgbox.setInformativeText("Incorrect format :(")
-                msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
-                ret = msgbox.exec_()
-                self.changeServer()
-                return 1
+            logging.info("server:    "+str(server))
+        except:
+            msgbox = QtWidgets.QMessageBox()
+            msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
+            msgbox.setWindowIcon(PesterIcon(self.theme["main/icon"]))
+            msgbox.setInformativeText("Incorrect format :(")
+            msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            ret = msgbox.exec_()
+            self.changeServer()
+            return 1
 
-            with open(_datadir + "serverlist.json", "r") as server_file:
-                read_file = server_file.read()
+        with open(_datadir + "serverlist.json", "r") as server_file:
+            read_file = server_file.read()
+            server_file.close()
+            server_list_obj = json.loads(read_file)
+        server_list_obj.append(server)
+        try:
+            with open(_datadir + "serverlist.json", "w") as server_file:
+                server_file.write(json.dumps(server_list_obj, indent = 4))
                 server_file.close()
-                server_list_obj = json.loads(read_file)
-            server_list_obj.append(server)
-            try:
-                with open(_datadir + "serverlist.json", "w") as server_file:
-                    server_file.write(json.dumps(server_list_obj, indent=4))
-                    server_file.close()
-            except:
+        except:
                 logging.error("failed")
 
-            # Go back to original screen
-            self.changeServer()
+        # Go back to original screen
+        self.changeServer()
+        
+    def resetServerlist(self):
+        default_server_list = [{
+                                        "server": "irc.pesterchum.xyz",
+                                        "port": "6697",
+                                        "TLS": True
+                                    }]
+        if os.path.isfile(_datadir + "serverlist.json"):
+            logging.error("Failed to load server list from serverlist.json.")
+            msgbox = QtWidgets.QMessageBox()
+            msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
+            msgbox.setWindowIcon(PesterIcon(self.theme["main/icon"]))
+            msgbox.setInformativeText("Failed to load server list, do you wish to revert to defaults?\n" \
+                                      + "Если выберете Нет, то Достанькореша, скорее всего, вылетет, если вы самостоятельно не исправите serverlist.json\n" \
+                                      + "Пожалуйста, сообщайте про такие ошибки :'3")
+            msgbox.addButton(QtWidgets.QPushButton("Да"), QtWidgets.QMessageBox.YesRole)
+            msgbox.addButton(QtWidgets.QPushButton("Нет"), QtWidgets.QMessageBox.NoRole)
+            ret = msgbox.exec_()
+            reply = msgbox.buttonRole(msgbox.clickedButton())
 
-        def resetServerlist(self):
-            default_server_list = [{
-                "server": "irc.pesterchum.xyz",
-                "port": "6697",
-                "TLS": True
-            }]
-            if os.path.isfile(_datadir + "serverlist.json"):
-                logging.error("Failed to load server list from serverlist.json.")
-                msgbox = QtWidgets.QMessageBox()
-                msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-                msgbox.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-                msgbox.setInformativeText("Ошибка загрузки списка серверов, вы желаете вернуться к настройкам по умолчанию?\n" \
-                                          + "Если нет, то Достанькореша, скорее всего, вылетит если вы самостоятельно не исправите serverlist.json\n" \
-                                          + "Пожалуйста, сообщайте об этих ошибках :'3")
-                msgbox.addButton(QtWidgets.QPushButton("Да"), QtWidgets.QMessageBox.YesRole)
-                msgbox.addButton(QtWidgets.QPushButton("Нет"), QtWidgets.QMessageBox.NoRole)
-                ret = msgbox.exec_()
-                reply = msgbox.buttonRole(msgbox.clickedButton())
-
-                if (reply == QtWidgets.QMessageBox.YesRole):
-                    with open(_datadir + "serverlist.json", "w") as server_file:
-                        server_file.write(json.dumps(default_server_list, indent=4))
-                        server_file.close()
-
-            else:
-                logging.warning("Failed to load server list because serverlist.json doesn't exist, " \
-                                + "this isn't an issue if this is the first time Pesterchum has been started.")
+            if (reply==QtWidgets.QMessageBox.YesRole):
                 with open(_datadir + "serverlist.json", "w") as server_file:
-                    server_file.write(json.dumps(default_server_list, indent=4))
+                    server_file.write(json.dumps(default_server_list, indent = 4) )
                     server_file.close()
-            self.changeServer()
+
+        else:
+            logging.warning("Failed to load server list because serverlist.json doesn't exist, " \
+                + "this isn't an issue if this is the first time Pesterchum has been started.")
+            with open(_datadir + "serverlist.json", "w") as server_file:
+                    server_file.write(json.dumps(default_server_list, indent = 4) )
+                    server_file.close()
+        self.changeServer()
 
     def removeServer(self):
         server_list_items = []
@@ -3050,13 +3050,13 @@ class PesterWindow(MovingWindow):
                 self.changeServerAskedToReset = True
                 self.resetServerlist()
                 return 1
-
+        
         for i in range(len(server_list_obj)):
             if server_list_obj[i]["server"] == self.removeServerBox.currentText():
                 selected_entry = i
 
         server_list_obj.pop(selected_entry)
-
+        
         try:
             with open(_datadir + "serverlist.json", "w") as server_file:
                 server_file.write(json.dumps(server_list_obj, indent = 4))
@@ -3064,60 +3064,60 @@ class PesterWindow(MovingWindow):
         except:
                 logging.error("failed")
 
+
         self.changeServer()
 
-        def setServer(self):
-            if self.serverBox.currentText() == "Add a server [Prompt]":
-                # Text input
-                self.customServerPrompt_qline = QtWidgets.QLineEdit(self)
-                self.customServerPrompt_qline.setMinimumWidth(200)
+    def setServer(self):
+        if self.serverBox.currentText() == "Добавить сервер [Prompt]":
+            # Text input
+            self.customServerPrompt_qline = QtWidgets.QLineEdit(self)
+            self.customServerPrompt_qline.setMinimumWidth(200)
+            
+            # Widget 1
+            self.customServerDialog = QtWidgets.QDialog()
+            
+            # Buttons
+            cancel = QtWidgets.QPushButton("ОТМЕНА")
+            ok = QtWidgets.QPushButton("OK")
+            
+            ok.setDefault(True)
+            ok.clicked.connect(self.customServerDialog.accept)
+            cancel.clicked.connect(self.customServerDialog.reject)
+            
+            #Layout
+            layout = QtWidgets.QHBoxLayout()
+            
+            self.TLS_checkbox = QtWidgets.QCheckBox(self)
+            self.TLS_checkbox.setChecked(True)
+            TLS_checkbox_label = QtWidgets.QLabel(":33 < Проверьте, нужно ли вам подключиться через TLS!!")
+            TLS_checkbox_label.setStyleSheet("QLabel { color: #416600; font-weight: bold;}")
+            TLS_layout = QtWidgets.QHBoxLayout()
+            TLS_layout.addWidget(TLS_checkbox_label)
+            TLS_layout.addWidget(self.TLS_checkbox)
+            
+            layout.addWidget(cancel)
+            layout.addWidget(ok)
+            main_layout = QtWidgets.QVBoxLayout()
+            nep_prompt = QtWidgets.QLabel(":33 < Пожалуйста, введите адрес сервера в формате ИМЯХОСТА:ПОРТ \n:33 <Вот например, irc.pesterchum.xyz:6697")
+            nep_prompt.setStyleSheet("QLabel { color: #416600; font-weight: bold;}")
+            main_layout.addWidget(nep_prompt)
+            main_layout.addWidget(self.customServerPrompt_qline)
+            main_layout.addLayout(TLS_layout)
+            main_layout.addLayout(layout)
+            
+            self.customServerDialog.setLayout(main_layout)
+            
+            # Theme
+            self.customServerDialog.setStyleSheet(self.theme["main/defaultwindow/style"])
+            self.customServerDialog.setWindowIcon(PesterIcon(self.theme["main/icon"]))
+            
+            # Connect
+            self.customServerDialog.accepted.connect(self.updateServerJson)
+            self.customServerDialog.rejected.connect(self.changeServer)
 
-                # Widget 1
-                self.customServerDialog = QtWidgets.QDialog()
-
-                # Buttons
-                cancel = QtWidgets.QPushButton("CANCEL")
-                ok = QtWidgets.QPushButton("OK")
-
-                ok.setDefault(True)
-                ok.clicked.connect(self.customServerDialog.accept)
-                cancel.clicked.connect(self.customServerDialog.reject)
-
-                # Layout
-                layout = QtWidgets.QHBoxLayout()
-
-                self.TLS_checkbox = QtWidgets.QCheckBox(self)
-                self.TLS_checkbox.setChecked(True)
-                TLS_checkbox_label = QtWidgets.QLabel(":33 < Check if you want to connect over TLS!!")
-                TLS_checkbox_label.setStyleSheet("QLabel { color: #416600; font-weight: bold;}")
-                TLS_layout = QtWidgets.QHBoxLayout()
-                TLS_layout.addWidget(TLS_checkbox_label)
-                TLS_layout.addWidget(self.TLS_checkbox)
-
-                layout.addWidget(cancel)
-                layout.addWidget(ok)
-                main_layout = QtWidgets.QVBoxLayout()
-                nep_prompt = QtWidgets.QLabel(
-                    ":33 < Please put in the server's address in the format HOSTNAME:PORT\n:33 < Fur example, irc.pesterchum.xyz:6697")
-                nep_prompt.setStyleSheet("QLabel { color: #416600; font-weight: bold;}")
-                main_layout.addWidget(nep_prompt)
-                main_layout.addWidget(self.customServerPrompt_qline)
-                main_layout.addLayout(TLS_layout)
-                main_layout.addLayout(layout)
-
-                self.customServerDialog.setLayout(main_layout)
-
-                # Theme
-                self.customServerDialog.setStyleSheet(self.theme["main/defaultwindow/style"])
-                self.customServerDialog.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-
-                # Connect
-                self.customServerDialog.accepted.connect(self.updateServerJson)
-                self.customServerDialog.rejected.connect(self.changeServer)
-
-                # Show
-                self.customServerDialog.show()
-
+            # Show
+            self.customServerDialog.show()
+            
         elif self.serverBox.currentText() == "Удалить сервер [Prompt]":
             # Read servers.
             server_list_items = []
@@ -3133,138 +3133,138 @@ class PesterWindow(MovingWindow):
                     self.changeServerAskedToReset = True
                     self.resetServerlist()
                     return 1
-
+        
             logging.info("server_list_items:    " + str(server_list_items))
-
+            
             # Widget 1
             self.chooseRemoveServerWidged = QtWidgets.QDialog()
-
+            
             # removeServerBox
             self.removeServerBox = QtWidgets.QComboBox()
 
             for i in range(len(server_list_items)):
                 self.removeServerBox.addItem(server_list_items[i])
-
+            
             # Buttons
             cancel = QtWidgets.QPushButton("ОТМЕНА")
             ok = QtWidgets.QPushButton("OK")
-
+            
             ok.setDefault(True)
             ok.clicked.connect(self.chooseRemoveServerWidged.accept)
             cancel.clicked.connect(self.chooseRemoveServerWidged.reject)
-
+            
             #Layout
             layout = QtWidgets.QHBoxLayout()
             layout.addWidget(cancel)
             layout.addWidget(ok)
             main_layout = QtWidgets.QVBoxLayout()
-            main_layout.addWidget(QtWidgets.QLabel("Пожалуйста, выберете сервер на удаление."))
+            main_layout.addWidget(QtWidgets.QLabel("Выберете сервер для удаления."))
             main_layout.addWidget(self.removeServerBox)
             main_layout.addLayout(layout)
-
+            
             self.chooseRemoveServerWidged.setLayout(main_layout)
-
+            
             # Theme
             self.chooseRemoveServerWidged.setStyleSheet(self.theme["main/defaultwindow/style"])
             self.chooseRemoveServerWidged.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-
+            
             # Connect
             self.chooseRemoveServerWidged.accepted.connect(self.removeServer)
             self.chooseRemoveServerWidged.rejected.connect(self.changeServer)
 
             # Show
             self.chooseRemoveServerWidged.show()
-            else:
-                logging.info(self.serverBox.currentText() + " chosen")
+        else:
+            logging.info(self.serverBox.currentText() + " chosen")
 
-                with open(_datadir + "serverlist.json", "r") as server_file:
-                    read_file = server_file.read()
+            with open(_datadir + "serverlist.json", "r") as server_file:
+                read_file = server_file.read()
+                server_file.close()
+                server_obj = json.loads(read_file)
+
+            selected_entry = None
+            
+            for i in range(len(server_obj)):
+                if server_obj[i]["server"] == self.serverBox.currentText():
+                    selected_entry = i
+            
+            try:
+                with open(_datadir + "server.json", "w") as server_file:
+                    json_server_file = {
+                                        "server": server_obj[selected_entry]["server"],
+                                        "port": server_obj[selected_entry]["port"],
+                                        "TLS": server_obj[selected_entry]["TLS"]
+                                    }
+                    server_file.write(json.dumps(json_server_file, indent = 4) )
                     server_file.close()
-                    server_obj = json.loads(read_file)
-
-                selected_entry = None
-
-                for i in range(len(server_obj)):
-                    if server_obj[i]["server"] == self.serverBox.currentText():
-                        selected_entry = i
-
-                try:
-                    with open(_datadir + "server.json", "w") as server_file:
-                        json_server_file = {
-                            "server": server_obj[selected_entry]["server"],
-                            "port": server_obj[selected_entry]["port"],
-                            "TLS": server_obj[selected_entry]["TLS"]
-                        }
-                        server_file.write(json.dumps(json_server_file, indent=4))
-                        server_file.close()
-                except:
+            except:
                     logging.error("Failed to set server :(")
 
-                # Continue running Pesterchum as usual
-                pesterchum.irc.start()
-                pesterchum.reconnectok = False
-                pesterchum.showLoading(pesterchum.widget)
-                self.show()  # Not required?
+            # Continue running Pesterchum as usual
+            pesterchum.irc.start()
+            pesterchum.reconnectok = False
+            pesterchum.showLoading(pesterchum.widget)
+            self.show() # Not required?
 
-        def changeServer(self):
-            # Read servers.
-            server_list_items = []
-            try:
-                with open(_datadir + "serverlist.json", "r") as server_file:
-                    read_file = server_file.read()
-                    server_file.close()
-                    server_obj = json.loads(read_file)
-                for i in range(len(server_obj)):
-                    server_list_items.append(server_obj[i]["server"])
-            except:
-                if self.changeServerAskedToReset == False:
-                    self.changeServerAskedToReset = True
-                    self.resetServerlist()
-                    return 1
+    def changeServer(self):
+        # Read servers.
+        server_list_items = []
+        try:
+            with open(_datadir + "serverlist.json", "r") as server_file:
+                read_file = server_file.read()
+                server_file.close()
+                server_obj = json.loads(read_file)
+            for i in range(len(server_obj)):
+                server_list_items.append(server_obj[i]["server"])
+        except:
+            if self.changeServerAskedToReset == False:
+                self.changeServerAskedToReset = True
+                self.resetServerlist()
+                return 1
+    
+        logging.info("server_list_items:    " + str(server_list_items))
+        
+        # Widget 1
+        self.chooseServerWidged = QtWidgets.QDialog()
+        
+        # Serverbox
+        self.serverBox = QtWidgets.QComboBox()
 
-            logging.info("server_list_items:    " + str(server_list_items))
-
-            # Widget 1
-            self.chooseServerWidged = QtWidgets.QDialog()
-
-            # Serverbox
-            self.serverBox = QtWidgets.QComboBox()
-
-            for i in range(len(server_list_items)):
-                self.serverBox.addItem(server_list_items[i])
-
-            self.serverBox.addItem("Добавить сервер [Prompt]")
+        for i in range(len(server_list_items)):
+            self.serverBox.addItem(server_list_items[i])
+        
+        self.serverBox.addItem("Добавить сервер [Prompt]")
         self.serverBox.addItem("Удалить сервер [Prompt]")
+        
+        # Buttons
+        cancel = QtWidgets.QPushButton("ОТМЕНА")
+        ok = QtWidgets.QPushButton("OK")
+        
+        ok.setDefault(True)
+        ok.clicked.connect(self.chooseServerWidged.accept)
+        cancel.clicked.connect(self.chooseServerWidged.reject)
+        
+        #Layout
+        layout = QtWidgets.QHBoxLayout()
+        layout.addWidget(cancel)
+        layout.addWidget(ok)
+        main_layout = QtWidgets.QVBoxLayout()
+        main_layout.addWidget(QtWidgets.QLabel("Выберете сервер."))
+        main_layout.addWidget(self.serverBox)
+        main_layout.addLayout(layout)
+        
+        self.chooseServerWidged.setLayout(main_layout)
+        
+        # Theme
+        self.chooseServerWidged.setStyleSheet(self.theme["main/defaultwindow/style"])
+        self.chooseServerWidged.setWindowIcon(PesterIcon(self.theme["main/icon"]))
+        
+        # Connect
+        self.chooseServerWidged.accepted.connect(self.setServer)
+        self.chooseServerWidged.rejected.connect(self.quit)
 
-            # Buttons
-            cancel = QtWidgets.QPushButton("ОТМЕНА")
-            ok = QtWidgets.QPushButton("OK")
-
-            ok.setDefault(True)
-            ok.clicked.connect(self.chooseServerWidged.accept)
-            cancel.clicked.connect(self.chooseServerWidged.reject)
-
-            # Layout
-            layout = QtWidgets.QHBoxLayout()
-            layout.addWidget(cancel)
-            layout.addWidget(ok)
-            main_layout = QtWidgets.QVBoxLayout()
-            main_layout.addWidget(QtWidgets.QLabel("Пожалуйста, выберете сервер."))
-            main_layout.addWidget(self.serverBox)
-            main_layout.addLayout(layout)
-
-            self.chooseServerWidged.setLayout(main_layout)
-
-            # Theme
-            self.chooseServerWidged.setStyleSheet(self.theme["main/defaultwindow/style"])
-            self.chooseServerWidged.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-
-            # Connect
-            self.chooseServerWidged.accepted.connect(self.setServer)
-            self.chooseServerWidged.rejected.connect(self.quit)
-
-            # Show
-            self.chooseServerWidged.show()
+        # Show
+        self.chooseServerWidged.show()
 
     pcUpdate = QtCore.pyqtSignal('QString', 'QString')
     closeToTraySignal = QtCore.pyqtSignal()
@@ -3342,7 +3342,7 @@ class MainProgram(QtCore.QObject):
             # Back to our scheduled program.
 
         self.app = QtWidgets.QApplication(sys.argv)
-        self.app.setApplicationName("ДОСТАНЬКОРЕША")
+        self.app.setApplicationName("Достанькореша")
         self.app.setQuitOnLastWindowClosed(False)
 
         options = self.oppts(sys.argv[1:])
@@ -3379,8 +3379,8 @@ class MainProgram(QtCore.QObject):
 
         self.trayicon = PesterTray(PesterIcon(self.widget.theme["main/icon"]), self.widget, self.app)
         self.traymenu = QtWidgets.QMenu()
-
-        moodMenu = self.traymenu.addMenu("ПОСТАВИТЬ НАСТРОЕНИЕ")
+        
+        moodMenu = self.traymenu.addMenu("УСТАНОВИТЬ НАСТРОЕНИЕ")
         moodCategories = {}
         for k in Mood.moodcats:
             moodCategories[k] = moodMenu.addMenu(k.upper())
@@ -3407,14 +3407,14 @@ class MainProgram(QtCore.QObject):
         self.trayicon.messageClicked.connect(self.trayMessageClick)
 
         self.attempts = 0
-
+        
         # but it's at least better than the way it was before.
         self.irc = PesterIRC(self.widget.config, self.widget)
         self.connectWidgets(self.irc, self.widget)
 
         self.widget.passIRC(self.irc) # Maybe this is absolutely terrible in practice, but screw it.
         self.widget.gainAttention[QtWidgets.QWidget].connect(self.alertWindow)
-
+        
 
     @QtCore.pyqtSlot(QtWidgets.QWidget)
     def alertWindow(self, widget):
@@ -3424,9 +3424,9 @@ class MainProgram(QtCore.QObject):
     def trayiconShow(self):
         self.trayicon.show()
         if self.widget.config.trayMessage():
-            self.trayicon.showMessage("ДОСТАНЬКОРЕША", "Достанькореша уже запущен в трее.\n\
-Нажмите правой кнопкой, чтобы закрыть.\n\
-Нажмите на это сообщение, чтобы больше никогда его не видеть.")
+            self.trayicon.showMessage("Достанькореша", "Достанькореша запушен в системном трее.\n\
+Нажмите правой кнопкой для закрытия.\n\
+Щелкните на это сообщение, чтобы больше никогда его не видеть.")
 
     @QtCore.pyqtSlot()
     def trayMessageClick(self):
@@ -3566,7 +3566,7 @@ class MainProgram(QtCore.QObject):
             self.widget.pcUpdate.emit(new_url[0], new_url[1])
         q.task_done()
 
-    def showLoading(self, widget, msg="СО3Д1Н3Н13"):
+    def showLoading(self, widget, msg="СО3ДИН3НИ3"):
         self.widget.show()
         if len(msg) > 60:
             newmsg = []
@@ -3637,16 +3637,16 @@ class MainProgram(QtCore.QObject):
             self.connectWidgets(self.irc, self.widget)
             self.irc.start()
             if self.attempts == 1:
-                msg = "П3Р3ПОДКЛЮЧ3Н13"
+                msg = "П3Р3ПОДКЛЮЧ3НИ3"
             elif self.attempts > 1:
-                msg = "П3Р3ПОДКЛЮЧ3Н13 %d" % (self.attempts)
+                msg = "П3Р3ПОДКЛЮЧ3НИ3 %d" % (self.attempts)
             else:
-                msg = "СО3Д1Н3Н13"
+                msg = "СО3ДИН3НИ3"
             self.reconnectok = False
             self.showLoading(self.widget, msg)
         else:
             self.reconnectok = True
-            self.showLoading(self.widget, "0Ш1БКА: %s" % stop)
+            self.showLoading(self.widget, "ОШИБК4: %s" % stop)
 
     def oppts(self, argv):
         options = {}
