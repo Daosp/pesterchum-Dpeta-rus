@@ -8,8 +8,8 @@ class Mood(object):
              "devious", "sleek", "detestful", "mirthful", "manipulative",
              "vigorous", "perky", "acceptant", "protective", "mystified",
              "amazed", "insolent", "bemused" ]
-    moodcats = ["кореша", "тролли", "остальные"]
-    revmoodcats = {'discontent': 'тролли', 'insolent': 'кореша', 'rancorous': 'кореша', 'sleek': 'тролли', 'bemused': 'кореша', 'mystified': 'кореша', 'pranky': 'кореша', 'distraught': 'кореша', 'offline': 'кореша', 'chummy': 'кореша', 'protective': 'остальные', 'vigorous': 'тролли', 'ecstatic': 'тролли', 'relaxed': 'тролли', 'pleasant': 'кореша', 'manipulative': 'тролли', 'detestful': 'тролли', 'smooth': 'кореша', 'mirthful': 'тролли', 'acceptant': 'тролли', 'perky': 'тролли', 'devious': 'тролли', 'amazed': 'кореша'}
+    moodcats = ["chums", "trolls", "other"]
+    revmoodcats = {'discontent': 'trolls', 'insolent': 'chums', 'rancorous': 'chums', 'sleek': 'trolls', 'bemused': 'chums', 'mystified': 'chums', 'pranky': 'chums', 'distraught': 'chums', 'offline': 'chums', 'chummy': 'chums', 'protective': 'other', 'vigorous': 'trolls', 'ecstatic': 'trolls', 'relaxed': 'trolls', 'pleasant': 'chums', 'manipulative': 'trolls', 'detestful': 'trolls', 'smooth': 'chums', 'mirthful': 'trolls', 'acceptant': 'trolls', 'perky': 'trolls', 'devious': 'trolls', 'amazed': 'chums'}
 
     def __init__(self, mood):
         if type(mood) is int:

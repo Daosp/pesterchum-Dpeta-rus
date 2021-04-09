@@ -324,24 +324,23 @@ class userConfig(object):
                     server_file.close()
                     server_obj = json.loads(read_file)
                 port = str(server_obj['port'])
-                #print("Port is: " + port)
+                # print("Port is: " + port)
                 return port
             except:
                 return self.config.get('port', '6697')
-
-    ##    def TLS(self):
-    ##        if hasattr(self.parent, 'tlsOverride'):
-    ##            return self.parent.tlsOverride
-    ##        try:
-    ##            with open(_datadir + "server.json", "r") as server_file:
-    ##                read_file = server_file.read()
-    ##                server_file.close()
-    ##                server_obj = json.loads(read_file)
-    ##            TLS = str(server_obj['TLS'])
-    ##            print("TLS-status is: " + TLS)
-    ##            return TLS
-    ##        except:
-    ##            return self.config.get('TLS', True)
+        ##    def TLS(self):
+        ##        if hasattr(self.parent, 'tlsOverride'):
+        ##            return self.parent.tlsOverride
+        ##        try:
+        ##            with open(_datadir + "server.json", "r") as server_file:
+        ##                read_file = server_file.read()
+        ##                server_file.close()
+        ##                server_obj = json.loads(read_file)
+        ##            TLS = str(server_obj['TLS'])
+        ##            print("TLS-status is: " + TLS)
+        ##            return TLS
+        ##        except:
+        ##            return self.config.get('TLS', True)
     def soundOn(self):
         if 'soundon' not in self.config:
             self.set('soundon', True)

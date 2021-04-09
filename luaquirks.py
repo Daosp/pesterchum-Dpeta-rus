@@ -52,7 +52,7 @@ class LuaQuirks(ScriptQuirks):
                     raise Exception
             except:
                 #print("Quirk malformed: %s" % (name))
-                logging.error("Правило искажено: %s" % (name))
+                logging.error("Quirk malformed: %s" % (name))
                 
                 # Since this is executed before QApplication is constructed,
                 # This prevented pesterchum from starting entirely when a quirk was malformed :/
