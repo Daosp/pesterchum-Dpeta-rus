@@ -21,7 +21,6 @@ includefiles = ["quirks",
                 "README.md",
                 "LICENSE",
                 "CHANGELOG.md",
-                "server.json",
                 "PCskins.png",
                 "Pesterchum.png"]
 build_exe_options = {
@@ -59,7 +58,7 @@ icon = "pesterchum.ico"
 shortcut_table = [
     ("DesktopShortcut",        # Shortcut
      "DesktopFolder",          # Directory_
-     "Достанькореша",             # Name
+     "Достанькореша",          # Name
      "TARGETDIR",              # Component_
      "[TARGETDIR]pesterchum.exe",# Target
      None,                     # Arguments

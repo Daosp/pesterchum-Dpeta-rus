@@ -1,5 +1,4 @@
 dist/*
-Pesterchum.egg-info/*
 *.sw?
 *~
 logs/*
@@ -16,4 +15,4 @@ quirks/*
 Pesterchum.dmg
 *.md.backup
 subscript.txt
-/.idea/
+/.idea/*

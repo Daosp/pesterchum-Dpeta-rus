@@ -836,7 +836,7 @@ class chumArea(RightClickTree):
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
                     msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
-                    msgbox.setInformativeText("ЭТО НЕДЕЙСТТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ")
+                    msgbox.setInformativeText("ЭТО НЕДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     ret = msgbox.exec_()
                     self.addgroupdialog = None
@@ -3015,7 +3015,7 @@ class PesterWindow(MovingWindow):
             msgbox = QtWidgets.QMessageBox()
             msgbox.setStyleSheet("QMessageBox{" + self.theme["main/defaultwindow/style"] + "}")
             msgbox.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-            msgbox.setInformativeText("Failed to load server list, do you wish to revert to defaults?\n" \
+            msgbox.setInformativeText("Ошибка загрузки списка серверов, желаете вернуть настройки по умолчанию?\n" \
                                       + "Если выберете Нет, то Достанькореша, скорее всего, вылетет, если вы самостоятельно не исправите serverlist.json\n" \
                                       + "Пожалуйста, сообщайте про такие ошибки :'3")
             msgbox.addButton(QtWidgets.QPushButton("Да"), QtWidgets.QMessageBox.YesRole)
@@ -3089,7 +3089,7 @@ class PesterWindow(MovingWindow):
             
             self.TLS_checkbox = QtWidgets.QCheckBox(self)
             self.TLS_checkbox.setChecked(True)
-            TLS_checkbox_label = QtWidgets.QLabel(":33 < Проверьте, нужно ли вам подключиться через TLS!!")
+            TLS_checkbox_label = QtWidgets.QLabel(":33 < Подключиться через TLS?")
             TLS_checkbox_label.setStyleSheet("QLabel { color: #416600; font-weight: bold;}")
             TLS_layout = QtWidgets.QHBoxLayout()
             TLS_layout.addWidget(TLS_checkbox_label)
@@ -3098,7 +3098,8 @@ class PesterWindow(MovingWindow):
             layout.addWidget(cancel)
             layout.addWidget(ok)
             main_layout = QtWidgets.QVBoxLayout()
-            nep_prompt = QtWidgets.QLabel(":33 < Пожалуйста, введите адрес сервера в формате ИМЯХОСТА:ПОРТ \n:33 <Вот например, irc.pesterchum.xyz:6697")
+            nep_prompt = QtWidgets.QLabel(":33 < Пожалуйста, введите адрес сервера в формате ИМЯХОСТА:ПОРТ \n"\
+                                        + ":33 < Вот например, irc.pesterchum.xyz:6697")
             nep_prompt.setStyleSheet("QLabel { color: #416600; font-weight: bold;}")
             main_layout.addWidget(nep_prompt)
             main_layout.addWidget(self.customServerPrompt_qline)

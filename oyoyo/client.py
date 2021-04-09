@@ -85,7 +85,7 @@ class IRCClient:
 
         # This should be moved to profiles
         import json
-
+        
         try:
             with open(_datadir + "server.json", "r") as server_file:
                 read_file = server_file.read()
@@ -109,7 +109,7 @@ class IRCClient:
             self.context.verify_mode = ssl.CERT_NONE
             self.bare_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.socket = self.context.wrap_socket(self.bare_socket)
-
+        
         self.nick = None
         self.real_name = None
         self.host = None
