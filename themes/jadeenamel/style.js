@@ -283,7 +283,7 @@
       "joinmemo": "ответил на меморандум",
       "joinmemo": "ушел отсюда",
       "kickedmemo": "Вас забанили здесь!!",
-      "idle": "is now an idle chum!!"
+      "idle": "вышел за чаем!!"
   },
   "systemMsgColor": "#393939"
  },

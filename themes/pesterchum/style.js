@@ -31,7 +31,7 @@
                        "import": "хлонпр",
                        "reconnect": "оепеондйкчвхрэяъ",
                        "idle": "нрнирх",
-                       "exit": "бшунд", "console": "йНМЯНКЭ"},
+                       "exit": "бшунд"},
             "profile": {"_name": "опнтхкэ",
                         "switch": "юййюсмр",
                         "color": "жбер",
@@ -44,7 +44,7 @@
                       "calsprite": "йщкяопюир",
                       "chanserv": "опнбепйю йюмюкю",
                       "nickserv": "опнбепйю мхйю",
-					  "reportbug": "яННАЫХРЭ Н АЮЦЕ"},
+					  "reportbug": "аюц"},
             "rclickchumlist": {"pester": "днярюрэ",
                                "removechum": "сдюкхрэ йнпеью",
                                "report": "онфюкнбюрэяъ",
@@ -64,10 +64,13 @@
                                "ooc": "дбнимше яйнайх",
                                "invitechum": "опхцкюяхрэ йнпеью",
                                "memosetting": "мюярпнийх цпсоош",
-                               "memonoquirk": "нрйкчвхрэ днярюбюмхе",
+                               "memonoquirk": "нрйкчвхрэ опюбхкю",
                                "memohidden": "яйпшрэяъ",
                                "memoinvite": "рнкэйн он опхцкюьемхч",
-                               "memomute": "гюрймсрэяъ"
+                               "memomute": "гюрймсрэяъ",
+							   "beeponmessage": "гбсй н яннаьемхъу",
+							   "flashonmessage": "лхцюрэ опх яннаыемхх",
+							   "mutenotifications": "нрйкчвхрэ нонбеыемхъ"
                               }
            },
   "chums": { "style": "border:2px solid yellow; background-color: black;color: white;font: bold;font-family: 'Courier';selection-background-color:#646464; ",

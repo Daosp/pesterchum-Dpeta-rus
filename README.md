@@ -65,7 +65,7 @@ Dpeta крайне рекомендует прочитать эти руково
 ``python setup.py bdist --format=zip``
 
 #### Mac:
-``python setup.py bdist``
+``python setup.py build``
 
 ### PYINSTALLER СБОРКА
 #### Linux (также может работать на других платформах!!): 
