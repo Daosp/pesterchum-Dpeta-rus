@@ -35,7 +35,7 @@
                         "theme": "Тема",
                         "block": "Лист блокировки",
                         "quirks": "Правила"},
-            "help": { "_name": "MSPA",
+            "help": {"reportbug": "Сообщить о баге", "_name": "MSPA",
                       "about": "О программе" },
             "rclickchumlist": {"pester": "Поговорить",
                                "removechum": "Удалить собеседника",

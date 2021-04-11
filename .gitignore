@@ -16,3 +16,4 @@ Pesterchum.dmg
 *.md.backup
 subscript.txt
 /.idea/*
+actual-version.py

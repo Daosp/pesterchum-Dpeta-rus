@@ -11,6 +11,7 @@ from quirks import ScriptQuirks
 from pyquirks import PythonQuirks
 from luaquirks import LuaQuirks
 import dataobjs
+import logging
 
 # karxi: My own contribution to this - a proper lexer.
 import pnc.lexercon as lexercon
@@ -42,7 +43,7 @@ quirkloader = ScriptQuirks()
 quirkloader.add(PythonQuirks())
 quirkloader.add(LuaQuirks())
 quirkloader.loadAll()
-print(quirkloader.funcre())
+logging.info(quirkloader.funcre())
 _functionre = re.compile(r"%s" % quirkloader.funcre())
 _groupre = re.compile(r"\\([0-9]+)")
 
@@ -321,7 +322,7 @@ def _max_msg_len(mask=None, target=None, nick=None, ident=None):
         # Since we should always be able to fetch this
         # karxi: ... Which we can't, right now, unlike in the old script.
         # TODO: Resolve this issue, give it the necessary information.
-
+        
         # If we CAN'T, stick with a length of 30, since that seems to be
         # the average maximum nowadays
         limit -= len(nick) if nick is not None else 30
@@ -343,11 +344,11 @@ def _max_msg_len(mask=None, target=None, nick=None, ident=None):
     return limit
 
 def kxsplitMsg(lexed, ctx, fmt="pchum", maxlen=None, debug=False):
-    """Разделяйте сообщения так, чтобы они не превышали лимит длины.
-    Возвращает аккуратно разделенный список сообщений.
+    """Split messages so that they don't go over the length limit.
+    Returns a list of the messages, neatly split.
     
-    Имейте в виду, что на данный момент в этом есть немного магии,
-    то есть некоторые опасные допущения."""
+    Keep in mind that there's a little bit of magic involved in this at the
+    moment; some unsafe assumptions are made."""
 
     # NOTE: Keep in mind that lexercon CTag objects convert to "r,g,b" format.
     # This means that they're usually going to be fairly long.
@@ -385,8 +386,8 @@ def kxsplitMsg(lexed, ctx, fmt="pchum", maxlen=None, debug=False):
     msglen = 0
 
     def efflenleft():
-        """Получите оставшееся пространство, с которым мы должны работать,
-        с учетом закрывающих тегов, которые потребуются."""
+        """Get the remaining space we have to work with, accounting for closing
+        tags that will be needed."""
         return maxlen - curlen - (len(open_ctags) * 4)
 
     safekeeping = lexed[:]
@@ -398,7 +399,7 @@ def kxsplitMsg(lexed, ctx, fmt="pchum", maxlen=None, debug=False):
     while len(lexed) > 0:
         rounds += 1
         if debug:
-            print("[Starting round {}...]".format(rounds))
+            logging.info("[Starting round {}...]".format(rounds))
         msg = lexed.popleft()
         msglen = 0
         is_text = False
@@ -439,7 +440,7 @@ def kxsplitMsg(lexed, ctx, fmt="pchum", maxlen=None, debug=False):
                     # instead?
                     subround += 1
                     if debug:
-                        print("[Splitting round {}-{}...]".format(
+                        logging.info("[Splitting round {}-{}...]".format(
                                 rounds, subround
                                 ))
                     point = msg.rfind(' ', 0, lenl)
@@ -454,12 +455,12 @@ def kxsplitMsg(lexed, ctx, fmt="pchum", maxlen=None, debug=False):
                     # Remove what we just added.
                     msg = msg[point:]
                     if debug:
-                        print("msg = {!r}".format(msg))
+                        logging.info("msg = {!r}".format(msg))
                 else:
                     # Catch the remainder.
                     stack.append(msg)
                     if debug:
-                        print("msg caught; stack = {!r}".format(stack))
+                        logging.info("msg caught; stack = {!r}".format(stack))
                 # Done processing. Pluck out the first portion so we can
                 # continue processing, clean it up a bit, then add the rest to
                 # our waiting list.
@@ -596,9 +597,9 @@ def kxsplitMsg(lexed, ctx, fmt="pchum", maxlen=None, debug=False):
     return output
 
 def _is_ooc(msg, strict=True):
-    """Проверьте, является ли линия OOC. Обратите внимание, что Достанькореш
-    * любезно * убирает за нас конечные пробелы даже в старых версиях,
-    но мы не делаем этого в этой функции. (Этим занимается вызывающий.)"""
+    """Check if a line is OOC. Note that Pesterchum *is* kind enough to strip
+    trailing spaces for us, even in the older versions, but we don't do that in
+    this function. (It's handled by the calling one.)"""
     # Define the matching braces.
     braces = (
             ('(', ')'),
@@ -622,9 +623,9 @@ def _is_ooc(msg, strict=True):
     return False
 
 def kxhandleInput(ctx, text=None, flavor=None):
-    """То что вводит пользователь, которое должно быть отправлено на сервер,
-    обрабатывается через функцию. Лексический анализ,
-    разбиение и приложение к правилам, а также отправку."""
+    """The function that user input that should be sent to the server is routed
+    through. Handles lexing, splitting, and quirk application, as well as
+    sending."""
     # TODO: This needs a 'dryrun' option, and ways to specify alternative
     # outputs and such, if it's to handle all of these.
     # Flavor is important for logic, ctx is 'self'.
@@ -632,7 +633,7 @@ def kxhandleInput(ctx, text=None, flavor=None):
     # files for the original sentMessage variants.
 
     if flavor is None:
-        raise ValueError("Нужен вкус, чтобы определить подходящую логику!")
+        raise ValueError("A flavor is needed to determine suitable logic!")
 
     if text is None:
         # Fetch the raw text from the input box.
@@ -691,8 +692,8 @@ def kxhandleInput(ctx, text=None, flavor=None):
             # Tell the user we couldn't do quirk things.
             # TODO: Include the actual error...and the quirk it came from?
             msgbox = QtWidgets.QMessageBox()
-            msgbox.setText("Эй, там! Кажется, есть проблема.")
-            err_info = "Кажется, пробема в правилах. (Error: {!s})"
+            msgbox.setText("Whoa there! There seems to be a problem.")
+            err_info = "A quirk seems to be having a problem. (Error: {!s})"
             err_info = err_info.format(err)
             msgbox.setInformativeText(err_info)
             msgbox.exec_()
@@ -842,29 +843,29 @@ def timeProtocol(cmd):
 
 def timeDifference(td):
     if td == timedelta(microseconds=1): # mysteryTime replacement :(
-        return "??:?? С ????"
+        return "??:?? FROM ????"
     if td < timedelta(0):
-        when = "НАЗАД"
+        when = "AGO"
     else:
-        when = "СПУСТЯ В БУДУЩЕМ"
+        when = "FROM NOW"
     atd = abs(td)
     minutes = (atd.days*86400 + atd.seconds) // 60
     hours = minutes // 60
     leftoverminutes = minutes % 60
     if atd == timedelta(0):
-        timetext = "ПРЯМО СЕЙЧАС"
+        timetext = "RIGHT NOW"
     elif atd < timedelta(0,3600):
         if minutes == 1:
-            timetext = "%d МИНУТА %s" % (minutes, when)
+            timetext = "%d MINUTE %s" % (minutes, when)
         else:
-            timetext = "%d МИНУТЫ %s" % (minutes, when)
+            timetext = "%d MINUTES %s" % (minutes, when)
     elif atd < timedelta(0,3600*100):
         if hours == 1 and leftoverminutes == 0:
-            timetext = "%d:%02d ЧАС %s" % (hours, leftoverminutes, when)
+            timetext = "%d:%02d HOUR %s" % (hours, leftoverminutes, when)
         else:
-            timetext = "%d:%02d ЧАСЫ %s" % (hours, leftoverminutes, when)
+            timetext = "%d:%02d HOURS %s" % (hours, leftoverminutes, when)
     else:
-        timetext = "%d ЧАСЫ %s" % (hours, when)
+        timetext = "%d HOURS %s" % (hours, when)
     return timetext
 
 def nonerep(text):
@@ -1082,4 +1083,4 @@ def themeChecker(theme):
         try:
             theme[n]
         except KeyError:
-            raise ThemeException("Отсутствие требовании к теме: %s" % (n))
+            raise ThemeException("Missing theme requirement: %s" % (n))

@@ -58,8 +58,8 @@ class PesterLog(object):
                     fp = codecs.open("%s/%s/%s/%s/%s.%s.txt" % (self.logpath, self.handle, handle, format, handle, time), encoding='utf-8', mode='a')
                 except IOError:
                     errmsg = QtWidgets.QMessageBox(self)
-                    errmsg.setText("ВНИМАНИЕ: Достанькорешу не удалось открыть лог %s!" % (handle))
-                    errmsg.setInformativeText("Ваш лог %s не будет сохранён, так как что то пошло не так. Мы предлагаем перезапустить Достанькореша. Просим прощения за доставленные неудобства :(" % (handle))
+                    errmsg.setText("Warning: Pesterchum could not open the log file for %s!" % (handle))
+                    errmsg.setInformativeText("Your log for %s will not be saved because something went wrong. We suggest restarting Pesterchum. Sorry :(" % (handle))
                     errmsg.show()
                     continue
                 self.convos[handle][format] = fp
@@ -318,29 +318,29 @@ class userConfig(object):
     def port(self):
         if hasattr(self.parent, 'portOverride'):
             return self.parent.portOverride
-            try:
-                with open(_datadir + "server.json", "r") as server_file:
-                    read_file = server_file.read()
-                    server_file.close()
-                    server_obj = json.loads(read_file)
-                port = str(server_obj['port'])
-                # print("Port is: " + port)
-                return port
-            except:
-                return self.config.get('port', '6697')
-        ##    def TLS(self):
-        ##        if hasattr(self.parent, 'tlsOverride'):
-        ##            return self.parent.tlsOverride
-        ##        try:
-        ##            with open(_datadir + "server.json", "r") as server_file:
-        ##                read_file = server_file.read()
-        ##                server_file.close()
-        ##                server_obj = json.loads(read_file)
-        ##            TLS = str(server_obj['TLS'])
-        ##            print("TLS-status is: " + TLS)
-        ##            return TLS
-        ##        except:
-        ##            return self.config.get('TLS', True)
+        try:
+            with open(_datadir + "server.json", "r") as server_file:
+                read_file = server_file.read()
+                server_file.close()
+                server_obj = json.loads(read_file)
+            port = str(server_obj['port'])
+            #print("Port is: " + port)
+            return port
+        except:
+            return self.config.get('port', '6697')
+##    def TLS(self):
+##        if hasattr(self.parent, 'tlsOverride'):
+##            return self.parent.tlsOverride
+##        try:
+##            with open(_datadir + "server.json", "r") as server_file:
+##                read_file = server_file.read()
+##                server_file.close()
+##                server_obj = json.loads(read_file)
+##            TLS = str(server_obj['TLS'])
+##            print("TLS-status is: " + TLS)
+##            return TLS
+##        except:
+##            return self.config.get('TLS', True)
     def soundOn(self):
         if 'soundon' not in self.config:
             self.set('soundon', True)
@@ -427,9 +427,9 @@ class userProfile(object):
                 msgBox.setIcon(QtWidgets.QMessageBox.Information)
                 msgBox.setWindowTitle(":(")
                 self.filename = _datadir+"pesterchum.js"
-                msgBox.setText("Не удалось открыть \"" + \
+                msgBox.setText("Failed to open \"" + \
                                ("%s/%s.js" % (self.profiledir, user)) + \
-                               "\n Вам следует переключиться на другой профиль и установить его по умолчанию.")
+                               "\n You should switch to a different profile and set it as the default.")
                                #"\" if pesterchum acts oddly you might want to try backing up and then deleting \"" + \
                                #_datadir+"pesterchum.js" + \
                                #"\"")

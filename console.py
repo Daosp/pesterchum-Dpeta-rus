@@ -130,7 +130,7 @@ class ConsoleWindow(QtWidgets.QDialog):
 
     def changeTheme(self, theme):
         self.setStyleSheet(theme[self.stylesheet_path])
-        self.setWindowTitle("==> Консоль")
+        self.setWindowTitle("==> Console")
         if "area" in self.text and "input" in self.text:
             self.text.area.changeTheme(theme)
             self.text.input.changeTheme(theme)
@@ -149,8 +149,8 @@ class ConsoleWindow(QtWidgets.QDialog):
         wgt = QtWidgets.QApplication.widgetAt(pos)
         if wgt is None:
             # Don't set None, for now. May change this later.
-            self.addMessage("Вам нужно навести курсор на что-либо " + \
-                    "в Достанькореше чтобы дальше пользоваться.",
+            self.addMessage("You need to have your cursor over something " + \
+                    "in Pesterchum to use that.",
                     direction=direction)
             return
 
@@ -170,11 +170,11 @@ class ConsoleWindow(QtWidgets.QDialog):
                 pass
             else:
                 if str(qtss) == str(""):
-                    uses_ss, ss_msg = False, "Нет"
+                    uses_ss, ss_msg = False, "No"
                 elif qtss is not None:
-                    uses_ss, ss_msg = True, "Да"
+                    uses_ss, ss_msg = True, "Yes"
                 else:
-                    uses_ss, ss_msg = None, "Недействительно"
+                    uses_ss, ss_msg = None, "Invalid"
 
             ss_par, ss_par_msg = None, ""
             if uses_ss is False:
@@ -204,12 +204,12 @@ class ConsoleWindow(QtWidgets.QDialog):
                     if ss_par is False:
                         # We had parent issues.
                         # TODO: Specifically indicate invalid parent.
-                        uses_ss, ss_msg = None, "Недействительно"
+                        uses_ss, ss_msg = None, "Invalid"
                     else:
-                        uses_ss, ss_msg = False, "Нет"
+                        uses_ss, ss_msg = False, "No"
                 else:
                     # We got a stylesheet out of this!
-                    uses_ss, ss_msg = True, "Да"
+                    uses_ss, ss_msg = True, "Yes"
                     #~ss_par_msg = "{0: <4}...on parent ↑{1:d}: {2!r}".format('',
                     ss_par_msg = "{0: <4}...on parent #{1:d}: {2!r}".format('',
                             i, ss_par)
@@ -292,7 +292,7 @@ class ConsoleWindow(QtWidgets.QDialog):
             else:
                 # No errors.
                 if result is not None:
-                    print(repr(result))
+                    logging.info(repr(result))
             finally:
                 # Restore system output.
                 sys.stdout = sysout

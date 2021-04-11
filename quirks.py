@@ -1,4 +1,4 @@
-import os, sys, re, ostools
+import os, sys, re, ostools, logging
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class ScriptQuirks(object):
@@ -20,7 +20,7 @@ class ScriptQuirks(object):
         self.last = self.quirks.copy()
         self.quirks.clear()
         for script in self.scripts:
-            print(script.getExtension())
+            logging.info(script.getExtension())
             script.load()
             #print script.quirks
             for q in script.quirks:
@@ -31,9 +31,9 @@ class ScriptQuirks(object):
                     del self.quirks[k]
         #print self.quirks
         if self.quirks:
-            print('Зарегестрированные правила:', '(), '.join(self.quirks) + "()")
+            logging.info('Registered quirks:', '(), '.join(self.quirks) + "()")
         else:
-            print("ВНИМАНИЕ: Не удалось найти скрипт для правил")
+            logging.warning("Couldn't find any script quirks")
 
     def add(self, script):
         self.scripts.append(script)

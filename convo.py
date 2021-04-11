@@ -551,12 +551,12 @@ class PesterText(QtWidgets.QTextEdit):
             hconn.request("POST", "/index.php", params, headers)
             response = hconn.getresponse()
             if response.status == 200:
-                self.sending.sendinglabel.setText("УСП3111Н0!")
+                self.sending.sendinglabel.setText("SUCC3SS!")
             else:
-                self.sending.sendinglabel.setText("О111ИБК4: %s %s" % (response.status, response.reason))
+                self.sending.sendinglabel.setText("F41L3D: %s %s" % (response.status, response.reason))
             hconn.close()
         except Exception as e:
-            self.sending.sendinglabel.setText("О111ИБК4: %s" % (e))
+            self.sending.sendinglabel.setText("F41L3D: %s" % (e))
         del self.sending
 
 class PesterInput(QtWidgets.QLineEdit):
@@ -649,15 +649,29 @@ class PesterConvo(QtWidgets.QFrame):
         # Easiest solution: Implement a 'Mute' option that overrides all
         # notifications for that window, save for mentions.
         # TODO: Look into setting up theme support here.
-        self._beepToggle = QtWidgets.QAction("Биип при сообщении", self)
+
+        # Theme support :3c
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/beeponmessage"):
+        try:
+            self._beepToggle = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/beeponmessage"], self)
+        except:
+            self._beepToggle = QtWidgets.QAction("BEEP ON MESSAGE", self)
         self._beepToggle.setCheckable(True)
         self._beepToggle.toggled[bool].connect(self.toggleBeep)
 
-        self._flashToggle = QtWidgets.QAction("Мигает при сообщении", self)
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/flashonmessage"):
+        try:
+            self._flashToggle = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/flashonmessage"], self)
+        except:
+            self._flashToggle = QtWidgets.QAction("FLASH ON MESSAGE", self)
         self._flashToggle.setCheckable(True)
         self._flashToggle.toggled[bool].connect(self.toggleFlash)
 
-        self._muteToggle = QtWidgets.QAction("Отключить уведомления", self)
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/mutenotifications"):
+        try:
+            self._muteToggle = QtWidgets.QAction(self.mainwindow.theme["main/menus/rclickchumlist/mutenotifications"], self)
+        except:
+            self._muteToggle = QtWidgets.QAction("MUTE NOTIFICATIONS", self)
         self._muteToggle.setCheckable(True)
         self._muteToggle.toggled[bool].connect(self.toggleMute)
 
@@ -862,6 +876,29 @@ class PesterConvo(QtWidgets.QFrame):
         self.unblockchum.setText(self.mainwindow.theme["main/menus/rclickchumlist/unblockchum"])
         self.logchum.setText(self.mainwindow.theme["main/menus/rclickchumlist/viewlog"])
 
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/beeponmessage"):
+        try:
+            self._beepToggle.setText(self.mainwindow.theme["main/menus/rclickchumlist/beeponmessage"])
+        except:
+            self._beepToggle.setText("BEEP ON MESSAGE")
+
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/flashonmessage"):
+        try:
+            self._flashToggle.setText(self.mainwindow.theme["main/menus/rclickchumlist/flashonmessage"])
+        except:
+            self._flashToggle.setText("FLASH ON MESSAGE", self)
+
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/mutenotifications"):
+        try:
+            self._muteToggle.setText(self.mainwindow.theme["main/menus/rclickchumlist/mutenotifications"])
+        except:
+            self._muteToggle.setText("MUTE NOTIFICATIONS")
+
+        #if self.mainwindow.theme.has_key("main/menus/rclickchumlist/report"):
+        try:
+            self.reportchum.setText(self.mainwindow.theme["main/menus/rclickchumlist/report"])
+        except:
+            pass
         self.textArea.changeTheme(theme)
         self.textInput.changeTheme(theme)
 

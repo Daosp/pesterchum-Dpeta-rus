@@ -18,7 +18,7 @@ class LuaQuirks(ScriptQuirks):
         try:
             return lua.require(name)
         except Error as e:
-            print(e)
+            logging.error(e)
             return None
         finally:
             os.chdir(CurrentDir)
@@ -60,8 +60,8 @@ class LuaQuirks(ScriptQuirks):
                     
                 if QtWidgets.QApplication.instance() != None:
                     msgbox = QtWidgets.QMessageBox()
-                    msgbox.setWindowTitle("ОШИБКА!")
-                    msgbox.setText("Правило искажено: %s" % (name))
+                    msgbox.setWindowTitle("Error!")
+                    msgbox.setText("Quirk malformed: %s" % (name))
                     msgbox.exec_()
             else:
                 self.quirks[name] = CommandWrapper

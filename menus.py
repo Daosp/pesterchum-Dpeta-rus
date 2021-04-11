@@ -183,7 +183,7 @@ class PesterQuirkList(QtWidgets.QTreeWidget):
                 gname = str(gname)
                 if re.search("[^A-Za-z0-9_\s]", gname) is not None:
                     msgbox = QtWidgets.QMessageBox()
-                    msgbox.setInformativeText("ЭТО НЕ ДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ ПРАВИЛ")
+                    msgbox.setInformativeText("ЭТО НЕДЕЙСТВИТЕЛЬНОЕ НАЗВАНИЕ ГРУППЫ ПРАВИЛ")
                     msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
                     ret = msgbox.exec_()
                     self.addgroupdialog = None
@@ -574,8 +574,8 @@ class PesterChooseQuirks(QtWidgets.QDialog):
 
         self.upShiftButton = QtWidgets.QPushButton("^", self)
         self.downShiftButton = QtWidgets.QPushButton("v", self)
-        self.upShiftButton.setToolTip("Двигать правило вверх на одну")
-        self.downShiftButton.setToolTip("Двигать правило вниз на одну")
+        self.upShiftButton.setToolTip("Двинуть правило вверх на одну")
+        self.downShiftButton.setToolTip("Двинуть правило вниз на одну")
         self.upShiftButton.clicked.connect(self.quirkList.upShiftQuirk)
         self.downShiftButton.clicked.connect(self.quirkList.downShiftQuirk)
 
@@ -692,7 +692,7 @@ class PesterChooseQuirks(QtWidgets.QDialog):
                 re.compile(vdict["from"])
             except re.error as e:
                 quirkWarning = QtWidgets.QMessageBox(self)
-                quirkWarning.setText("Не действительное регулярное выражение!")
+                quirkWarning.setText("Недействительное регулярное выражение!")
                 quirkWarning.setInformativeText("ПОЧ3МУ ЗД3СЬ DUMP4SS: %s" % (e))
                 quirkWarning.exec_()
                 self.quirkadd = None
@@ -839,7 +839,7 @@ class PesterChooseProfile(QtWidgets.QDialog):
                 self.errorMsg.setText("КОРЕШНИК СЛИШКОМ ДЛИННЫЙ")
                 return
             if not PesterProfile.checkValid(handle)[0]:
-                self.errorMsg.setText("НЕ ДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК. ПРИЧИНА:\n%s" % (PesterProfile.checkValid(handle)[1]))
+                self.errorMsg.setText("НЕДЕЙСТВИТЕЛЬНЫЙ КОРЕШНИК. ПРИЧИНА:\n%s" % (PesterProfile.checkValid(handle)[1]))
                 return
         self.accept()
 
@@ -935,7 +935,7 @@ class PesterMentions(QtWidgets.QDialog):
             re.compile(pdict["value"])
         except re.error as e:
             quirkWarning = QtWidgets.QMessageBox(self)
-            quirkWarning.setText("Не действительное регулярное выражение!")
+            quirkWarning.setText("Недействительное регулярное выражение!")
             quirkWarning.setInformativeText("ПОЧ3МУ ЗД3СЬ DUMP4SS: %s" % (e))
             quirkWarning.exec_()
         else:
@@ -989,7 +989,7 @@ class PesterOptions(QtWidgets.QDialog):
         font.setPointSize(8)
         bandwidthLabel.setFont(font)
 
-        self.autonickserv = QtWidgets.QCheckBox("Автоматическая индетификация при помощи NickServ", self)
+        self.autonickserv = QtWidgets.QCheckBox("Автоматическая идентификация при помощи NickServ", self)
         self.autonickserv.setChecked(parent.userprofile.getAutoIdentify())
         self.autonickserv.stateChanged[int].connect(self.autoNickServChange)
         self.nickservpass = QtWidgets.QLineEdit(self)
@@ -1104,7 +1104,7 @@ class PesterOptions(QtWidgets.QDialog):
         self.sortBox = QtWidgets.QComboBox(self)
         self.sortBox.addItem("Алфавитно")
         self.sortBox.addItem("По настроению")
-        self.sortBox.addItem("Самостаятельно")
+        self.sortBox.addItem("Самостоятельно")
         method = self.config.sortMethod()
         if method >= 0 and method < self.sortBox.count():
             self.sortBox.setCurrentIndex(method)
@@ -1166,7 +1166,7 @@ class PesterOptions(QtWidgets.QDialog):
         self.ghostchum = QtWidgets.QCheckBox("Pesterdunk Ghostchum!!", self)
         self.ghostchum.setChecked(self.config.ghostchum())
 
-        self.buttonOptions = ["Свернуть на панель задач", "Свернуть в трей", "Выход"]
+        self.buttonOptions = ["Свернуть в панель задач", "Свернуть в трей", "Выход"]
         self.miniBox = QtWidgets.QComboBox(self)
         self.miniBox.addItems(self.buttonOptions)
         self.miniBox.setCurrentIndex(self.config.minimizeAction())
@@ -1380,7 +1380,7 @@ class PesterOptions(QtWidgets.QDialog):
             widget = QtWidgets.QWidget()
             layout_advanced = QtWidgets.QVBoxLayout(widget)
             layout_advanced.setAlignment(QtCore.Qt.AlignTop)
-            layout_advanced.addWidget(QtWidgets.QLabel("Текужий пользовательский режим: %s" % parent.modes))
+            layout_advanced.addWidget(QtWidgets.QLabel("Текущий пользовательский режим: %s" % parent.modes))
             layout_advanced.addLayout(layout_change)
             self.pages.addWidget(widget)
 
@@ -1776,6 +1776,7 @@ Special Thanks:\n\
   ABT\n\
   gamblingGenocider\n\
   Eco-Mono\n\
+  \n\
 Русификацией занимался Daosp")
 
         self.ok = QtWidgets.QPushButton("OK", self)
@@ -1794,10 +1795,10 @@ class UpdatePesterchum(QtWidgets.QDialog):
         self.url = url
         self.mainwindow = parent
         self.setStyleSheet(self.mainwindow.theme["main/defaultwindow/style"])
-        self.setWindowTitle("ДОСТАНЬКОРЕША v%s Update" % (ver))
+        self.setWindowTitle("ДОСТАНЬКОРЕША v%s ОБНОВЛЕНИЕ" % (ver))
         self.setModal(False)
 
-        self.title = QtWidgets.QLabel("Обновление ДОСТАНЬКОРЕША уже доступно!/nВНИМАНИЕ!/nЕсли вы сейчас обновите, то перевод уберётся...")
+        self.title = QtWidgets.QLabel("Обновление ДОСТАНЬКОРЕША уже доступно!")
 
         layout_0 = QtWidgets.QVBoxLayout()
         layout_0.addWidget(self.title)

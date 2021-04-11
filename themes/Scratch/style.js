@@ -34,7 +34,7 @@
                         "color": "Цвет",
                         "block": "Хэйтеры",
                         "quirks": "Жаргон" },
-            "help": { "_name": "Инфо",
+            "help": {"reportbug": "Сообщить о баге", "_name": "Инфо",
                       "help": "Инфо",
                       "calsprite": "Келспрайт",
                       "nickserv": "Сервер ников",

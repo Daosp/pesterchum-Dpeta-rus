@@ -44,7 +44,7 @@
                       "calsprite": "йщкяопюир",
                       "chanserv": "опнбепйю йюмюкю",
                       "nickserv": "опнбепйю мхйю",
-                      "bug": "аюцх?" },
+					  "reportbug": "яННАЫХРЭ Н АЮЦЕ"},
             "rclickchumlist": {"pester": "днярюрэ",
                                "removechum": "сдюкхрэ йнпеью",
                                "report": "онфюкнбюрэяъ",

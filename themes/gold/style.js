@@ -36,7 +36,7 @@
                         "theme": "Theme",
                         "block": "Trollslum",
                         "quirks": "Quirks"},
-            "help": { "_name": "Help",
+            "help": {"reportbug": "Сообщить о баге", "_name": "Help",
                       "about": "About",
                       "help": "Help",
                       "calsprite": "CalSprite",

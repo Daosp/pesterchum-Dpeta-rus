@@ -8,8 +8,71 @@ except NameError:
 
 if os.path.dirname(sys.argv[0]):
     os.chdir(os.path.dirname(sys.argv[0]))
+
+print("Usage: pesterchum.py [OPTIONS]\n")
+print("Use -h/--help to see the available options.")
+#print("sys.argv:    " + str(sys.argv[1:]) + '\n')
+
+# Help
+if ('--help' in sys.argv[1:]) or ('-h' in sys.argv[1:]):
+    print("Possible arguments:")
+    help_arguments = " -l, --logging\n    Specify level of logging, possible values are:\n" + \
+                     "    CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET.\n" + \
+                     "    The default value is WARNING.\n" + \
+                     "    (See https://docs.python.org/3/library/logging.html)\n\n" + \
+                     " -s, --server\n    Specify server override. (legacy)\n\n" + \
+                     " -p, --port\n    Specify port override. (legacy)\n\n" + \
+                     " --advanced\n    Enable advanced.\n\n" + \
+                     " --no-honk\n    Disable honking.\n"
+    print(help_arguments)
+    sys.exit()
+
 import logging
-logging.basicConfig(level=logging.WARNING)
+
+if ('--logging' in sys.argv[1:]) or ('-l' in sys.argv[1:]) & (False == ('--logging' in sys.argv[1:]) and ('-l' in sys.argv[1:])):
+    try:
+        # If both are specified, this does not run.
+        if ('-l' in sys.argv[1:]):
+            loglevel = sys.argv[sys.argv.index('-l') + 1]
+        if ('--logging' in sys.argv[1:]):
+            loglevel = sys.argv[sys.argv.index('--logging') + 1]
+
+        loglevel = loglevel.upper()
+
+        if loglevel == "CRITICAL":
+            loglevel = 50
+            print("Logging Level is CRITICAL")
+        elif loglevel == "ERROR":
+            loglevel = 40
+            print("Logging Level is ERROR")
+        elif loglevel == "WARNING":
+            loglevel = 30
+            print("Logging Level is WARNING")
+        elif loglevel == "INFO":
+            loglevel = 20
+            print("Logging Level is INFO")
+        elif loglevel == "DEBUG":
+            loglevel = 10
+            print("Logging Level is DEBUG")
+        elif loglevel == "NOTSET":
+            loglevel = 0
+            print("Logging Level is NOTSET")
+        else:
+            raise Exception
+        logging.basicConfig(level=loglevel)
+
+        # Remove from argv because the rest of the code can't handle it :/
+        if ('-l' in sys.argv[1:]):
+                sys.argv.pop(sys.argv.index('-l') + 1)
+                sys.argv.pop(sys.argv.index('-l'))
+        if ('--logging' in sys.argv[1:]):
+            sys.argv.pop(sys.argv.index('--logging') + 1)
+            sys.argv.pop(sys.argv.index('--logging'))
+    except:
+        print("Invalid syntax.")
+        logging.basicConfig(level=30) # Warning
+else:
+    logging.basicConfig(level=30) # Warning
 
 from datetime import *
 import random
@@ -48,19 +111,26 @@ except ImportError as e:
     if module.startswith("No module named ") or \
        module.startswith("cannot import name "):
         reqmissing.append(module[module.rfind(" ")+1:])
-    else: print(e)
+    else: logging.critical(e)
     del module
+
+# Because pygame intro msg :3c
+# See https://stackoverflow.com/questions/54246668/how-do-i-delete-the-hello-from-the-pygame-community-console-alert-while-using
+try:
+    os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
+except:
+    logging.exception("Failed to set PYGAME_HIDE_SUPPORT_PROMPT, this is a non-issue.")
 try:
     import pygame
 except ImportError as e:
     pygame = None
     module = str(e)
     if module[:16] == "No module named ": optmissing.append(module[16:])
-    else: print(e)
+    else: logging.critical(e)
     del module
 if reqmissing:
-    print("ERROR: The following modules are required for Pesterchum to run and are missing on your system:")
-    for m in reqmissing: print("* "+m)
+    logging.critical("ERROR: The following modules are required for Pesterchum to run and are missing on your system:")
+    for m in reqmissing: logging.critical("* "+m)
     # False flag for some reason.
     #exit()
 vnum = QtCore.qVersion()
@@ -70,11 +140,11 @@ if vnum.find(".", vnum.find(".")+1) != -1:
 else:
     minor = int(vnum[vnum.find(".")+1:])
 if not ((major > 5) or (major == 5 and minor >= 0)):
-    print("ERROR: Pesterchum requires at least Qt version >= 5.0")
-    print("You currently have version " + vnum + ". Please upgrade Qt.")
+    logging.critical("ERROR: Pesterchum requires at least Qt version >= 5.0")
+    logging.critical("You currently have version " + vnum + ". Please upgrade Qt.")
     exit()
 
-from version import _pcVersion
+from version import _pcVersion, buildVersion
 
 import ostools
 # Placed here before importing the rest of pesterchum, since bits of it need
@@ -329,7 +399,7 @@ class chumArea(RightClickTree):
 
     @QtCore.pyqtSlot()
     def beginNotify(self):
-        print("BEGIN NOTIFY")
+        logging.info("BEGIN NOTIFY")
         self.notify = True
 
     def getOptionsMenu(self):
@@ -350,13 +420,20 @@ class chumArea(RightClickTree):
                 return self.optionsMenu
 
     def startDrag(self, dropAction):
-        # create mime data object
-        mime = QtCore.QMimeData()
-        mime.setData('application/x-item', '???')
-        # start drag
-        drag = QtGui.QDrag(self)
-        drag.setMimeData(mime)
-        drag.start(QtCore.Qt.MoveAction)
+        ##        Traceback (most recent call last):
+        ##            File "pesterchum.py", line 355, in startDrag
+        ##            mime.setData('application/x-item', '???')
+        ##            TypeErroreError: setData(self, str, Union[QByteArray, bytes, bytearray]): argument 2 has unexpected type 'str'
+        try:
+            # create mime data object
+            mime = QtCore.QMimeData()
+            mime.setData('application/x-item', '???')
+            # start drag
+            drag = QtGui.QDrag(self)
+            drag.setMimeData(mime)
+            drag.start(QtCore.Qt.MoveAction)
+        except:
+            logging.exception('')
 
     def dragMoveEvent(self, event):
         if event.mimeData().hasFormat("application/x-item"):
@@ -1094,6 +1171,7 @@ class PesterWindow(MovingWindow):
             self.portOverride = options["port"]
         if "honk" in options:
               self.honk = options["honk"]
+
         else: self.honk = True
         self.modes = ""
 
@@ -1236,7 +1314,11 @@ class PesterWindow(MovingWindow):
         self.chanServAction.triggered.connect(self.loadChanServ)
         self.aboutAction = QtWidgets.QAction(self.theme["main/menus/help/about"], self)
         self.aboutAction.triggered.connect(self.aboutPesterchum)
-        self.reportBugAction = QtWidgets.QAction("СООБЩИТЬ ОБ ОШИБКЕ", self)
+        # Because I can't expect all themes to have this included.
+        if self.theme.has_key("main/menus/help/reportbug"):
+            self.reportBugAction = QtWidgets.QAction(self.theme["main/menus/help/reportbug"], self)
+        else:
+            self.reportBugAction = QtWidgets.QAction("СООБЩИТЬ ОБ ОШИБКЕ", self)
         self.reportBugAction.triggered.connect(self.reportBug)
         helpmenu = self.menu.addMenu(self.theme["main/menus/help/_name"])
         self.helpmenu = helpmenu
@@ -1328,8 +1410,8 @@ class PesterWindow(MovingWindow):
         self.lastping = int(time())
         self.pingtimer.start(1000*90)
 
-        self.changeServerAskedToReset = False
-        self.changeServer()
+        self.chooseServerAskedToReset = False
+        self.chooseServer()
     
     @QtCore.pyqtSlot(QString, QString)
     def updateMsg(self, ver, url):
@@ -1416,13 +1498,13 @@ class PesterWindow(MovingWindow):
                         t.show()
                 else:
                     if msg == "PESTERCHUM:CEASE":
-                        t = self.tm.Toast("Закрыть беседу", handle)
+                        t = self.tm.Toast("Закрыта беседа", handle)
                         t.show()
                     elif msg == "PESTERCHUM:BLOCK":
-                        t = self.tm.Toast("Заблокировать", handle)
+                        t = self.tm.Toast("Заблокирован", handle)
                         t.show()
                     elif msg == "PESTERCHUM:UNBLOCK":
-                        t = self.tm.Toast("Разблокировать", handle)
+                        t = self.tm.Toast("Разблокирован", handle)
                         t.show()
         if handle not in self.convos:
             if msg == "PESTERCHUM:CEASE": # ignore cease after we hang up
@@ -1730,6 +1812,11 @@ class PesterWindow(MovingWindow):
         except:
             self.console.action.setText("Console")
 
+        try:
+            self.reportBugAction.setText(self.theme["main/menus/help/reportbug"])
+        except:
+            self.reportBugAction = QtWidgets.QAction("СООБЩИТЬ ОБ ОШИБКЕ", self)
+
         # moods
         self.moodsLabel.setText(theme["main/moodlabel/text"])
         self.moodsLabel.move(*theme["main/moodlabel/loc"])
@@ -1777,7 +1864,10 @@ class PesterWindow(MovingWindow):
         self.mychumcolor.setStyleSheet("background: %s" % (self.profile().colorhtml()))
         # I don't know why "if "main/mychumhandle/currentMood" in self.theme:" doesn't work,
         # But this seems to work just as well :3c
-        if self.theme.has_key("main/mychumhandle/currentMood"):
+        # GWAHH why does inheriting not work with this </3
+        # For some reason, this only works on trollian with 'try' :/
+        #if self.theme.has_key("main/mychumhandle/currentMood"):
+        try:
             moodicon = self.profile().mood.icon(theme)
             if hasattr(self, 'currentMoodIcon') and self.currentMoodIcon:
                 self.currentMoodIcon.hide()
@@ -1786,7 +1876,7 @@ class PesterWindow(MovingWindow):
             self.currentMoodIcon.setPixmap(moodicon.pixmap(moodicon.realsize()))
             self.currentMoodIcon.move(*theme["main/mychumhandle/currentMood"])
             self.currentMoodIcon.show()
-        else:
+        except:
             if hasattr(self, 'currentMoodIcon') and self.currentMoodIcon:
                 self.currentMoodIcon.hide()
             self.currentMoodIcon = None
@@ -1828,6 +1918,7 @@ class PesterWindow(MovingWindow):
             #    # We don't have any options...just use fillers.
             #    soundclass = NoneSound
             else:
+                logging.warning("Failed to define pygame mixer, is pygame imported?")
                 try:
                     soundclass = QtMultimedia.QSound
                 except:
@@ -1865,13 +1956,14 @@ class PesterWindow(MovingWindow):
         for sound in sounds:
             try:
                 if pygame and pygame.mixer and \
-                        isinstance(sound, pygame.mixer.sound):
+                        isinstance(sound, pygame.mixer.Sound):#pygame.mixer.Sound is case sensitive!!
                             sound.set_volume(vol)
                 elif not isinstance(sound, QtMultimedia.QSound):
                     # We can't set a volume on those....
                     sound.setVolume(vol)
             except Exception as err:
-                logging.info("Couldn't set volume: {}".format(err))
+                # Why was this set as "info"? ?w?
+                logging.warning("Couldn't set volume: {}".format(err))
 
     def canSetVolume(self):
         """Returns the state of volume setting capabilities."""
@@ -2196,7 +2288,7 @@ class PesterWindow(MovingWindow):
     def reportChum(self, handle):
         (reason, ok) = QtWidgets.QInputDialog.getText(self, "Пожаловаться на пользователя", "Введите причину жалобы на пользователя (необязательно):")
         if ok:
-            self.sendMessage.emit("ЖАЛОБА %s %s" % (handle, reason) , "кэлСпрайт")
+            self.sendMessage.emit('ЖАЛОБА %s по причине "%s"' % (handle, reason) , 'кэлСпрайт')
 
     @QtCore.pyqtSlot(QString)
     def blockChum(self, handle):
@@ -2975,7 +3067,7 @@ class PesterWindow(MovingWindow):
         try:
             server = {
                 "server": server_and_port[0],
-                "port": server_and_port[1],
+                "port": int(server_and_port[1]),# to make sure port is a valid integer, and raise an exception if it cannot be converted.
                 "TLS": self.TLS_checkbox.isChecked()
                 }
             logging.info("server:    "+str(server))
@@ -2986,7 +3078,7 @@ class PesterWindow(MovingWindow):
             msgbox.setInformativeText("Incorrect format :(")
             msgbox.setStandardButtons(QtWidgets.QMessageBox.Ok)
             ret = msgbox.exec_()
-            self.changeServer()
+            self.chooseServer()
             return 1
 
         with open(_datadir + "serverlist.json", "r") as server_file:
@@ -3002,8 +3094,8 @@ class PesterWindow(MovingWindow):
                 logging.error("failed")
 
         # Go back to original screen
-        self.changeServer()
-        
+        self.chooseServer()
+
     def resetServerlist(self):
         default_server_list = [{
                                         "server": "irc.pesterchum.xyz",
@@ -3029,12 +3121,12 @@ class PesterWindow(MovingWindow):
                     server_file.close()
 
         else:
-            logging.warning("Failed to load server list because serverlist.json doesn't exist, " \
-                + "this isn't an issue if this is the first time Pesterchum has been started.")
+            logging.warning("Ошибка загрузки списка серверов из serverlist.json, " \
+                + "это не проблема, если Достанькореша запускается впервые.")
             with open(_datadir + "serverlist.json", "w") as server_file:
                     server_file.write(json.dumps(default_server_list, indent = 4) )
                     server_file.close()
-        self.changeServer()
+        self.chooseServer()
 
     def removeServer(self):
         server_list_items = []
@@ -3046,47 +3138,49 @@ class PesterWindow(MovingWindow):
             for i in range(len(server_list_obj)):
                 server_list_items.append(server_list_obj[i]["server"])
         except:
-            if self.changeServerAskedToReset == False:
-                self.changeServerAskedToReset = True
+            if self.chooseServerAskedToReset == False:
+                self.chooseServerAskedToReset = True
                 self.resetServerlist()
                 return 1
-        
+
+        selected_entry = None
+
         for i in range(len(server_list_obj)):
             if server_list_obj[i]["server"] == self.removeServerBox.currentText():
                 selected_entry = i
+        if selected_entry != None:
+            server_list_obj.pop(selected_entry)
 
-        server_list_obj.pop(selected_entry)
-        
-        try:
-            with open(_datadir + "serverlist.json", "w") as server_file:
-                server_file.write(json.dumps(server_list_obj, indent = 4))
-                server_file.close()
-        except:
-                logging.error("failed")
+            try:
+                with open(_datadir + "serverlist.json", "w") as server_file:
+                    server_file.write(json.dumps(server_list_obj, indent = 4))
+                    server_file.close()
+            except:
+                    logging.error("failed")
 
 
-        self.changeServer()
+        self.chooseServer()
 
     def setServer(self):
         if self.serverBox.currentText() == "Добавить сервер [Prompt]":
             # Text input
             self.customServerPrompt_qline = QtWidgets.QLineEdit(self)
             self.customServerPrompt_qline.setMinimumWidth(200)
-            
+
             # Widget 1
             self.customServerDialog = QtWidgets.QDialog()
-            
+
             # Buttons
             cancel = QtWidgets.QPushButton("ОТМЕНА")
             ok = QtWidgets.QPushButton("OK")
-            
+
             ok.setDefault(True)
             ok.clicked.connect(self.customServerDialog.accept)
             cancel.clicked.connect(self.customServerDialog.reject)
-            
+
             #Layout
             layout = QtWidgets.QHBoxLayout()
-            
+
             self.TLS_checkbox = QtWidgets.QCheckBox(self)
             self.TLS_checkbox.setChecked(True)
             TLS_checkbox_label = QtWidgets.QLabel(":33 < Подключиться через TLS?")
@@ -3094,7 +3188,7 @@ class PesterWindow(MovingWindow):
             TLS_layout = QtWidgets.QHBoxLayout()
             TLS_layout.addWidget(TLS_checkbox_label)
             TLS_layout.addWidget(self.TLS_checkbox)
-            
+
             layout.addWidget(cancel)
             layout.addWidget(ok)
             main_layout = QtWidgets.QVBoxLayout()
@@ -3105,20 +3199,21 @@ class PesterWindow(MovingWindow):
             main_layout.addWidget(self.customServerPrompt_qline)
             main_layout.addLayout(TLS_layout)
             main_layout.addLayout(layout)
-            
+
             self.customServerDialog.setLayout(main_layout)
-            
+
             # Theme
             self.customServerDialog.setStyleSheet(self.theme["main/defaultwindow/style"])
             self.customServerDialog.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-            
+
             # Connect
             self.customServerDialog.accepted.connect(self.updateServerJson)
-            self.customServerDialog.rejected.connect(self.changeServer)
+            self.customServerDialog.rejected.connect(self.chooseServer)
 
             # Show
             self.customServerDialog.show()
-            
+            self.customServerDialog.setFocus()
+
         elif self.serverBox.currentText() == "Удалить сервер [Prompt]":
             # Read servers.
             server_list_items = []
@@ -3130,30 +3225,30 @@ class PesterWindow(MovingWindow):
                 for i in range(len(server_obj)):
                     server_list_items.append(server_obj[i]["server"])
             except:
-                if self.changeServerAskedToReset == False:
-                    self.changeServerAskedToReset = True
+                if self.chooseServerAskedToReset == False:
+                    self.chooseServerAskedToReset = True
                     self.resetServerlist()
                     return 1
-        
+
             logging.info("server_list_items:    " + str(server_list_items))
-            
+
             # Widget 1
             self.chooseRemoveServerWidged = QtWidgets.QDialog()
-            
+
             # removeServerBox
             self.removeServerBox = QtWidgets.QComboBox()
 
             for i in range(len(server_list_items)):
                 self.removeServerBox.addItem(server_list_items[i])
-            
+
             # Buttons
             cancel = QtWidgets.QPushButton("ОТМЕНА")
             ok = QtWidgets.QPushButton("OK")
-            
+
             ok.setDefault(True)
             ok.clicked.connect(self.chooseRemoveServerWidged.accept)
             cancel.clicked.connect(self.chooseRemoveServerWidged.reject)
-            
+
             #Layout
             layout = QtWidgets.QHBoxLayout()
             layout.addWidget(cancel)
@@ -3162,16 +3257,16 @@ class PesterWindow(MovingWindow):
             main_layout.addWidget(QtWidgets.QLabel("Выберете сервер для удаления."))
             main_layout.addWidget(self.removeServerBox)
             main_layout.addLayout(layout)
-            
+
             self.chooseRemoveServerWidged.setLayout(main_layout)
-            
+
             # Theme
             self.chooseRemoveServerWidged.setStyleSheet(self.theme["main/defaultwindow/style"])
             self.chooseRemoveServerWidged.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-            
+
             # Connect
             self.chooseRemoveServerWidged.accepted.connect(self.removeServer)
-            self.chooseRemoveServerWidged.rejected.connect(self.changeServer)
+            self.chooseRemoveServerWidged.rejected.connect(self.chooseServer)
 
             # Show
             self.chooseRemoveServerWidged.show()
@@ -3184,11 +3279,11 @@ class PesterWindow(MovingWindow):
                 server_obj = json.loads(read_file)
 
             selected_entry = None
-            
+
             for i in range(len(server_obj)):
                 if server_obj[i]["server"] == self.serverBox.currentText():
                     selected_entry = i
-            
+
             try:
                 with open(_datadir + "server.json", "w") as server_file:
                     json_server_file = {
@@ -3206,8 +3301,9 @@ class PesterWindow(MovingWindow):
             pesterchum.reconnectok = False
             pesterchum.showLoading(pesterchum.widget)
             self.show() # Not required?
+            self.setFocus()
 
-    def changeServer(self):
+    def chooseServer(self):
         # Read servers.
         server_list_items = []
         try:
@@ -3218,33 +3314,33 @@ class PesterWindow(MovingWindow):
             for i in range(len(server_obj)):
                 server_list_items.append(server_obj[i]["server"])
         except:
-            if self.changeServerAskedToReset == False:
-                self.changeServerAskedToReset = True
+            if self.chooseServerAskedToReset == False:
+                self.chooseServerAskedToReset = True
                 self.resetServerlist()
                 return 1
-    
+
         logging.info("server_list_items:    " + str(server_list_items))
-        
+
         # Widget 1
         self.chooseServerWidged = QtWidgets.QDialog()
-        
+
         # Serverbox
         self.serverBox = QtWidgets.QComboBox()
 
         for i in range(len(server_list_items)):
             self.serverBox.addItem(server_list_items[i])
-        
+
         self.serverBox.addItem("Добавить сервер [Prompt]")
         self.serverBox.addItem("Удалить сервер [Prompt]")
-        
+
         # Buttons
         cancel = QtWidgets.QPushButton("ОТМЕНА")
         ok = QtWidgets.QPushButton("OK")
-        
+
         ok.setDefault(True)
         ok.clicked.connect(self.chooseServerWidged.accept)
         cancel.clicked.connect(self.chooseServerWidged.reject)
-        
+
         #Layout
         layout = QtWidgets.QHBoxLayout()
         layout.addWidget(cancel)
@@ -3253,19 +3349,20 @@ class PesterWindow(MovingWindow):
         main_layout.addWidget(QtWidgets.QLabel("Выберете сервер."))
         main_layout.addWidget(self.serverBox)
         main_layout.addLayout(layout)
-        
+
         self.chooseServerWidged.setLayout(main_layout)
-        
+
         # Theme
         self.chooseServerWidged.setStyleSheet(self.theme["main/defaultwindow/style"])
         self.chooseServerWidged.setWindowIcon(PesterIcon(self.theme["main/icon"]))
-        
+
         # Connect
         self.chooseServerWidged.accepted.connect(self.setServer)
         self.chooseServerWidged.rejected.connect(self.quit)
 
         # Show
         self.chooseServerWidged.show()
+        self.chooseServerWidged.setFocus()
 
     pcUpdate = QtCore.pyqtSignal('QString', 'QString')
     closeToTraySignal = QtCore.pyqtSignal()
@@ -3347,7 +3444,7 @@ class MainProgram(QtCore.QObject):
         self.app.setQuitOnLastWindowClosed(False)
 
         options = self.oppts(sys.argv[1:])
-        
+
         def doSoundInit():
             # TODO: Make this more uniform, adapt it into a general function.
             if pygame and pygame.mixer:
