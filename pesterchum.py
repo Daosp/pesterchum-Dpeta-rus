@@ -1763,7 +1763,7 @@ class PesterWindow(MovingWindow):
         self.resize(*theme["main/size"])
         self.setWindowIcon(PesterIcon(theme["main/icon"]))
         self.setWindowTitle(theme["main/windowtitle"])
-        self.setStyleSheet("QFrame#main { %s }" % (theme["main/style"]))
+        self.setStyleSheet("QtWidgets.QFrame#main { %s }" % (theme["main/style"]))
         self.backgroundImage = QtGui.QPixmap(theme["main/background-image"])
         self.backgroundMask = self.backgroundImage.mask()
         self.setMask(self.backgroundMask)
