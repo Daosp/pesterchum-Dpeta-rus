@@ -206,7 +206,7 @@ canon_handles = ["apocalypseArisen", "arsenicCatnip", "arachnidsGrip", "adiosTor
                  "caligulasAquarium", "cuttlefishCuller", "carcinoGeneticist", "centaursTesticle", \
                  "grimAuxiliatrix", "gallowsCalibrator", "gardenGnostic", "ectoBiologist", \
                  "twinArmageddons", "terminallyCapricious", "turntechGodhead", "tentacleTherapist"]
-CUSTOMBOTS = ["кэлСпрайт", RANDNICK.upper()]
+CUSTOMBOTS = ["calSprite", RANDNICK.upper()]
 BOTNAMES = ["NICKSERV", "CHANSERV", "MEMOSERV", "OPERSERV", "HELPSERV"]
 BOTNAMES.extend(CUSTOMBOTS)
 
