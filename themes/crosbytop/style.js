@@ -17,7 +17,7 @@
            },
   "sounds": { "alertsound": "$path/alarm.wav",
               "ceasesound": "$path/cease.wav" },
-   "menus": {"client": {"_name": "            ",
+   "menus": {"client": {"_name": "     ",
                        "options": "Настройки",
                        "memos": "Группы",
                        "logviewer": "Библиотека",
@@ -29,7 +29,7 @@
                        "reconnect": "Пересоединиться",
                        "idle": "Отойти и почитать",
                        "exit": "Выход", "console": "Консоль"},
-            "profile": {"_name": "       ",
+            "profile": {"_name": "    ",
                         "switch": "Аккаунт",
                         "color": "Цвет",
                         "theme": "Тема",
@@ -150,7 +150,7 @@
   "defaultmood": 1,
   "moodlabel": { "style": "",
                  "loc": [409, 361],
-                 "text": "НАСТРОЕНИЯ"
+                 "text": "    "
                },
   "moods": [
       { "style": "text-align:left; border:0px solid #c48a00; padding: 0px;color: rgba(0, 0, 0, 0%); font-family:'Courier'", 
