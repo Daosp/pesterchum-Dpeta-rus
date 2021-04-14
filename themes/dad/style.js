@@ -5,13 +5,13 @@
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
   "windowtitle": "—Â¸∏ÁÌ˚Â ‰ÂÎ‡",
-  "menu" : { "style": "font-family: 'Courier'; font: bold; font-size: 14px; background-color: #BABABA;border:2px solid #B3B3B3",
+  "menu" : { "style": "font-family: 'Courier'; font: bold; font-size: 14px; background-color: #BABABA;border:1px solid #B3B3B3",
              "loc": [52,5]},
-  "menubar": { "style": "font-family: 'Courier'; font:bold; font-size: 14px; color:#000000; allign:center;" },
+  "menubar": { "style": "font-family: 'Courier'; font:bold; font-size: 10px; color:#000000; allign:center; " },
   "close": { "image": "$path/x.png",
-             "loc": [236, 15]},
+             "loc": [251, 23]},
   "minimize": { "image": "$path/m.png",
-                "loc": [222, 21]},
+                "loc": [237, 29]},
   "sounds": { "alertsound": "$path/alarm.wav",
               "ceasesound": "$path/cease.wav" },
   "defaultwindow": { "style": "background: #BABABA; font-family:'Courier';font:bold;selection-background-color:black; " },
@@ -78,7 +78,8 @@
                   },
   "addchum":  { "style": "background: black; border:2px solid #B3B3B3; font: bold; color: #BABABA; font-family:'Courier';"
               },
-  "pester": { "style": "background: black; border:2px solid #B3B3B3; font: bold; color: #BABABA; font-family:'Courier';"
+  "pester": { "style": "background: black; border:2px solid #B3B3B3; font: bold; color: #BABABA; font-family:'Courier';",
+              "text": "Õ¿œ»—¿“‹"
             },
   "block": { "style": "background: black; border:2px solid #B3B3B3; font: bold; color: #BABABA; font-family:'Courier';"
            },

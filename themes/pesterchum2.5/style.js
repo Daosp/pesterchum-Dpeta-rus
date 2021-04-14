@@ -18,7 +18,7 @@
                          "size": [270, 300]
            },
   "mychumhandle": { "label":
-                    { "text": "CHUMHANDLE:",
+                    { "text": "йнпеьмхй:",
                       "loc": [12,415],
                       "style": "color: black ;font:bold; font-family: 'Courier';"
                     },
@@ -34,12 +34,12 @@
   "addchum":  { "style": "background: rgba(255, 255, 0, 100%); border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
                 "loc": [15,380],
                 "size": [90, 30],
-                "text": "днаюбхрэ йнпеью"
+                "text": "днаюбхрэ"
               },
   "pester": { "style": "background:  rgba(255, 255, 0, 100%); border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
               "loc": [193,380],
               "size": [89, 30],
-              "text": "днярюрэ!"
+              "text": "днярюрэ"
             },
   "block": { "style": "background: #F00000; border:2px solid #c48a00; font: bold; color: black; font-family:'Courier';",
              "loc": [104,380],
