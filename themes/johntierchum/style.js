@@ -89,13 +89,13 @@
                 "pressed" : "background: #6090C6;",
                 "loc": [260,620],
                 "size": [71, 22],
-                "text": "Greet"
+                "text": "Добавить"
               },
   "pester": { "style": "background: #6277BC; border:2px solid white; font: bold; color:  white; font-family:'Verdana';",
               "pressed" : "background: #6090C6;",
               "loc": [330,620],
               "size": [71, 22],
-              "text": "Pester"
+              "text": "Достать"
             },
   "block":  { "style": "background: rgba(0,0,0,0); border:0px; color: rgba(0,0,0,0);",
              "loc": [0, 0],

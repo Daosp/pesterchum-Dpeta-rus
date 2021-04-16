@@ -202,11 +202,12 @@ from toast import PesterToastMachine, PesterToast
 import pytwmn
 from profile import *
 
-canon_handles = ["apocalypseArisen", "arsenicCatnip", "arachnidsGrip", "adiosToreador", \
-                 "caligulasAquarium", "cuttlefishCuller", "carcinoGeneticist", "centaursTesticle", \
-                 "grimAuxiliatrix", "gallowsCalibrator", "gardenGnostic", "ectoBiologist", \
-                 "twinArmageddons", "terminallyCapricious", "turntechGodhead", "tentacleTherapist"]
-CUSTOMBOTS = ["calSprite", RANDNICK.upper()]
+#canon_handles = ["apocalypseArisen", "arsenicCatnip", "arachnidsGrip", "adiosToreador", \
+#                 "caligulasAquarium", "cuttlefishCuller", "carcinoGeneticist", "centaursTesticle", \
+#                 "grimAuxiliatrix", "gallowsCalibrator", "gardenGnostic", "ectoBiologist", \
+#                 "twinArmageddons", "terminallyCapricious", "turntechGodhead", "tentacleTherapist"]
+canon_handles = ["",]# Unused, kept to prevent unexpected calls causing a crash.
+CUSTOMBOTS = ["CALSPRITE", RANDNICK.upper()]
 BOTNAMES = ["NICKSERV", "CHANSERV", "MEMOSERV", "OPERSERV", "HELPSERV"]
 BOTNAMES.extend(CUSTOMBOTS)
 
@@ -413,11 +414,11 @@ class chumArea(RightClickTree):
         elif text in self.groups:
             return self.groupMenu
         else:
-            currenthandle = self.currentItem().chum.handle
-            if currenthandle in canon_handles:
-                return self.canonMenu
-            else:
-                return self.optionsMenu
+            #currenthandle = self.currentItem().chum.handle
+            #if currenthandle in canon_handles:
+            #    return self.canonMenu
+            #else:
+            return self.optionsMenu
 
     def startDrag(self, dropAction):
         ##        Traceback (most recent call last):
@@ -564,7 +565,8 @@ class chumArea(RightClickTree):
     def showAllChums(self):
         for c in self.chums:
             chandle = c.handle
-            if not len(self.findItems(chandle, QtCore.Qt.MatchContains | QtCore.Qt.MatchRecursive)):
+            if not len(self.findItems(chandle, QtCore.Qt.MatchExactly | QtCore.Qt.MatchRecursive)):
+            #if True:# For if it doesn't work at all :/
                 chumLabel = chumListing(c, self.mainwindow)
                 self.addItem(chumLabel)
         self.sort()
@@ -672,7 +674,8 @@ class chumArea(RightClickTree):
                 if text.rfind(" (") != -1:
                     text = text[0:text.rfind(" (")]
                 curgroups.append(text)
-            if not self.findItems(chumLabel.handle, QtCore.Qt.MatchContains | QtCore.Qt.MatchRecursive):
+            if not self.findItems(chumLabel.handle, QtCore.Qt.MatchExactly | QtCore.Qt.MatchRecursive):
+                # if True:# For if it doesn't work at all :/
                 if chumLabel.chum.group not in curgroups:
                     child_1 = QtWidgets.QTreeWidgetItem(["%s" % (chumLabel.chum.group)])
                     i = 0
@@ -724,7 +727,8 @@ class chumArea(RightClickTree):
                 if self.mainwindow.config.showOnlineNumbers():
                     self.showOnlineNumbers()
         else: # usually means this is now the trollslum
-            if not self.findItems(chumLabel.handle, QtCore.Qt.MatchContains | QtCore.Qt.MatchRecursive):
+            if not self.findItems(chumLabel.handle, QtCore.Qt.MatchExactly | QtCore.Qt.MatchRecursive):
+                # if True:# For if it doesn't work at all :/
                 self.topLevelItem(0).addChild(chumLabel)
                 self.topLevelItem(0).sortChildren(0, QtCore.Qt.AscendingOrder)
     def takeItem(self, chumLabel):
@@ -2123,6 +2127,7 @@ class PesterWindow(MovingWindow):
 
     @QtCore.pyqtSlot(QString, QtGui.QColor)
     def updateColorSlot(self, handle, color):
+        logging.debug("updateColorSlot, "+ str(handle) +", " + str(color))
         h = str(handle)
         self.changeColor(h, color)
 
@@ -3574,8 +3579,8 @@ class MainProgram(QtCore.QObject):
     irc2widget = [('connected()', 'connected()'),
                   ('moodUpdated(QString, PyQt_PyObject)',
                    'updateMoodSlot(QString, PyQt_PyObject)'),
-                  ('colorUpdated(QString, QColor)',
-                   'updateColorSlot(QString, QColor)'),
+                  ('colorUpdated(QString, QtGui.QColor)',
+                   'updateColorSlot(QString, QtGui.QColor)'),
                   ('messageReceived(QString, QString)',
                    'deliverMessage(QString, QString)'),
                   ('memoReceived(QString, QString, QString)',
@@ -3637,6 +3642,7 @@ class MainProgram(QtCore.QObject):
                 (irc.moodUpdated, widget.updateMoodSlot),
                 (irc.messageReceived, widget.deliverMessage),
                 (irc.memoReceived, widget.deliverMemo),
+                (irc.colorUpdated, widget.updateColorSlot),
                 (irc.noticeReceived, widget.deliverNotice),
                 (irc.inviteReceived, widget.deliverInvite),
                 (irc.nickCollision, widget.nickCollision),

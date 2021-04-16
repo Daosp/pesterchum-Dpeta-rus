@@ -1,11 +1,21 @@
 # Changelog
 (This document uses YYYY-MM-DD as per ISO 8601)
 
-## [v2.1.2]
+## [v2.1.2] - 2021-4-16
+
+### Added
+- Added HOSTSERV and BOTSERV to BOTNAMES.
+
+### Fixed
+- Colors in direct messages sometimes not working.
+- Handles sometimes not showing up in chumroll or trollslum.
+
+### Removed
+- Separate handling for canon handles on chumroll because it was buggy and unneeded.
 
 ### Changed
-- Made file capitalization consistent for a few files. (.PNG --> .png), because some file systems are queasy on that. (See https://superuser.com/questions/881804/case-sensitive-file-extensions-in-windows-and-linux) 
-
+- setup.py build description to just "Pesterchum"
+- Made file capitalization consistent for a few files. (.PNG --> .png), because some file systems are queasy on that, and it wasn't working on Debian. (See https://superuser.com/questions/881804/case-sensitive-file-extensions-in-windows-and-linux) 
 
 ## [v2.1.1] - 2021-4-12
 
