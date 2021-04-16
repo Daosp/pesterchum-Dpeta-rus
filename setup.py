@@ -51,7 +51,7 @@ bdist_mac_options = {
     'bundle_name': "Pesterchum"
 }
 
-description = "Клиент мгновенного обмена сообщениями, копирующий внешний вид клиентов из веб-комикса Эндрю Хасси Homestuck."
+description = "Достанькореша"
 icon = "pesterchum.ico"
 
 # See https://stackoverflow.com/questions/15734703/use-cx-freeze-to-create-an-msi-that-adds-a-shortcut-to-the-desktop
