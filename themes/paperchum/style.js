@@ -12,7 +12,7 @@
              "loc": [9,10]
            },
     "menubar": { "style": "font-family: 'arial';  font-size: 14px; color: #000000;" },
-   "menus": {"client": {"_name": "            ",
+   "menus": {"client": {"_name": "             ",
                        "options": "Настройки",
                        "memos": "Группы",
                        "logviewer": "Библиотека",
@@ -24,7 +24,7 @@
                        "reconnect": "Пересоединиться",
                        "idle": "Отойти и почитать",
                        "exit": "Выход", "console": "Консоль"},
-            "profile": {"_name": "           ",
+            "profile": {"_name": "             ",
                         "switch": "Аккаунт",
                         "color": "Цвет",
                         "theme": "Тема",
@@ -133,7 +133,7 @@
   "trollslum": {
       "style": "background: #9b896c; border:1px solid #4d4b48; font-family: 'Arial'",
       "size": [195, 200],
-      "label": { "text": "Block List",
+      "label": { "text": "Лист заблокированных",
                  "style": "color: #3e240d; font-family: 'Arial';border:0px;" },
       "chumroll": {"style": "border:1px solid #4d4b48; background-color: #9b896c;color: 3e240d; font-family: 'Arial';selection-background-color:#314159; " }
   },
@@ -173,7 +173,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [17, 537],
                 "size": [80, 18],
-            "text": "Chummy",
+            "text": "Корешовое",
                 "icon": "$path/chummy.png",
                 "mood": 0
           },
@@ -182,7 +182,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [17, 559],
                 "size": [80, 18],
-            "text": "Pleasant",
+            "text": "Приятное",
                 "icon": "$path/pleasant.png",
                 "mood": 3
           },
@@ -191,7 +191,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [17, 581],
                 "size": [80, 18],
-            "text": "Rancorous",
+            "text": "Злобленное",
                 "icon": "$path/rancorous.png",
                 "mood": 1
           },
@@ -200,7 +200,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [110, 537],
                 "size": [90, 18],
-            "text": "Pranky",
+            "text": "Шутливое",
                 "icon": "$path/pranky.png",
                 "mood": 5
           },
@@ -209,7 +209,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [110, 559],
                 "size": [90, 18],
-            "text": "Smooth",
+            "text": "Спокойное",
                 "icon": "$path/smooth.png",
                 "mood": 6
           },
@@ -218,7 +218,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [110, 581],
                 "size": [90, 18],
-            "text": "Relaxed",
+            "text": "Расслабленное",
                 "icon": "$path/relaxed.png",
                 "mood": 8
           },          
@@ -227,7 +227,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [190, 537],
                 "size": [90, 18],
-                "text": "Insolent",
+                "text": "Наглое",
                 "icon": "$path/insolent.png",
                 "mood": 21
           },
@@ -237,7 +237,7 @@
                 "selected": "text-align:left; background: #314159; color: #4c2f13; font-family:'arial';  padding-left:3px;",
                 "loc": [190, 559],
                 "size": [90, 18],
-            "text": "Devious",
+            "text": "Коварное",
                 "icon": "$path/devious.png",
                 "mood": 10
           },          
@@ -246,7 +246,7 @@
                 "selected": "text-align:left; background: #314159; color: #1f1308; font-family:'arial';  padding-left:3px;",
                 "loc": [190, 581],
                 "size": [90, 18],
-                "text": "Abscond",
+                "text": "Скрытый",
                 "icon": "$path/offline.png",
                 "mood": 2
           }

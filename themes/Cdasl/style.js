@@ -33,12 +33,12 @@
   "addchum":  { "style": "background: rgba(0, 255, 0, 100%); border:2px solid green; font: bold; color: black; font-family:'Courier';",
                 "loc": [15,410],
                 "size": [90, 30],
-                "text": "днаюбхрэ гюяпюмжю"
+                "text": "днаюбхрэ"
               },
   "pester": { "style": "background:  rgba(0, 255, 0, 100%); border:2px solid green; font: bold; color: black; font-family:'Courier';",
               "loc": [193,410],
               "size": [89, 30],
-              "text": "бшеаюрэ ецн!"
+              "text": "бшеаюрэ"
             },
   "block": { "style": "background: #F00000; border:2px solid green; font: bold; color: black; font-family:'Courier';",
              "loc": [104,410],

@@ -15,7 +15,7 @@
               "ceasesound": "$path/cease.wav" },
   "defaultwindow": { "style": "background: #FFFFFF; font-family:'Courier';font:bold;selection-background-color:black; " },
   "chums": { "style": "border:2px solid #FFFFFF; background-color: #FFFFFF;color: #000000;font: bold;font-size:14px;font-family: 'Courier';selection-background-color:black; ",
-             "userlistcolor": "00C661", 
+             "userlistcolor": "00C661",
              "moods": { 
 
                  "chummy": { "icon": "$path/chummy.png", "color": "#000000" },
@@ -82,7 +82,8 @@
             },
   "block": { "style": "background: #00E371; border:2px solid #0E6037; font: bold; color: #000000; font-family:'Courier';"
            },
-  "moodlabel": { "style": "font:bold;font-family:'Courier';color:#008C45;"
+  "moodlabel": { "style": "font:bold;font-family:'Courier';color:#008C45;",
+                 "text": ""
                },
   "defaultmood": 18,
   "moods": [
