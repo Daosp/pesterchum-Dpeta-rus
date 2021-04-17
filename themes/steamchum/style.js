@@ -24,7 +24,7 @@
                        "reconnect": "Пересоединиться",
                        "idle": "Отойти и почитать",
                        "exit": "Выход", "console": "Консоль"},
-            "profile": {"_name": "           ",
+            "profile": {"_name": "               ",
                         "switch": "Аккаунт",
                         "color": "Цвет",
                         "theme": "Тема",

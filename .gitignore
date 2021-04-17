@@ -19,3 +19,4 @@ package-lock.json
 package.json
 /.idea/*
 actual-version.py
+later-themes/*
