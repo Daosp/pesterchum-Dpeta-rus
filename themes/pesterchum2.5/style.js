@@ -55,7 +55,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; color: black; font-family:'Courier'; font:bold; padding-left:3px;",
                 "loc": [15, 485],
                 "size": [135, 30],
-            "text": "CHUMMY",
+            "text": "йнпеьнбне",
                 "icon": "$path/chummy.png",
                 "mood": 0
           },
@@ -64,7 +64,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; color: black; font-family:'Courier'; font:bold;padding-left:3px;",
                 "loc": [15, 513],
                 "size": [135, 30],
-            "text": "PLEASANT",
+            "text": "опхърмне",
                 "icon": "$path/pleasant.png",
                 "mood": 3
           },
@@ -73,7 +73,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; color: black; font-family:'Courier'; font:bold;padding-left:3px;",
                 "loc": [15, 541],
                 "size": [135, 30],
-            "text": "DISTRAUGHT",
+            "text": "меопхърмне",
                 "icon": "$path/distraught.png",
                 "mood": 4
           },
@@ -82,7 +82,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; color: black; font-family:'Courier'; font:bold;padding-left:3px;",
                 "loc": [148, 485],
                 "size": [135, 30],
-            "text": "PRANKY",
+            "text": "ьсркхбне",
                 "icon": "$path/pranky.png",
                 "mood": 5
           },
@@ -91,7 +91,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; color: black; font-family:'Courier'; font:bold;padding-left:3px;",
                 "loc": [148, 513],
                 "size": [135, 30],
-            "text": "SMOOTH",
+            "text": "яонйнимне",
                 "icon": "$path/smooth.png",
                 "mood": 6
           },
@@ -100,7 +100,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; color: red; font-family:'Courier'; font:bold;padding-left:3px;",
                 "loc": [148, 541],
                 "size": [135, 30],
-            "text": "RANCOROUS",
+            "text": "гкнамне",
                 "icon": "$path/rancorous.png",
                 "mood": 1
           },
@@ -109,7 +109,7 @@
                 "selected": "text-align:left; background:white; border:2px solid #c48a00; padding: 5px;color: black; font-family:'Courier'; font:bold;padding-left:3px;",
                 "loc": [15, 569],
                 "size": [270, 30],
-                "text": "ABSCOND",
+                "text": "яйпшрши",
                 "icon": "$path/offline.png",
                 "mood": 2
           }

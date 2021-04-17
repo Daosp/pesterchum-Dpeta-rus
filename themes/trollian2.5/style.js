@@ -70,14 +70,14 @@
              }
            },
   "mychumhandle": { "label": 
-                    { "text": "TROLLTAG:",
+                    { "text": "“–ŒÀÀ‹Õ» :",
                       "style": "color: black ;font:bold; font-family: 'Arial';" 
                     },
                     "handle": { "style": "background-color: black; padding: 3px; padding-left: 25px; color:white; font-family:'Arial'; font:bold; text-align:left; border:2px solid #ffa4a4;" }
                   },
-  "addchum":  { "text": "ADD CHUMP", "style": "background: #ffa4a4; border:2px solid #780000; font: bold; color: black; font-family:'Arial';"
+  "addchum":  { "text": "ƒŒ¡¿¬»“‹", "style": "background: #ffa4a4; border:2px solid #780000; font: bold; color: black; font-family:'Arial';"
               },
-  "pester": { "text": "TROLL", "style": "background: #ffa4a4; border:2px solid #780000; font: bold; color: black; font-family:'Arial';"
+  "pester": { "text": "“–ŒÀÀ»“‹", "style": "background: #ffa4a4; border:2px solid #780000; font: bold; color: black; font-family:'Arial';"
             },
   "block": { "style": "background: #ffa4a4; border:2px solid #780000; font: bold; color: black; font-family:'Arial';"
            },
@@ -89,7 +89,7 @@
         "selected": "text-align:left; background:white; border:2px solid #780000; color: black; font-family:'Arial'; font:bold; padding-left:3px;",
         "loc": [15, 485],
         "size": [135, 30],
-        "text": "ECSTATIC",
+        "text": "¬Œ—“Œ–∆≈ÕÕŒ≈",
         "icon": "$path/estatic.png",
         "mood": 7
       },
@@ -98,7 +98,7 @@
         "selected": "text-align:left; background:white; border:2px solid #780000; color: black; font-family:'Arial'; font:bold; padding-left:3px;",
         "loc": [15, 513],
         "size": [135, 30],
-        "text": "RELAXED",
+        "text": "–¿——À¿¡À≈ÕÕŒ≈",
         "icon": "$path/relaxed.png",
         "mood": 8
       },
@@ -107,7 +107,7 @@
         "selected": "text-align:left; background:white; border:2px solid #780000; color: black; font-family:'Arial'; font:bold; padding-left:3px;",
         "loc": [15, 541],
         "size": [135, 30],
-        "text": "DISCONTENT",
+        "text": "Õ≈ƒŒ¬ŒÀ‹ÕŒ≈",
         "icon": "$path/discontent.png",
         "mood": 9
       },
@@ -116,7 +116,7 @@
         "selected": "text-align:left; background:white; border:2px solid #780000; color: black; font-family:'Arial'; font:bold; padding-left:3px;",
         "loc": [148, 485],
         "size": [135, 30],
-        "text": "DEVIOUS",
+        "text": "’»“–Œ≈",
         "icon": "$path/devious.png",
         "mood": 10
       },
@@ -134,7 +134,7 @@
         "selected": "text-align:left; background:white; border:2px solid #780000; color: black; font-family:'Arial'; font:bold; padding-left:3px;",
         "loc": [148, 541],
         "size": [135, 30],
-        "text": "DETESTFUL",
+        "text": "'‘””, Ã≈–«Œ—“‹!'",
         "icon": "$path/detestful.png",
         "mood": 12
       },
@@ -143,7 +143,7 @@
         "selected": "text-align:left; background:white; border:2px solid #780000; padding: 5px;color: black; font-family:'Arial'; font:bold;padding-left:3px;",
         "loc": [15, 569],
         "size": [268, 30],
-        "text": "ABSCOND",
+        "text": "— –€“€…",
         "icon": "$path/offline.png",
         "mood": 2
       }
@@ -152,7 +152,7 @@
  "convo": {
      "style": "background-color: #e5000f;border:2px solid #780000; font-family: 'Arial';",
      "chumlabel": { "style": "margin-bottom: 21px;background: #ffa4a4; color: black; border:0px; font-size: 14px;",
-                    "text" : ":: trolling: $handle ::" },
+                    "text" : ":: ÚÓÎÎËÏ $handle ::" },
      "textarea": {
          "style": "background: white;  font-size: 14px;font:bold; border:2px solid #ffa4a4;text-align:center; margin-right:10px; margin-left:10px;font-family: 'Arial'"
       },
