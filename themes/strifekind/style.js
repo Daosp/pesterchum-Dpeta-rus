@@ -4,13 +4,13 @@
   "size": [300,620],
   "icon": "$path/trayicon.png",
   "newmsgicon": "$path/trayicon2.png",
-  "windowtitle": "CHUMKIND",
+  "windowtitle": " Œ–≈ÿŒ¬»ƒÕ€…",
   "menu" : { "style": "font-family: 'Courier'; font: bold; font-size: 14px; background-color: #00C661;border:2px solid #00E371" },
   "menubar": { "style": "font-family: 'Courier'; font:bold; font-size: 14px; color:#FFFFFF; allign:center;" },
   "close": { "image": "$path/x.png",
-             "loc": [10, 30]},
+             "loc": [240, 40]},
   "minimize": { "image": "$path/m.png",
-                "loc": [20, 33]},
+                "loc": [230, 46]},
   "sounds": { "alertsound": "$path/alarm.wav",
               "ceasesound": "$path/cease.wav" },
   "defaultwindow": { "style": "background: #FFFFFF; font-family:'Courier';font:bold;selection-background-color:black; " },
@@ -71,7 +71,7 @@
              }
            },
   "mychumhandle": { "label": 
-                    { "text": "Kind:",
+                    { "text": "¬Ë‰:",
                       "style": "color: black ;font:bold; font-family: 'Courier';" 
                     },
                     "handle": { "style": "background-color: #00C661; padding: 3px; padding-left: 25px; color:#FFFFFF; font-family:'Courier'; font:bold; text-align:left; border:2px solid #FFFFFF;" }
@@ -272,7 +272,7 @@
         "selected": "text-align:center; background:#008C45; border:2px solid #000000; color: black; font-family:'Courier'; font:bold; padding-left:3px;",
         "loc": [135, 545],
         "size": [150, 30],
-        "text": "HIDING/RUNNING",
+        "text": "— –€“€…/Œ‘À¿…Õ",
         "icon": "$path/offline.png",
         "mood": 2
       }
@@ -281,7 +281,7 @@
  "convo": {
      "style": "background-color: #008C45;border:2px solid black; font-family: 'Courier';",
      "chumlabel": { "style": "margin-bottom: 21px;background: #FFFFFF; color: black; border:0px; font-size: 14px;",
-                    "text" : ":: contacting: $handle ::" },
+                    "text" : ":: Ó·˘‡ÂÚÂÒ¸ Ò $handle ::" },
      "textarea": {
          "style": "background: #7FFFBF;  font-size: 14px;font:bold; border:2px solid #00E371;text-align:center; margin-right:10px; margin-left:10px;font-family: 'Courier'"
       },
