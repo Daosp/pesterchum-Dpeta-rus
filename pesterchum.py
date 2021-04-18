@@ -3000,7 +3000,7 @@ class PesterWindow(MovingWindow):
         self.aboutwindow = None
     @QtCore.pyqtSlot()
     def loadCalsprite(self):
-        self.newConversation("кэлСпрайт")
+        self.newConversation("calSprite")
     @QtCore.pyqtSlot()
     def loadChanServ(self):
         self.newConversation("chanServ")
