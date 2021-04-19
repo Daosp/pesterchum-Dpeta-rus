@@ -7,57 +7,111 @@
 
 ## Смайлы
 
-* ![:rancorous:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/rancorous.png) `:rancorous:`
-* ![:apple:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/apple.png) `:apple:`
-* ![:bathearst:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/bathearst.png) `:bathearst:`
-* ![:cathearst:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cathearst.png) `:cathearst:`
-* ![:woeful:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mystified.png) `:woeful:`
-* ![:pleasant:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pleasant.gif) `:pleasant:`
-* ![:blueghost:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/blueghost.gif) `:blueghost:`
-* ![:slimer:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/slimer.png) `:slimer:`
-* ![:candycorn:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/candycorn.png) `:candycorn:`
-* ![:cheer:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cheer.png) `:cheer:`
-* ![:duhjohn:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/duhjohn.gif) `:duhjohn:`
-* ![:datrump:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/datrump.png) `:datrump:`
-* ![:facepalm:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/facepalm.png) `:facepalm:`
-* ![:bonk:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/bonk.gif) `:bonk:`
-* ![:mspa:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mspa.gif) `:mspa:`
-* ![:gun:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/gun.gif) `:gun:`
-* ![:cal:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/lilcal.png) `:cal:`
-* ![:amazedfirman:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/amazedfirman.gif) `:amazedfirman:`
-* ![:amazed:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/amazed.png) `:amazed:`
-* ![:chummy:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/chummy.png) `:chummy:`
-* ![:cool:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cool.png) `:cool:`
-* ![:smooth:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/smooth.png) `:smooth:`
-* ![:distraughtfirman:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/distraughtfirman.png) `:distraughtfirman:`
-* ![:distraught:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/distraught.png) `:distraught:`
-* ![:insolent:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/insolent.png) `:insolent:`
-* ![:bemused:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/bemused.png) `:bemused:`
-* ![:3:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/3.png) `:3:`
-* ![:mystified:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mystified.png) `:mystified:`
-* ![:pranky:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pranky.png) `:pranky:`
-* ![:tense:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/tense.png) `:tense:`
-* ![:record:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/record.png) `:record:`
-* ![:squiddle:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/squiddle.png) `:squiddle:`
-* ![:tab:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/tab.png) `:tab:`
-* ![:beetip:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/beetip.png) `:beetip:`
-* ![:flipout:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/flipout.png) `:flipout:`
-* ![:befuddled:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/befuddled.png) `:befuddled:`
-* ![:pumpkin:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pumpkin.png) `:pumpkin:`
-* ![:trollcool:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/trollcool.png) `:trollcool:`
-* ![:jadecry:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/jadecry.png) `:jadecry:`
-* ![:ecstatic:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/ecstatic.png) `:ecstatic:`
-* ![:relaxed:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/relaxed.png) `:relaxed:`
-* ![:discontent:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/discontent.png) `:discontent:`
-* ![:devious:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/devious.png) `:devious:`
-* ![:sleek:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/sleek.png) `:sleek:`
-* ![:detestful:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/detestful.png) `:detestful:`
-* ![:mirthful:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mirthful.png) `:mirthful:`
-* ![:manipulative:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/manipulative.png) `:manipulative:`
-* ![:vigorous:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/vigorous.png) `:vigorous:`
-* ![:perky:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/perky.png) `:perky:`
-* ![:acceptant:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/acceptant.png) `:acceptant:`
-* ![:olliesouty:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/olliesouty.png) `:olliesouty:`
-* ![:billiards:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/billiards.png) `:billiards:`
-* ![:billiardslarge:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/billiardslarge.png) `:billiardslarge:`
-* ![:whatdidyoudo:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/whatdidyoudo.png) `:whatdidyoudo:`
+* `:apple:`
+  * ![:apple:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/apple.png)
+* `:bathearst:`
+  * ![:bathearst:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/bathearst.png)
+* `:cathearst:`
+  * ![:cathearst:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cathearst.png)
+* `:blueghost:`
+  * ![:blueghost:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/blueslimer.gif)
+* `:slimer:`
+  * ![:slimer:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/slimer.gif)
+* `:candycorn:`
+  * ![:candycorn:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/candycorn.png)
+* `:cheer:`
+  * ![:cheer:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cheer.png)
+* `:duhjohn:`
+  * ![:duhjohn:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/confusedjohn.gif)
+* `:datrump:`
+  * ![:datrump:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/datrump.png)
+* `:facepalm:`
+  * ![:facepalm:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/facepalm.png)
+* `:bonk:`
+  * ![:bonk:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/headbonk.gif)
+* `:mspa:`
+  * ![:mspa:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mspa_face.png)
+* `:gun:`
+  * ![:gun:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mspa_reader.gif)
+* `:cal:`
+  * ![:cal:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/lilcal.png)
+* `:woeful:`
+  * ![:woeful:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/bemused.png)
+* `:pleasant:`
+  * ![:pleasant:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pleasant.png)
+* `:amazedfirman:`
+  * ![:amazedfirman:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_amazedfirman.png)
+* `:amazed:`
+  * ![:amazed:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_amazed.png)
+* `:chummy:`
+  * ![:chummy:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_chummy.png)
+* `:cool:`
+  * ![:cool:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pccool.png)
+* `:smooth:`
+  * ![:smooth:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/smooth.png)
+* `:distraughtfirman:`
+  * ![:distraughtfirman:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_distraughtfirman.png)
+* `:distraught:`
+  * ![:distraught:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_distraught.png)
+* `:insolent:`
+  * ![:insolent:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_insolent.png)
+* `:bemused:`
+  * ![:bemused:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_bemused.png)
+* `:3:`
+  * ![:3:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pckitty.png)
+* `:mystified:`
+  * ![:mystified:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_mystified.png)
+* `:pranky:`
+  * ![:pranky:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_pranky.png)
+* `:tense:`
+  * ![:tense:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_tense.png)
+* `:rancorous:`
+  * ![:rancorous:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/pc_rancorous.png)
+* `:record:`
+  * ![:record:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/record.gif)
+* `:squiddle:`
+  * ![:squiddle:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/squiddle.png)
+* `:tab:`
+  * ![:tab:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/tab.png)
+* `:beetip:`
+  * ![:beetip:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/theprofessor.png)
+* `:flipout:`
+  * ![:flipout:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/weasel.gif)
+* `:pumpkin:`
+  * ![:pumpkin:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/whatpumpkin.png)
+* `:trollcool:`
+  * ![:trollcool:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/trollcool.png)
+* `:jadecry:`
+  * ![:jadecry:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/jadespritehead.gif)
+* `:ecstatic:`
+  * ![:ecstatic:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/ecstatic.png)
+* `:relaxed:`
+  * ![:relaxed:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/relaxed.png)
+* `:discontent:`
+  * ![:discontent:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/discontent.png)
+* `:devious:`
+  * ![:devious:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/devious.png)
+* `:sleek:`
+  * ![:sleek:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/sleek.png)
+* `:detestful:`
+  * ![:detestful:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/detestful.png)
+* `:mirthful:`
+  * ![:mirthful:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/mirthful.png)
+* `:manipulative:`
+  * ![:manipulative:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/manipulative.png)
+* `:vigorous:`
+  * ![:vigorous:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/vigorous.png)
+* `:perky:`
+  * ![:perky:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/perky.png)
+* `:acceptant:`
+  * ![:acceptant:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/acceptant.png)
+* `:olliesouty:`
+  * ![:olliesouty:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/olliesouty.gif)
+* `:billiards:`
+  * ![:billiards:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/poolballS.gif)
+* `:billiardslarge:`
+  * ![:billiardslarge:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/poolballL.gif)
+* `:honk:`
+  * ![:honk:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/honk.png)
+* `:whatdidyoudo:`
+  * ![:whatdidyoudo:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/whatdidyoudo.gif)
