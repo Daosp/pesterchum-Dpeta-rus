@@ -21,6 +21,7 @@ includefiles = ["quirks",
                 "README-Dpeta.md",
                 "README.md",
                 "LICENSE",
+                "CHANGELOG-Dpeta.md",
                 "CHANGELOG.md",
                 "PCskins.png",
                 "Pesterchum.png"]
