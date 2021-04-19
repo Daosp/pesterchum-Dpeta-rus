@@ -20,7 +20,7 @@
 * `:candycorn:`
   * ![:candycorn:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/candycorn.png)
 * `:cheer:`
-  * ![:cheer:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cheer.png)
+  * ![:cheer:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/cheer.gif)
 * `:duhjohn:`
   * ![:duhjohn:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/confusedjohn.gif)
 * `:datrump:`
@@ -70,9 +70,9 @@
 * `:record:`
   * ![:record:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/record.gif)
 * `:squiddle:`
-  * ![:squiddle:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/squiddle.png)
+  * ![:squiddle:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/squiddle.gif)
 * `:tab:`
-  * ![:tab:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/tab.png)
+  * ![:tab:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/tab.gif)
 * `:beetip:`
   * ![:beetip:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/theprofessor.png)
 * `:flipout:`
