@@ -5,7 +5,7 @@
 
 [Dpeta/pesterchum-alt-servers]: https://github.com/Dpeta/pesterchum-alt-servers
 
-## Смайлы
+## СМАЙЛЫ
 
 * `:apple:`
   * ![:apple:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/apple.png)
@@ -115,3 +115,174 @@
   * ![:honk:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/honk.png)
 * `:whatdidyoudo:`
   * ![:whatdidyoudo:](https://github.com/Daosp/pesterchum-Dpeta-rus/raw/py3_pyqt5/smilies/whatdidyoudo.gif)
+## УСТАНОВКА
+Скачайте соответствующий релиз в [Releases][releases].
+Для установки скачайте нужный архив и извлеките содержимое в любой каталог,
+в котором у вас будет храниться основная программа,
+а затем запустите файл `pesterchum.exe`.
+
+Из-за особенности cx_freeze и pyinstaller некоторые библиотеки (как glibc) динамически связаны.
+Если у вас появились проблемы при обычной установке,
+то посмотрите следующий раздел для сборки Достанькореша для вашей операционной системы.
+ 
+[releases]: https://github.com/Daosp/pesterchum-Dpeta-rus/releases
+## СБОРКА
+Вот краткое руководство, что делать,
+чтобы запустить Достанькореша из командной строки и создать его,
+если хотите (то есть создать исполняемые файлы).
+Прямой запуск Достанькореша или самостоятельная сборка Достанькореша не требуется!!!
+Это актуально только в том случае, если вы знаете, что делаете >:3c
+
+### НЕОБХОДИМО:
+
+ - [Python 3]
+
+#### PYTHON ЗАВИСИМОСТИ
+ - [pygame]
+ - [PyQt5] (И, в зависимости от вашего менеджера пакетов и платформы, python3-pyqt5.qtmultimedia)
+ - [feedparser]
+ - [python-magic]
+ - [ostools]
+ - [requests]
+
+[Python 3]: https://www.python.org/downloads/
+[PyQt5]: https://pypi.org/project/PyQt5/
+[pygame]: https://pypi.org/project/pygame/
+[feedparser]: https://pypi.org/project/feedparser/
+[python-magic]: https://pypi.org/project/python-magic/
+[ostools]: https://pypi.org/project/ostools/
+[requests]: https://pypi.org/project/requests/
+### CX_FREEZE СБОРКА
+#### Windows:
+``python setup.py build`` - в этом случаи будет создана папка `build`, в котором в свою очередь находится папка с программой.
+
+или
+
+``python setup.py bdist --format=zip`` - создаст архив с программой в папке `bdist`
+#### Mac:
+``python setup.py build``
+### PYINSTALLER СБОРКА
+#### Linux (также может работать на других операционных системах): 
+``pyinstaller pesterchum.spec``
+## ПРОГРЕСС ПЕРЕВОДА
+### РУКОВОДСТВ
+* themes:
+- [X] Перевод
+- [ ] Проверка
+* README-karxi:
+- [ ] Перевод
+- [ ] Проверка
+* README-pesterchum:
+- [ ] Перевод
+- [ ] Проверка
+* PYQUIRKS:
+- [ ] Перевод
+- [ ] Проверка
+### ТЕМ
+* ОТЛОЖЕНО - battlefield:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* BettyBother:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* Cdasl:
+- [X] Текст
+- [ ] Проверка
+* crosbytop:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* dad:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* danceofthorns:
+- [X] Текст
+- [ ] Проверка
+* ОТЛОЖЕНО - enamel:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* ОТЛОЖЕНО - enoirmel:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* FRESHjamz:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* ОТЛОЖЕНО - gold:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* ОТЛОЖЕНО - gold xl:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* ОТЛОЖЕНО - jadeenamel:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* johntierchum:
+- [X] Текст
+- [ ] Проверка
+* MSChum:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* ОТЛОЖЕНО - niccage:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* paperchum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* pesterchum:
+- [X] Текст
+- [X] Визуал
+- [X] Проверка
+* pesterchum2.5:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* sbahj:
+- [X] Текст
+- [ ] Визуал (нужно ли?)
+- [ ] Проверка
+* Scratch:
+- [X] Текст
+- [ ] Проверка
+* ОТЛОЖЕНО - squiddlechum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* steamchum:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* strifekind:
+- [X] Текст
+- [ ] Визуал
+- [ ] Проверка
+* Teal Trollian:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* trollian:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* trollian2.5:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* typewriter:
+- [X] Текст
+- [X] Визуал
+- [ ] Проверка
+* Zodiac:
+- [X] Текст
+- [ ] Проверка
