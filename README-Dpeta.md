@@ -149,9 +149,9 @@ Dpeta крайне рекомендует прочитать эти руково
 [README-karxi.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/README-karxi.mkdn
 
 ## ПРОГРЕСС ПЕРЕВОДА ТЕМ
-* ОТЛОЖЕНО - battlefield:
+* battlefield:
 - [X] Текст
-- [ ] Визуал
+- [X] Визуал
 - [ ] Проверка
 * BettyBother:
 - [X] Текст
