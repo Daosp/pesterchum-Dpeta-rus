@@ -13,3 +13,7 @@
   - README-karxi.mkdn
   - README-pesterchum.mkdn
   - PYQUIRKS.mkdn
+- Темы:
+  - TrueMSChum
+  - TrueTrollian
+  - TrueTrollian2.5
