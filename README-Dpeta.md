@@ -1,24 +1,23 @@
-# Достанькореша
-Поддерживается репозиторий Достанькореша ghostDunk'a. Подключается к irc.pesterchum.xyz по умолчанию с момента выключения официального сервера (поменять на другие серверы можно в server.json!!!). Достанькореша - это клиент обмена мгновенными сообщениями, который копирует внешний вид клиентов из веб-комикса Эндрю Хасси Homestuck.
+# PESTERCHUM
+Pesterchum is an instant messaging client copying the look and feel of clients from Andrew Hussie's webcomic Homestuck.
+Maintained repository of ghostDunk's Pesterchum. Prompts the user to choose a server at launch (irc.pesterchum.xyz by default).
 
-Репозиторий Dpet'ы основан (и был скопирован на зеркала) на исправлениях nickserv pesterchum-karxi + Hydrothermal.
+This repository builds on (and was mirrored from!) from pesterchum-karxi + Hydrothermal's nickserv fix.
 
-Проверьте файл [CHANGELOG.md], чтобы узнать изменения!
-
-Проверьте файл [TODO.md], чтобы увидеть текущие цели основного репозитория >:3c
+Check out [CHANGELOG.md] file to see what's changed!
+Check out [TODO.md] to see this repo's current goals >:3c
 
 [CHANGELOG.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/CHANGELOG.md
 [TODO.md]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/TODO.md
 
-## РУКОВОДСТВА
+## GUIDES
 
-Старые файлы README и руководства смотрите в папке [docs].
-
-Dpeta крайне рекомендует прочитать эти руководства, если вы новичок в Достанькореше:
+The old READMEs and guides can be viewed in the [docs] folder.
+I'd highly recommend you take a look at the following files if you're new to Pesterchum:
 - [README-pesterchum.mkdn]
 - [trollquirks.mkdn]
 
-Руководства по особенностям и темам Python также находятся в папке [docs]. Если вы хотите настроить градиентное правило (gradient quirk), вам следует взглянуть на это [руководство][gradient-guide].
+Guides for python quirks and themes are also in the [docs] folder. If you want to set up a gradient quirk you should take a look at [these guides][gradient-guide].
 
 [gradient-guide]: https://paste.0xfc.de/?e60df5a155e93583#AmcgN9cRnCcBycmVMvw6KJ1YLKPXGbaSzZLbgAhoNCQD
 [trollquirks.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/blob/py3_pyqt5/docs/trollquirks.mkdn
@@ -26,23 +25,25 @@ Dpeta крайне рекомендует прочитать эти руково
 [docs]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/
 
 
-## УСТАНОВКА
-Загрузите соответствующий выпуск с [Releases][releases]. Для установки загрузите архив-файл и извлеките его в любой каталог, а затем запустите исполняемый файл : )
+## INSTALATION
+Download the appropriate release for your platform from [releases][releases]. If you're on windows you can use the installer, for a manual install download the zip file and extract it to any directory, and run the executable : )
 
-Из-за природы cx_freeze и pyinstaller некоторые библиотеки (как glibc) динамически связаны. Если исполняемый файл для вашей платформы несовместим с версией вашей операционной системы, смотрите следующий раздел для прямого запуска Достанькореша.
+Because of the nature of cx_freeze & pyinstaller, some libraries (like glibc) are dynamically linked. If the executeable for your platform is uncompatible with the version of your operating system, see the next section for running Pesterchum directly.
  
-[releases]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/releases
+[releases]: https://github.com/Dpeta/pesterchum-alt-servers/releases
 
-## ЗАПУСК И СБОРКА
-Вот краткое руководство, что делать, чтобы запустить Pesterchum из командной строки и создать его, если хотите (то есть создать исполняемый файл). Прямой запуск Достанькореша или самостоятельная сборка Достанькореша не требуется!!! Это актуально только в том случае, если вы знаете, что делаете >:3c
+## RUNNING & BUILDING
+Here's a quick guide on what to do to run Pesterchum from the command line, and to build it if you so desire (that is, generating an executable). Running Pesterchum directly or building Pesterchum yourself is not required to run it!!! This is only relevant if you know what you're doing >:3c
 
-### НЕОБХОДИМО:
+If you have Python and Pesterchum's dependencies installed, you can simply run Pesterchum from the commandline with ```python pesterchum.py```.
+### REQUIREMENTS:
 
  - [Python 3]
 
-#### PYTHON ЗАВИСИМОСТИ
+#### PYTHON DEPENDENCIES
+You can install them with Python's pip or your package manager if you're on linux :)
  - [pygame]
- - [PyQt5] (И, в зависимости от вашего менеджера пакетов и платформы, python3-pyqt5.qtmultimedia)
+ - [PyQt5] (And, depending on your package manager & platform, python3-pyqt5.qtmultimedia)
  - [feedparser]
  - [python-magic]
  - [ostools]
@@ -55,41 +56,23 @@ Dpeta крайне рекомендует прочитать эти руково
 [python-magic]: https://pypi.org/project/python-magic/
 [ostools]: https://pypi.org/project/ostools/
 [requests]: https://pypi.org/project/requests/
-### CX_FREEZE СБОРКА
+
+### PYINSTALLER BUILDING
+My preferred method of generating binary releases on Windows and Linux, MacOS doesn't seem to work for me.
+``python pyinstaller.py``
+
+### CX_FREEZE BUILDING
 
 #### Windows:
 ``python setup.py build``
-
-или
-
-``python setup.py bdist --format=zip``
+or
+``python setup.py bdist_msi``
 
 #### Mac:
 ``python setup.py build``
 
-### PYINSTALLER СБОРКА
-#### Linux (также может работать на других платформах!!): 
-``pyinstaller pesterchum.spec``
-
-## РУСИФИКАЦИЯ
-Переводом и остальным занимается Daosp (тупой челик, который хренового знает инглиш и питон)
-### Прогресс первевода:
-* Основные файлы переведены, нужно проверять
-* Темы (посмотрите в [конце][pcott]):
-    * Pesterchum переведён визуально и текстово (ВТ)
-    * Trollian - ВТ, нужно проверять
-    * остальное - Т, нужно проверять
-* [Руководство по созданию своих тем][themes.mkdn]
-
-Я могу ошибаться, так что отправляйте мне найденные вами ошибки перевода в [Issues][issues-rus], если ошибка связана с работой клиента, то тогда нужно обращаться к самому [Dpet'е][issues] (ДООЛ: он англоговорящий)
-
-[pcott]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/README.md#%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B0-%D1%82%D0%B5%D0%BC
-[themes.mkdn]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/blob/py3_pyqt5/docs/themes.mkdn
-[issues-rus]: https://github.com/Daosp/pesterchum-Dpeta-altservers-rus/issues
-[issues]: https://github.com/Dpeta/pesterchum-alt-servers/issues
-
-## СМАЙЛЫ
-Просто для удобства. :3 (Взято из [README-karxi.mkdn])
+## SMILIES
+Just for easy reference. :3 (Taken from docs/README-karxi.mkdn)
 
 * `:rancorous:`
 * `:apple:`
@@ -145,114 +128,3 @@ Dpeta крайне рекомендует прочитать эти руково
 * `:billiards:`
 * `:billiardslarge:`
 * `:whatdidyoudo:`
-
-[README-karxi.mkdn]: https://github.com/Dpeta/pesterchum-alt-servers/tree/py3_pyqt5/docs/README-karxi.mkdn
-
-## ПРОГРЕСС ПЕРЕВОДА ТЕМ
-* battlefield:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* BettyBother:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* Cdasl:
-- [X] Текст
-- [ ] Проверка
-* crosbytop:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* dad:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* danceofthorns:
-- [X] Текст
-- [ ] Проверка
-* ОТЛОЖЕНО - enamel:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* ОТЛОЖЕНО - enoirmel:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* FRESHjamz:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* ОТЛОЖЕНО - gold:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* ОТЛОЖЕНО - gold xl:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* ОТЛОЖЕНО - jadeenamel:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* johntierchum:
-- [X] Текст
-- [ ] Проверка
-* MSChum:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* ОТЛОЖЕНО - niccage:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* paperchum:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* pesterchum:
-- [X] Текст
-- [X] Визуал
-- [X] Проверка
-* pesterchum2.5:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* sbahj:
-- [X] Текст
-- [ ] Визуал (нужно ли?)
-- [ ] Проверка
-* Scratch:
-- [X] Текст
-- [ ] Проверка
-* ОТЛОЖЕНО - squiddlechum:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* steamchum:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* strifekind:
-- [X] Текст
-- [ ] Визуал
-- [ ] Проверка
-* Teal Trollian:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* trollian:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* trollian2.5:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* typewriter:
-- [X] Текст
-- [X] Визуал
-- [ ] Проверка
-* Zodiac:
-- [X] Текст
-- [ ] Проверка

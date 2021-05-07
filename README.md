@@ -2,6 +2,7 @@
 
 Достанькореша - это клиент мгновенных сообщений, повторяющий стиль клиентов из комикса Homestuck.
 На этом репозитории содержится только перевод программы, располагающийся на [Dpeta/pesterchum-alt-servers]
+При запуске даётся выбор сервера (по умолчанию irc.pesterchum.xyz)
 
 [Dpeta/pesterchum-alt-servers]: https://github.com/Dpeta/pesterchum-alt-servers
 
@@ -152,6 +153,9 @@
 [python-magic]: https://pypi.org/project/python-magic/
 [ostools]: https://pypi.org/project/ostools/
 [requests]: https://pypi.org/project/requests/
+### PYINSTALLER СБОРКА
+Предпочтительный метод создания релизов в Windows и Linux, в MacOS не работает
+``pyinstaller pesterchum.py``
 ### CX_FREEZE СБОРКА
 #### Windows:
 ``python setup.py build`` - в этом случаи будет создана папка `build`, в котором в свою очередь находится папка с программой.
@@ -161,9 +165,6 @@
 ``python setup.py bdist --format=zip`` - создаст архив с программой в папке `bdist`
 #### Mac:
 ``python setup.py build``
-### PYINSTALLER СБОРКА
-#### Linux (также может работать на других операционных системах): 
-``pyinstaller pesterchum.spec``
 ## ПРОГРЕСС ПЕРЕВОДА
 ### РУКОВОДСТВ
 * themes:

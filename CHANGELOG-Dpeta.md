@@ -1,6 +1,15 @@
 # Changelog
 (This document uses YYYY-MM-DD as per ISO 8601)
 
+## [v2.1.3] - 2021-5-3
+
+### Added
+- pyinstaller.py script to make building with pyinstaller more convenient.
+- Themes by cubicSimulation.
+
+### Changed
+- Honk emote now only triggers when typing ':honk:' instead of on every 'honk'.
+
 ## [v2.1.2] - 2021-4-16
 
 ### Added

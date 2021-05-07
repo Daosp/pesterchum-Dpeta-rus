@@ -6,8 +6,8 @@
   "newmsgicon": "$path/trayicon2.png",
   "windowtitle": "ДОСТАНЬКОРЕША 95",
   "menu" : { "style": "font-family: 'Courier'; font-size: 12px; color: #000000; background-color: #c3c3c3;border:1px solid #000000",
-             "menuitem": "margin-right:1px;",
-             "selected": "background-color: #ffffff",
+             "menuitem": "margin-right:1px; color: #000000;",
+             "selected": "color: #000000; background-color: #ffffff",
              "disabled": "color: grey",
              "loc": [3,21]
            },
@@ -37,9 +37,9 @@
             "help": { "_name": "            ",
                       "about": "О программе",
                       "help": "Помощь",
-                      "calsprite": "Малой Кэл Приятель",
+                      "calsprite": "Малой Кэл",
                       "chanserv": "Модерация групп",
-                      "nickserv": "Никсерв",
+                      "nickserv": "Модерация ников",
 					  "reportbug": "Сообщить об ошибке" },
             "rclickchumlist": {"pester": "Отправить сообщение",
                                "removechum": "Удалить из корешей",
@@ -59,7 +59,7 @@
                                "quirksoff": "Отключить правила",
                                "ooc": "OOC",
                                "invitechum": "Пригласить",
-                               "memosetting": "НАСТРОЙКА ГРУППЫ",
+                               "memosetting": "Настройка группы",
                                "memonoquirk": "Отключить правила",
                                "memohidden": "Скрыть",
                                "memoinvite": "Только по приглашению",
@@ -70,12 +70,12 @@
              "loc": [279, 5]},
   "minimize": { "image": "$path/minimize.png",
                 "loc": [262, 5]},
-  "chums": { "style": "background: #c3c3c3 url($path/chumbg.png) repeat-x top left; background-attachment: fixed;border:0px solid dicks;font-size:14px;font-family: 'arial'; color: #000000",
+  "chums": { "style": "background: #FFFFFF; selection-background-color:#000082; border-image: url($path/chumbg.png) 2 stretch;font-size:14px; border: 2px solid #000000; font-family: 'Courier'; color: #000000; selection-color: #FFFFFF",
 				
 				
 				"loc": [12, 110],
 				"size": [278, 339],
-				
+				"userlistcolor": "#000000",
 				
 
 				"moods": {
@@ -84,7 +84,7 @@
 
                  "rancorous": { "icon": "$path/rancorous.png", "color": "#626262" },
 
-                 "offline": { "icon": "$path/offline.png", "color": "#0000"},
+                 "offline": { "icon": "$path/offline.png", "color": "#000000"},
 
 
                  "pleasant": { "icon": "$path/pleasant.png", "color": "#B536DA" },
@@ -135,24 +135,24 @@
            },
 		   
   "trollslum": {
-      "style": "background: #c3c3c3; border:1px solid #000000; font-family: 'Arial'",
-      "size": [195, 200],
-      "label": { "text": "Block List",
-                 "style": "color: #000000; font-family: 'Arial';border:0px;" },
-      "chumroll": {"style": "border:1px solid #000000; background-color: #FFFFFF;color: #000000; font-family: 'Arial';selection-background-color:#FFFFFF; " }
+      "style": "color: #000000; background: #c3c3c3; border:1px solid #000000; font-family: 'Courier'",
+      "size": [350, 200],
+      "label": { "text": "Список заблокированных",
+                 "style": "color: #000000; font-family: 'Courier';border:0px;" },
+      "chumroll": {"style": "border:1px solid #000000; background-color: #FFFFFF;color: #000000; font-family: 'Courier';selection-background-color:#0000FF; " }
   },
 		   
 	"mychumhandle": { 
             "handle": { "loc": [40,507],
                     "size": [233, 18],
-                    "style": "background: transparent; color: #000000; font-family:'arial'; text-align:left;"
+                    "style": "background: transparent; color: #000000; font-family:'Courier'; text-align:left;"
                                                         },
                     "colorswatch": { "loc": [260,504],
                                      "size": [29,25],
                                      "text": " " },
                     "currentMood": [21, 508]
                   },
-	"defaultwindow": { "style": "background: #c3c3c3; color:#000000; font-family:arial;selection-background-color:#FFFFFF; "
+	"defaultwindow": { "style": "background: #c3c3c3; color:#000000; font-family:'Courier'; selection-background-color:#FFFFFF; "
                    },
 				  
   "addchum":  { "style": "background: transparent;",
@@ -167,68 +167,68 @@
              "loc": [198,454],
              "size": [90, 44]
            },
-  "defaultmood": 0,
+  "defaultmood": 1,
   "moodlabel": { "style": "",
                                  "loc": [20, 430],
                                  "text": ""
                            },   
   "moods": [
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:2px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:2px;",
                 "loc": [18, 535],
                 "size": [90, 22],
-            "text": "Корешовое",
+            "text": "Корешов",
                 "icon": "$path/chummy.png",
                 "mood": 0
           },
 
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [18, 557],
                 "size": [90, 22],
-            "text": "Приятное",
+            "text": "Приятен",
                 "icon": "$path/pleasant.png",
                 "mood": 3
           },
 
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [18, 579],
                 "size": [90, 22],
-            "text": "Обозлённое",
+            "text": "Обозлён",
                 "icon": "$path/rancorous.png",
                 "mood": 1
           },
 
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [108, 535],
                 "size": [90, 22],
-            "text": "Шутливое",
+            "text": "Шутлив",
                 "icon": "$path/pranky.png",
                 "mood": 5
           },
 
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [108, 557],
                 "size": [90, 22],
-            "text": "Спокойное",
+            "text": "Спокоен",
                 "icon": "$path/smooth.png",
                 "mood": 6
           },
 		  
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [108, 579],
                 "size": [90, 22],
-            "text": "Расслабл.",
+            "text": "Весел",
                 "icon": "$path/relaxed.png",
                 "mood": 8
           },		  
 
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [198, 535],
                 "size": [90, 22],
 				"text": "Дерзкое",
@@ -237,8 +237,8 @@
           },
 		  
 
-      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'arial';  padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3; color: #000000; font-family:'Courier';  padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [198, 557],
                 "size": [90, 22],
             "text": "Хитрое",
@@ -246,8 +246,8 @@
                 "mood": 10
           },		  
 		  
-      { "style": "text-align:left; background:#c3c3c3;color: #000000; font-family:'arial'; padding-left:3px;",
-                "selected": "text-align:left; background: #314159; color: #000000; font-family:'arial';  padding-left:3px;",
+      { "style": "text-align:left; background:#c3c3c3;color: #000000; font-family:'Courier'; padding-left:3px;",
+                "selected": "text-align:left; background: #314159; color: #000000; font-family:'Courier';  padding-left:3px;",
                 "loc": [198, 579],
                 "size": [90, 22],
                 "text": "Оффлайн",
@@ -257,7 +257,7 @@
   ]
  },
   "convo":
- {"style": "background: #c3c3c3; font-family: 'Arial'; font-size: 14px; ",
+ {"style": "background: #c3c3c3; font-family: 'Courier'; font-size: 14px; ",
   "scrollbar": { "style" : "background: #c3c3c3", "handle": "" },
   "margins": {"top": 5, "bottom": 9, "left": 10, "right": 10 },
   "size": [500,425],
@@ -269,25 +269,25 @@
                },
   
   "tabwindow" : {
-      "style": "background: #c3c3c3 repeat-x top left; font-family: Courier;"
+      "style": "color: #000000; background: #c3c3c3 repeat-x top left; font-family: Courier;"
   },
   "textarea": {
-      "style": "background: #FFFFFF repeat-x top left; background-attachment: fixed; border:1px solid #000000; font-size: 14px; color: #000000; margin-top: 10px;"
+      "style": "background: #FFFFFF repeat-x top left; background-attachment: fixed; border:1px solid #000000; font-size: 14px; color: #000000; margin-top: 10px; font-family: 'Courier';"
   },
   "input": {
-      "style": "background: #FFFFFF; margin-top:5px; border:1px solid #4d4b48; font-size: 12px; color: #000000; "
+      "style": "font-family: 'Courier'; background: #FFFFFF; margin-top:5px; border:1px solid #4d4b48; font-size: 12px; color: #000000; "
   },
   
   "tabs": {
-      "style": "background: #4a4846; color: #a6a4a1; height: 21px; margin: 3px 1px 0px 1px; padding-left: 3px; padding-bottom: 3px;",
-      "selectedstyle": "background: #a0a0a0 url($path/tabbg.png) repeat-x top left; color: #000000; padding-bottom: 10px",
+      "style": "background: #4a4846; color: #a6a4a1; height: 21px; margin: 3px 1px 0px 1px; padding-left: 3px; padding-bottom: 3px; font-family: 'Courier';",
+      "selectedstyle": "font-family: 'Courier';background: #a0a0a0 url($path/tabbg.png) repeat-x top left; color: #000000; padding-bottom: 10px",
        "newmsgcolor": "#FFFF00",
        "tabstyle": 0
 	   
   },
   "text": {
-      "beganpester": "начал доставать",
-      "ceasepester": "прекратил доставать",
+      "beganpester": "начал общаться с",
+      "ceasepester": "прекратил общаться с",
       "blocked": "заблокировал пользователя",
       "unblocked": "разблокировал пользователя",
       "blockedmsg": "не может получать письма",
@@ -300,7 +300,7 @@
   "systemMsgColor": "#000000"
  },
  "memos":
- {"size": [500,325],
+ {"size": [400,325],
  "memoicon": "$path/trayicon.png",
   "style": "background: #c3c3c3; border:1px solid #000000; color: #000000; font-family: 'Courier';",
   "tabs": {
@@ -321,29 +321,29 @@
                  "uparrow": "background: #c3c3c3;height:17px;",
                  "uarrowstyle": "image:url($path/uparrow.png);"
                },
-  "label": { "text": "Welcome to $channel!",
-             "style": "margin-bottom: 21px;background: #000082; color: #FFFFFF; border:0px; font-size: 14px;",
+  "label": { "text": "Добро пожаловать в $channel!",
+             "style": "margin-bottom: 21px;background: #000082; color: #FFFFFF; border:0px; font-size: 14px;font-family: 'Courier';",
              "align": { "h": "center", "v": "center" },
              "minheight": 47,
              "maxheight": 47
            },
-  "input": { "style": "background: #FFFFFF; color: #000000; border:1px solid #4d4b48;margin-top:5px; margin-right:10px; margin-left:10px; font-size: 12px;" },
-  "textarea": { "style": "background: #FFFFFF; font-size: 14px; border:1px solid #000000;text-align:center; margin-right:10px; margin-left:10px;" },
+  "input": { "style": "background: #FFFFFF; color: #000000; border:1px solid #4d4b48;margin-top:5px; margin-right:10px; margin-left:10px; font-size: 12px;font-family: 'Courier';" },
+  "textarea": { "style": "font-family: 'Courier'; color: #000000; background: #FFFFFF; font-size: 14px; border:1px solid #000000;text-align:center; margin-right:10px; margin-left:10px;" },
   "margins": {"top": 0, "bottom": 6, "left": 0, "right": 0 },
   "userlist": { "width": 150,
-                "style": "background: #FFFFFF; border:1px solid #4d4b48; font-size: 14px; color: #000000; selection-background-color:#FFFFFF; margin-left:0px; margin-right:10px;"
+                "style": "background: #FFFFFF; border:1px solid #4d4b48; font-size: 14px; color: #000000; selection-background-color:#FFFFFF; margin-left:0px; margin-right:10px;font-family: 'Courier';"
               },
   "time": { "text": { "width": 75,
                       "style": "color: #000000; border: 1px solid #000000; background: #FFFFFF; font-size: 12px; margin-top: 5px; margin-right: 11px; margin-left:10px; font-family:'Courier';"
                     },
-            "slider": { "style": " border:0px solid #c2c2c2;margin-top:5px;margin-left:6px;",
+            "slider": { "style": "border:0px solid #c2c2c2;margin-top:5px;margin-left:6px;",
                         "groove": "border-image:url($path/timeslider.png);",
                         "handle": "image:url($path/handle.png);"
                       },
-            "buttons": { "style": "color: #000000;  border: 1px solid #4d4b48;  font-size: 12px; background: #FFFFFF; margin-top: 5px; margin-right: 5px; margin-left: 0px; width: 50px;" },
+            "buttons": { "style": "font-family: 'Courier'; color: #000000;  border: 1px solid #4d4b48;  font-size: 12px; background: #FFFFFF; margin-top: 5px; margin-right: 5px; margin-left: 0px; width: 50px;" },
             "arrows": { "left": "$path/leftarrow.png",
                         "right": "$path/rightarrow.png",
-                        "style": " border:0px; margin-top: 5px; margin-right:10px;background: #c3c3c3;"
+                        "style": "border:0px; margin-top: 5px; margin-right:10px;background: #c3c3c3;"
                       }
           },
   "systemMsgColor": "#000000",
@@ -363,8 +363,8 @@
              "signout": "$path/../enamel/distraught2.gif",
              "style": "border: 2px solid black; border-width: 2px 0px 0px 2px;" },
    "title": { "minimumheight": 50,
-              "style": "border: 2px solid black; border-width: 2px 2px 0px 0px; padding: 5px; font-weight:bold;"
+              "style": "font-family: 'Courier'; border: 2px solid black; border-width: 2px 2px 0px 0px; padding: 5px; font-weight:bold;"
             },
-   "content": { "style": "background: #c3c3c3; color: black; padding: 5px;" }
+   "content": { "style": "font-family: 'Courier'; background: #c3c3c3; color: black; padding: 5px;" }
  }
 }

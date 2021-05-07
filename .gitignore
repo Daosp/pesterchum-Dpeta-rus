@@ -20,3 +20,4 @@ package.json
 /.idea/*
 actual-version.py
 later-themes/*
+pesterchum.spec
