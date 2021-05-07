@@ -1,4 +1,5 @@
 # Достанькореша
+![ТЕГ](https://img.shields.io/github/v/release/Daosp/pesterchum-Dpeta-rus?color=green&label=%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)
 
 Достанькореша - это клиент мгновенных сообщений, повторяющий стиль клиентов из комикса Homestuck.
 На этом репозитории содержится только перевод программы, располагающийся на [Dpeta/pesterchum-alt-servers]
