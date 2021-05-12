@@ -1,46 +1,41 @@
-Python Quirk Functions
-===============
+# Python Функции Правил
 
-Table of Contents
------------------
-1. Introduction
-2. Create A Module
-3. Functions In A Module
+# Оглавление
+1. Введение
+2. Создание модуля
+3. Функции в модуле
 4. Command Requirements
 5. Completed Quirk Function
+# 1. Введение
+При помощи этого руководства вы узнаете:
 
-Introduction
----------------
-Over the course of this short tutorial you will learn:
+* Как сделать свои собственные Функции Правил
+* ОЧЕНЬ базовый синтаксис Python
 
-* How to create your own Quirk Functions
-* VERY basic Python syntax
+Вы ни в коем случае не узнаете отсюда:
 
-You will not learn:
+* Как писать бекенд на Python
+* Как испечь пирог
+* Смысл жизни
 
-* How to write Python
-* How to bake a cake
-
-Throughout this tutorial there will be
+В этом руководстве будут
 <pre>
-Instructions in special boxes.
-If you follow the instructions in these boxes, by the end of this tutorial
-you will have recreated the default reverse() Quirk Function.
+Инструкции в таких прямоугольничков.
+Если вы будете следовать этим инструкциям,
+то вы сможете сделать обычную Функцию Правил reverse().
 </pre>
 
-Create A Module
--------------------
-All Quirk Function Modules should be created in the 'quirks/' directory. File names <b>must</b> end in '.py'.
-You can have multiple Quirk Functions per Module.
+# 2. Создание модуля
+Все Модули Функции Правил создаются и хранятся в папке ```quirks/```. Имя файла <b>должно</b> заканчиваться '.py'.
+У вас может быть несколько Функции Правил для.
 
-Each Module can also have a 'setup' function which will be called once, the moment the Module is loaded.
+Каждый модуль также может иметь функцию настройки, которая будет вызываться один раз в момент загрузки модуля.
 
 <pre>
-Create 'reverse.py' in the 'quirks/' directory.
+Создаём файл reverse.py в папке quirks.
 </pre>
 
-Functions In A Module
---------------------------
+# 3. Функции в модуле
 If you've ever done programming before, you should know what a function is. If not, I suggest picking up a good programming book (or e-book).
 
 In Python, function syntax looks like this:
@@ -57,8 +52,7 @@ def reverserep(text):
     return text[::-1]
 ```
 
-Command Requirements
-------------------------
+# 4. Command Requirements
 For a function to be registered as a Quirk Function, it must conform to three simple rules:
 
 1.  It must have a command name.
@@ -73,8 +67,7 @@ function_name.command = "name"
 reverserep.command = "reverse"
 ```
 
-Completed Quirk Function
----------------------------
+# 5. Completed Quirk Function
 Below is the completed, fully working, reverse Quirk Function. After it I will break down the pieces of each line.
 
 ```python
